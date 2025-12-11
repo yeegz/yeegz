@@ -1,29 +1,40 @@
-# 👋 Welcome to my corner of the internet, I'm Yousof Selim
+# Hi there, I'm Yousof Selim 👋
+### Software Engineering Undergraduate | Backend & Database Enthusiast
 
-🎓 Software Engineering student at Sunway University & Lancaster University (Class of 2027)  
-💡 Passionate about building modern web applications, games, and AI-powered tools  
-🚀 Currently learning: Full-stack development, Networking, and Data Management  
-🎮 Game Dev Enthusiast – I built a 2D RPG game called **Fallen Asteri** using Godot  
-📦 Version Control: Comfortable using Git & GitHub for collaboration and personal projects  
+I am a Software Engineering student at **Sunway University & Lancaster University** (Class of 2027), specializing in **Backend Systems**, **Database Architecture**, and **Automation**.
+
+- 🔭 **I’m currently working on:** Optimizing database schemas and Linux automation scripts.
+- 🌱 **I’m currently learning:** Cloud Infrastructure and Advanced PL/SQL.
+- 🎓 **Education:** BSc (Hons) in Software Engineering.
+- 💼 **Connect with me:** [LinkedIn](https://www.linkedin.com/in/yousof-selim-57b5a927a/)
 
 ---
 
 ## 🛠️ Tech Stack
-- **Languages:** Python, C++, HTML, CSS, JavaScript
-- **Tools:** Git, GitHub, Godot, Cisco Packet Tracer
-- **Web Dev:** Building responsive sites and interactive UIs
-- **Game Dev:** 2D game logic, animation handling, and asset integration
+
+| Category | Technologies |
+| :--- | :--- |
+| **Backend & Scripting** | ![Python](https://img.shields.io/badge/-Python-3776AB?logo=python&logoColor=white) ![Bash](https://img.shields.io/badge/-Bash-4EAA25?logo=gnu-bash&logoColor=white) ![SQL](https://img.shields.io/badge/-SQL-4479A1?logo=mysql&logoColor=white) ![C#](https://img.shields.io/badge/-C%23-239120?logo=c-sharp&logoColor=white) |
+| **Databases** | Oracle SQL, PL/SQL, Relational Design (ERD) |
+| **Tools** | ![Git](https://img.shields.io/badge/-Git-F05032?logo=git&logoColor=white) ![Linux](https://img.shields.io/badge/-Linux-FCC624?logo=linux&logoColor=black) ![Unity](https://img.shields.io/badge/-Unity-000000?logo=unity&logoColor=white) |
 
 ---
 
-## 📌 Personal Projects
-- 🎮 **Fallen Asteri** – 2D RPG built with Godot, managed with Git in a team
-- 🧮 **Python Calculator** – CLI and GUI-based calculator using Python
-- 🗂️ **To-Do Manager** – Task manager using HTML, CSS, and JavaScript
-- 🌐 **Portfolio Website** – Built from scratch using HTML and CSS
+## 🚀 Key Projects
 
----
+### 🗄️ University Management Database System
+*Backend Database Architecture | Academic Project*
+- **Tech:** SQL, PL/SQL, Oracle Database
+- Designed a fully normalized relational schema (ERD) to manage student records.
+- Implemented **Stored Procedures** and **Triggers** to automate grade calculations.
 
-## 📫 Let’s Connect!
-- 🌐 [LinkedIn](https://www.linkedin.com/in/yousof-selim-57b5a927a/)
+### 🐧 Linux System Automation Suite
+*System Administration Tool | Academic Project*
+- **Tech:** Bash, Shell Scripting, Linux
+- Engineered a suite of shell scripts to automate mathematical computations and file management.
+- Included rigorous error handling and input validation.
 
+### ⚔️ Fallen Asteri (RPG Game)
+*Game Logic & Physics | Personal Project*
+- **Tech:** Godot Engine / C#
+- Developed a 2D RPG with complex inventory management and state machines.
