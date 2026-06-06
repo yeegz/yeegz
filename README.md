@@ -7,9 +7,6 @@
   </a>
 </p>
 
-<p align="center">
-  <img src="https://komarev.com/ghpvc/?username=yeegz&label=Profile%20views&color=02569B&style=flat" alt="profile views" />
-</p>
 
 ---
 
@@ -88,19 +85,6 @@ I'm a Software Engineering student in the **Sunway × Lancaster University** dua
 ![Xcode](https://img.shields.io/badge/-Xcode-147EFB?style=flat&logo=xcode&logoColor=white)
 ![Figma](https://img.shields.io/badge/-Figma-F24E1E?style=flat&logo=figma&logoColor=white)
 ![Godot](https://img.shields.io/badge/-Godot-478CBF?style=flat&logo=godotengine&logoColor=white)
-
----
-
-### 📊 GitHub Stats
-
-<p align="center">
-  <img height="165" src="https://github-readme-stats.vercel.app/api?username=yeegz&show_icons=true&theme=tokyonight&hide_border=true&count_private=true" alt="GitHub Stats" />
-  <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=yeegz&layout=compact&theme=tokyonight&hide_border=true" alt="Top Languages" />
-</p>
-
-<p align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=yeegz&theme=tokyonight&hide_border=true" alt="GitHub Streak" />
-</p>
 
 ---
 
