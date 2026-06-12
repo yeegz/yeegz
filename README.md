@@ -1,12 +1,6 @@
 <!-- ════════════════════════════════════════════════════════════
      Yousof Selim · @yeegz — liquid-glass profile
-     File layout at repo root:
-       README.md · header.svg · divider.svg · footer.svg
-       card-bupples.svg · card-tajweed.svg
-     Snake workflow:
-       .github/workflows/snake.yml
-     Palette:
-       #070B14 canvas · #0D1525 glass · #13B9FD sky · #02569B deep
+     Put every SVG file in this ZIP at the ROOT of the yeegz/yeegz repo.
      ════════════════════════════════════════════════════════════ -->
 
 <img src="header.svg" width="100%" alt="Yousof Selim — Full-Stack & Cross-Platform Developer · open to SWE / technical PM internships" />
@@ -27,88 +21,11 @@
 
 <img src="divider.svg" width="100%" alt="" />
 
-### about_me.dart
+### about/
 
-```dart
-class YousofSelim extends Developer {
-  @override
-  final String role =
-      'Full-Stack & Cross-Platform Mobile Developer';
+<img src="card-profile.svg" width="100%" alt="About Yousof Selim" />
 
-  final Degree education = const Degree(
-    'BSc (Hons) Software Engineering',
-    at: 'Sunway University × Lancaster University',
-    graduating: 2027,
-  );
-
-  final int shippingSince = 2023;
-
-  final String sideQuest =
-      'Digital Marketing Exec @ Sunway Cybersecurity Club';
-
-  @override
-  List<String> get drivenBy => [
-        'minimalist, modern UI/UX',
-        'liquid-glass interfaces',
-        'the gap between "it works" and "it feels right"',
-      ];
-
-  final List<String> aiPairProgrammers = [
-    'Claude',
-    'Cursor',
-    'Copilot',
-  ];
-
-  Future<Internship> get nextChapter => apply(
-        roles: [
-          'Software Engineering',
-          'Technical PM',
-        ],
-      );
-}
-```
-
-### toolkit.yaml
-
-```yaml
-name: yousof_selim
-description: >
-  Cross-platform apps with full-stack plumbing,
-  clean UX, and obsessive UI polish.
-
-environment:
-  shipping_since: "February 2023"
-  degree: "BSc Software Engineering"
-  university: "Sunway × Lancaster"
-  graduating: 2027
-
-mobile_and_frontend:
-  flutter: "primary"
-  dart: "fluent"
-  react_native: "when needed"
-  tailwind_css: "utility-first"
-
-backend_and_data:
-  node_js: "services"
-  rest_apis: "hand-designed"
-  supabase: "real-time sync"
-  postgresql: "relational"
-  firebase: "firestore"
-
-languages:
-  typescript: "typed"
-  javascript: "ES2023"
-  python: "scripts and tools"
-
-tools:
-  claude: "AI pair programmer"
-  cursor: "daily driver"
-  github_copilot: "autocomplete boost"
-  figma: "where UI starts"
-  git: "non-negotiable"
-  xcode: "simulators"
-  godot: "weekend game dev"
-```
+<img src="card-stack.svg" width="100%" alt="Yousof Selim tech stack" />
 
 <img src="divider.svg" width="100%" alt="" />
 
@@ -116,67 +33,28 @@ tools:
 
 <sub>real products — tap any card</sub>
 
-<table align="center">
-  <tr>
-    <td align="center" width="50%">
-      <a href="https://yeegz.github.io">
-        <img src="card-bupples.svg" alt="Bupples" />
-      </a>
-      <br />
-      <sub>
-        <b>💸 Bupples</b> — group expense-splitting ·
-        Flutter + Supabase/Firebase real-time sync ·
-        built for <b>iOS & Android</b>
-      </sub>
-    </td>
-    <td align="center" width="50%">
-      <a href="https://github.com/yeegz/yeegz.github.io">
-        <img src="https://github-readme-stats.vercel.app/api/pin/?username=yeegz&repo=yeegz.github.io&bg_color=0D1525&title_color=13B9FD&icon_color=13B9FD&text_color=94A3B8&hide_border=true&border_radius=24" alt="Portfolio" />
-      </a>
-      <br />
-      <sub>
-        <b>🪟 Portfolio</b> — liquid-glass personal site ·
-        HTML/CSS/JS ·
-        <a href="https://yeegz.github.io"><b>live on GitHub Pages</b></a>
-      </sub>
-    </td>
-  </tr>
-  <tr>
-    <td align="center" width="50%">
-      <a href="https://github.com/yeegz/To-Do-List-Board">
-        <img src="https://github-readme-stats.vercel.app/api/pin/?username=yeegz&repo=To-Do-List-Board&bg_color=0D1525&title_color=13B9FD&icon_color=13B9FD&text_color=94A3B8&hide_border=true&border_radius=24" alt="Task Board" />
-      </a>
-      <br />
-      <sub>
-        <b>✅ Task Board</b> — ClickUp-style to-do app ·
-        drag-and-drop, category tags, priority sorting
-      </sub>
-    </td>
-    <td align="center" width="50%">
-      <a href="https://github.com/yeegz/Fallen-Asteri">
-        <img src="https://github-readme-stats.vercel.app/api/pin/?username=yeegz&repo=Fallen-Asteri&bg_color=0D1525&title_color=13B9FD&icon_color=13B9FD&text_color=94A3B8&hide_border=true&border_radius=24" alt="Fallen Asteri" />
-      </a>
-      <br />
-      <sub>
-        <b>⚔️ Fallen Asteri</b> — 2D platformer in Godot ·
-        movement, combat systems, scene transitions
-      </sub>
-    </td>
-  </tr>
-  <tr>
-    <td align="center" colspan="2">
-      <a href="https://yeegz.github.io">
-        <img src="card-tajweed.svg" alt="Tajweed" />
-      </a>
-      <br />
-      <sub>
-        <b>📖 Tajweed</b> — UI/UX redesign of a
-        Quranic-recitation learning platform ·
-        navigation & information architecture
-      </sub>
-    </td>
-  </tr>
-</table>
+<br />
+<br />
+
+<a href="https://yeegz.github.io">
+  <img src="project-bupples.svg" width="100%" alt="Bupples — group expense-splitting app" />
+</a>
+
+<a href="https://github.com/yeegz/yeegz.github.io">
+  <img src="project-portfolio.svg" width="100%" alt="Portfolio — liquid-glass personal site" />
+</a>
+
+<a href="https://github.com/yeegz/To-Do-List-Board">
+  <img src="project-task-board.svg" width="100%" alt="Task Board — ClickUp-style to-do app" />
+</a>
+
+<a href="https://github.com/yeegz/Fallen-Asteri">
+  <img src="project-fallen-asteri.svg" width="100%" alt="Fallen Asteri — 2D Godot platformer" />
+</a>
+
+<a href="https://yeegz.github.io">
+  <img src="project-tajweed.svg" width="100%" alt="Tajweed — UI/UX redesign" />
+</a>
 
 <img src="divider.svg" width="100%" alt="" />
 
