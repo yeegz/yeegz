@@ -1,0 +1,36 @@
+<svg width="1200" height="150" viewBox="0 0 1200 150" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Let's build something — open to SWE and technical PM internships">
+  <defs>
+    <clipPath id="fframe"><rect width="1200" height="150" rx="24"/></clipPath>
+    <radialGradient id="horizon" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#13B9FD" stop-opacity="0.5"/>
+      <stop offset="55%" stop-color="#02569B" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#02569B" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="baseline" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#13B9FD" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#7DD3FC" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#13B9FD" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="fsoften" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="42"/>
+    </filter>
+    <pattern id="fdots" width="22" height="22" patternUnits="userSpaceOnUse">
+      <circle cx="1" cy="1" r="1" fill="#FFFFFF" fill-opacity="0.045"/>
+    </pattern>
+  </defs>
+
+  <g clip-path="url(#fframe)">
+    <rect width="1200" height="150" fill="#070B14"/>
+    <rect width="1200" height="150" fill="url(#fdots)"/>
+
+    <!-- breathing horizon glow rising from the bottom edge -->
+    <ellipse cx="600" cy="205" rx="520" ry="130" fill="url(#horizon)" filter="url(#fsoften)">
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="6s" repeatCount="indefinite"/>
+    </ellipse>
+    <rect x="150" y="146.5" width="900" height="1.5" fill="url(#baseline)"/>
+
+    <text x="600" y="68" text-anchor="middle" font-family="-apple-system, 'SF Pro Display', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="19" font-weight="600" letter-spacing="0.5" fill="#F1F5F9">let's build something</text>
+
+    <text x="600" y="98" text-anchor="middle" font-family="-apple-system, 'SF Pro Display', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" letter-spacing="3.5" fill="#94A3B8">OPEN TO SWE &amp; TECHNICAL PM INTERNSHIPS · YEEGZ.GITHUB.IO</text>
+  </g>
+</svg>
