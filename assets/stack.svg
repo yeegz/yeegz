@@ -1,0 +1,102 @@
+<svg width="1400" height="760" viewBox="0 0 1400 760" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Yousof Selim tech stack">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1400" y2="760" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#05070D"/>
+      <stop offset="0.38" stop-color="#08111F"/>
+      <stop offset="0.72" stop-color="#061A2A"/>
+      <stop offset="1" stop-color="#042B3F"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="20" y1="20" x2="1380" y2="740" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0B1220"/>
+      <stop offset="0.55" stop-color="#0A1424"/>
+      <stop offset="1" stop-color="#082B40"/>
+    </linearGradient>
+    <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#FFFFFF" stop-opacity="0.13"/>
+      <stop offset="0.45" stop-color="#FFFFFF" stop-opacity="0.035"/>
+      <stop offset="1" stop-color="#13B9FD" stop-opacity="0.12"/>
+    </linearGradient>
+    <linearGradient id="cyan" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#19D3FF"/>
+      <stop offset="1" stop-color="#13B9FD"/>
+    </linearGradient>
+    <linearGradient id="mint" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#54F0B8"/>
+      <stop offset="1" stop-color="#13B9FD"/>
+    </linearGradient>
+    <linearGradient id="violet" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#A78BFA"/>
+      <stop offset="1" stop-color="#13B9FD"/>
+    </linearGradient>
+    <radialGradient id="glowA" cx="72%" cy="18%" r="62%">
+      <stop stop-color="#13B9FD" stop-opacity="0.32"/>
+      <stop offset="0.48" stop-color="#13B9FD" stop-opacity="0.08"/>
+      <stop offset="1" stop-color="#13B9FD" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowB" cx="15%" cy="92%" r="58%">
+      <stop stop-color="#54F0B8" stop-opacity="0.16"/>
+      <stop offset="0.55" stop-color="#54F0B8" stop-opacity="0.04"/>
+      <stop offset="1" stop-color="#54F0B8" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="softShadow" x="-20%" y="-30%" width="140%" height="160%">
+      <feDropShadow dx="0" dy="22" stdDeviation="18" flood-color="#000000" flood-opacity="0.38"/>
+    </filter>
+    <filter id="tinyShadow" x="-20%" y="-30%" width="140%" height="160%">
+      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#000000" flood-opacity="0.28"/>
+    </filter>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M 32 0 L 0 0 0 32" fill="none" stroke="#9FD9FF" stroke-opacity="0.045" stroke-width="1"/>
+    </pattern>
+    <pattern id="dots" width="26" height="26" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.05" fill="#9FD9FF" opacity="0.12"/>
+    </pattern>
+  </defs>
+  
+  <rect width="1400" height="760" rx="42" fill="#05070D"/>
+  <rect x="32" y="32" width="1336" height="696" rx="40" fill="url(#panel)" stroke="#224861" filter="url(#softShadow)"/>
+  <rect x="32" y="32" width="1336" height="696" rx="40" fill="url(#glowB)"/>
+  <rect x="32" y="32" width="1336" height="696" rx="40" fill="url(#dots)" opacity="0.45"/>
+  <text x="86" y="100" fill="#13B9FD" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="18" font-weight="900" letter-spacing="4">TOOLKIT / FULL-STACK MOBILE</text>
+  <text x="86" y="162" fill="#F8FAFC" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="52" font-weight="900" letter-spacing="-1">Built around shipping.</text>
+  <text x="86" y="212" fill="#A9B8CA" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="27" font-weight="700">A lean stack for apps that need good UI, real auth, real data, and real deployment discipline.</text>
+
+  <rect x="86" y="290" width="252" height="124" rx="28" fill="#07101D" stroke="#214E6C"/>
+  <circle cx="128" cy="335" r="12" fill="#13B9FD"/>
+  <text x="156" y="343" fill="#F8FAFC" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="28" font-weight="900">Flutter</text>
+  <text x="128" y="381" fill="#93A7BC" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="20" font-weight="700">Dart</text>
+  <rect x="374" y="290" width="252" height="124" rx="28" fill="#07101D" stroke="#214E6C"/>
+  <circle cx="416" cy="335" r="12" fill="#54F0B8"/>
+  <text x="444" y="343" fill="#F8FAFC" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="28" font-weight="900">Node.js</text>
+  <text x="416" y="381" fill="#93A7BC" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="20" font-weight="700">REST APIs</text>
+  <rect x="662" y="290" width="252" height="124" rx="28" fill="#07101D" stroke="#214E6C"/>
+  <circle cx="704" cy="335" r="12" fill="#54F0B8"/>
+  <text x="732" y="343" fill="#F8FAFC" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="28" font-weight="900">Supabase</text>
+  <text x="704" y="381" fill="#93A7BC" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="20" font-weight="700">Realtime</text>
+  <rect x="950" y="290" width="252" height="124" rx="28" fill="#07101D" stroke="#214E6C"/>
+  <circle cx="992" cy="335" r="12" fill="#FFB86B"/>
+  <text x="1020" y="343" fill="#F8FAFC" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="28" font-weight="900">Firebase</text>
+  <text x="992" y="381" fill="#93A7BC" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="20" font-weight="700">Firestore</text>
+  <rect x="86" y="455" width="252" height="124" rx="28" fill="#07101D" stroke="#214E6C"/>
+  <circle cx="128" cy="500" r="12" fill="#60A5FA"/>
+  <text x="156" y="508" fill="#F8FAFC" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="28" font-weight="900">TypeScript</text>
+  <text x="128" y="546" fill="#93A7BC" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="20" font-weight="700">Typed JS</text>
+  <rect x="374" y="455" width="252" height="124" rx="28" fill="#07101D" stroke="#214E6C"/>
+  <circle cx="416" cy="500" r="12" fill="#8B5CF6"/>
+  <text x="444" y="508" fill="#F8FAFC" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="28" font-weight="900">PostgreSQL</text>
+  <text x="416" y="546" fill="#93A7BC" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="20" font-weight="700">Data</text>
+  <rect x="662" y="455" width="252" height="124" rx="28" fill="#07101D" stroke="#214E6C"/>
+  <circle cx="704" cy="500" r="12" fill="#F472B6"/>
+  <text x="732" y="508" fill="#F8FAFC" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="28" font-weight="900">Figma</text>
+  <text x="704" y="546" fill="#93A7BC" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="20" font-weight="700">UI starts</text>
+  <rect x="950" y="455" width="252" height="124" rx="28" fill="#07101D" stroke="#214E6C"/>
+  <circle cx="992" cy="500" r="12" fill="#13B9FD"/>
+  <text x="1020" y="508" fill="#F8FAFC" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="28" font-weight="900">Cursor</text>
+  <text x="992" y="546" fill="#93A7BC" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="20" font-weight="700">Daily driver</text>
+  <rect x="518" y="600" width="364" height="124" rx="28" fill="#07101D" stroke="#214E6C"/>
+  <circle cx="560" cy="645" r="12" fill="#A78BFA"/>
+  <text x="588" y="653" fill="#F8FAFC" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="28" font-weight="900">Claude</text>
+  <text x="560" y="691" fill="#93A7BC" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="20" font-weight="700">AI pair</text>
+  <path d="M212 414 C350 540 530 350 662 455 C780 550 905 525 1076 414" stroke="#13B9FD" stroke-opacity="0.28" stroke-width="2"/>
+  <path d="M500 600 C620 515 720 515 842 600" stroke="#54F0B8" stroke-opacity="0.25" stroke-width="2"/>
+
+</svg>
