@@ -1,12 +1,12 @@
-<svg width="1600" height="520" viewBox="0 0 1600 520" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Tajweed project">
+<svg width="1600" height="640" viewBox="0 0 1600 640" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Recruiter proof">
   <defs>
-    <linearGradient id="page" x1="0" y1="0" x2="1600" y2="520" gradientUnits="userSpaceOnUse">
+    <linearGradient id="page" x1="0" y1="0" x2="1600" y2="640" gradientUnits="userSpaceOnUse">
       <stop stop-color="#050816"/>
       <stop offset="0.42" stop-color="#07111F"/>
       <stop offset="0.78" stop-color="#0A1630"/>
       <stop offset="1" stop-color="#111827"/>
     </linearGradient>
-    <linearGradient id="aurora" x1="0" y1="0" x2="1600" y2="520" gradientUnits="userSpaceOnUse">
+    <linearGradient id="aurora" x1="0" y1="0" x2="1600" y2="640" gradientUnits="userSpaceOnUse">
       <stop stop-color="#00E5FF" stop-opacity="0.46"/>
       <stop offset="0.44" stop-color="#7C3AED" stop-opacity="0.34"/>
       <stop offset="0.75" stop-color="#00FFA3" stop-opacity="0.30"/>
@@ -41,7 +41,7 @@
     <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
       <path d="M48 0H0V48" stroke="#E2E8F0" stroke-opacity="0.045"/>
     </pattern>
-    <clipPath id="clip"><rect x="0" y="0" width="1600" height="520" rx="42"/></clipPath>
+    <clipPath id="clip"><rect x="0" y="0" width="1600" height="640" rx="42"/></clipPath>
     <style>
       .title { font-family: Inter, Segoe UI, Arial, sans-serif; font-weight: 950; letter-spacing: -2px; }
       .ui { font-family: Inter, Segoe UI, Arial, sans-serif; }
@@ -56,36 +56,34 @@
   </defs>
   
   <g clip-path="url(#clip)">
-    <rect width="1600" height="520" fill="url(#page)"/>
-    <rect width="1600" height="520" fill="url(#dots)"/>
-    <rect width="1600" height="520" fill="url(#glowCyan)"/>
-    <rect x="70" y="62" width="1460" height="396" rx="44" fill="#08111F" fill-opacity="0.92" stroke="#243B53" filter="url(#shadow)"/>
-    <rect x="70" y="62" width="1460" height="396" rx="44" fill="url(#aurora)" opacity="0.10"/>
+    <rect width="1600" height="640" fill="url(#page)"/>
+    <rect width="1600" height="640" fill="url(#grid)"/>
+    <rect width="1600" height="640" fill="url(#glowViolet)"/>
+    <rect x="70" y="70" width="1460" height="500" rx="44" fill="#08111F" fill-opacity="0.92" stroke="#243B53" filter="url(#shadow)"/>
+    <text class="tiny" x="130" y="142" fill="#00E5FF" font-size="18">WHY RECRUITERS SHOULD CARE</text>
+    <text class="title" x="130" y="226" fill="#F8FAFC" font-size="62">I can own the path from idea to shipped app.</text>
 
-    <text class="tiny" x="130" y="132" fill="#FF6B9A" font-size="18">CASE 05</text>
-    <text class="title" x="130" y="222" fill="#F8FAFC" font-size="68">Tajweed</text>
-    <text class="ui" x="132" y="270" fill="#FF6B9A" font-size="27" font-weight="950">UI/UX redesign</text>
-    <text class="ui" x="132" y="322" fill="#C7D5E5" font-size="27" font-weight="760">Cleaner navigation for a recitation-learning platform.</text>
-    <text class="ui" x="132" y="360" fill="#9FB1C5" font-size="23" font-weight="700">Focused on information architecture and learning flow.</text>
-
-    <rect x="130" y="392" width="620" height="48" rx="24" fill="#07101D" stroke="#304E68"/>
-    <text class="ui" x="160" y="423" fill="#F8FAFC" font-size="20" font-weight="900">Figma · UI/UX · IA</text>
-
-    <g class="float" transform="translate(930 104)">
-      <rect x="0" y="0" width="438" height="316" rx="34" fill="#07101D" stroke="#304E68"/>
-      <rect x="34" y="38" width="156" height="20" rx="10" fill="#FF6B9A"/>
-      <rect x="34" y="82" width="336" height="16" rx="8" fill="#42546B"/>
-      <rect x="34" y="116" width="272" height="16" rx="8" fill="#263E58"/>
-      <rect x="34" y="170" width="162" height="86" rx="24" fill="#0B1628" stroke="#263E58"/>
-      <rect x="220" y="170" width="162" height="86" rx="24" fill="#0B1628" stroke="#263E58"/>
-      <path class="flow" d="M58 228 C125 144 215 268 348 194" stroke="#FF6B9A" stroke-width="7" stroke-linecap="round" opacity="0.76"/>
-      <circle cx="58" cy="228" r="10" fill="#FFFFFF"/>
-      <circle cx="204" cy="207" r="10" fill="#FFFFFF"/>
-      <circle cx="348" cy="194" r="10" fill="#FFFFFF"/>
+    <g transform="translate(130 302)">
+      <rect width="390" height="152" rx="30" fill="#0B1628" stroke="#263E58"/>
+      <text class="ui" x="34" y="58" fill="#00E5FF" font-size="22" font-weight="950">01 · PRODUCT SENSE</text>
+      <text class="ui" x="34" y="104" fill="#FFFFFF" font-size="30" font-weight="950">Design-aware engineer</text>
+    </g>
+    <g transform="translate(560 302)">
+      <rect width="390" height="152" rx="30" fill="#0B1628" stroke="#263E58"/>
+      <text class="ui" x="34" y="58" fill="#00FFA3" font-size="22" font-weight="950">02 · EXECUTION</text>
+      <text class="ui" x="34" y="104" fill="#FFFFFF" font-size="30" font-weight="950">Frontend + backend</text>
+    </g>
+    <g transform="translate(990 302)">
+      <rect width="390" height="152" rx="30" fill="#0B1628" stroke="#263E58"/>
+      <text class="ui" x="34" y="58" fill="#B794F4" font-size="22" font-weight="950">03 · SPEED</text>
+      <text class="ui" x="34" y="104" fill="#FFFFFF" font-size="30" font-weight="950">AI-assisted workflow</text>
     </g>
 
-    <rect x="1432" y="102" width="54" height="54" rx="18" fill="#07101D" stroke="#304E68"/>
-    <path d="M1450 129 L1468 111 M1468 111 H1454 M1468 111 V125" stroke="#FF6B9A" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="130" y="492" width="1250" height="42" rx="21" fill="#07101D" stroke="#304E68"/>
+    <rect x="130" y="492" width="760" height="42" rx="21" fill="url(#line)" opacity="0.92">
+      <animate attributeName="width" values="560;940;760;560" dur="5s" repeatCount="indefinite"/>
+    </rect>
+    <text class="ui" x="154" y="520" fill="#FFFFFF" font-size="19" font-weight="950">ready for internships · mobile engineering · product-minded teams</text>
   </g>
 
 </svg>

@@ -1,52 +1,91 @@
-<svg width="1600" height="420" viewBox="0 0 1600 420" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Fallen Asteri project">
+<svg width="1600" height="520" viewBox="0 0 1600 520" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Fallen Asteri project">
   <defs>
-    <linearGradient id="fade" x1="0" y1="0" x2="1600" y2="420" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#050505"/>
-      <stop offset="0.58" stop-color="#101010"/>
-      <stop offset="1" stop-color="#1A0003"/>
+    <linearGradient id="page" x1="0" y1="0" x2="1600" y2="520" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#050816"/>
+      <stop offset="0.42" stop-color="#07111F"/>
+      <stop offset="0.78" stop-color="#0A1630"/>
+      <stop offset="1" stop-color="#111827"/>
     </linearGradient>
-    <linearGradient id="panel" x1="0" y1="0" x2="1600" y2="420" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#0A0A0B"/>
-      <stop offset="0.68" stop-color="#101114"/>
-      <stop offset="1" stop-color="#190407"/>
+    <linearGradient id="aurora" x1="0" y1="0" x2="1600" y2="520" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#00E5FF" stop-opacity="0.46"/>
+      <stop offset="0.44" stop-color="#7C3AED" stop-opacity="0.34"/>
+      <stop offset="0.75" stop-color="#00FFA3" stop-opacity="0.30"/>
+      <stop offset="1" stop-color="#FFB86B" stop-opacity="0.18"/>
+      <animate attributeName="x1" values="0;160;0" dur="8s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="1600;1420;1600" dur="8s" repeatCount="indefinite"/>
     </linearGradient>
-    <linearGradient id="redline" x1="0" y1="0" x2="1" y2="0">
-      <stop stop-color="#FF2A2A"/>
-      <stop offset="0.5" stop-color="#FF4D4D"/>
-      <stop offset="1" stop-color="#FFFFFF"/>
+    <linearGradient id="line" x1="0" y1="0" x2="1" y2="0">
+      <stop stop-color="#00E5FF"/>
+      <stop offset="0.45" stop-color="#7C3AED"/>
+      <stop offset="1" stop-color="#00FFA3"/>
     </linearGradient>
-    <filter id="shadow" x="-15%" y="-20%" width="130%" height="140%">
-      <feDropShadow dx="0" dy="22" stdDeviation="22" flood-color="#000000" flood-opacity="0.48"/>
+    <radialGradient id="glowCyan" cx="78%" cy="18%" r="70%">
+      <stop stop-color="#00E5FF" stop-opacity="0.35"/>
+      <stop offset="0.45" stop-color="#00E5FF" stop-opacity="0.09"/>
+      <stop offset="1" stop-color="#00E5FF" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowViolet" cx="18%" cy="82%" r="65%">
+      <stop stop-color="#7C3AED" stop-opacity="0.30"/>
+      <stop offset="0.55" stop-color="#7C3AED" stop-opacity="0.07"/>
+      <stop offset="1" stop-color="#7C3AED" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="shadow" x="-20%" y="-25%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="22" stdDeviation="22" flood-color="#000000" flood-opacity="0.40"/>
     </filter>
-    <filter id="smallShadow" x="-15%" y="-20%" width="130%" height="140%">
-      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#000000" flood-opacity="0.32"/>
+    <filter id="soft" x="-20%" y="-25%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#00E5FF" flood-opacity="0.12"/>
     </filter>
-    <pattern id="grain" width="18" height="18" patternUnits="userSpaceOnUse">
-      <circle cx="2" cy="2" r="0.75" fill="#FFFFFF" opacity="0.055"/>
-      <circle cx="13" cy="9" r="0.55" fill="#FF2A2A" opacity="0.05"/>
+    <pattern id="dots" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.1" fill="#E2E8F0" opacity="0.09"/>
     </pattern>
-    <pattern id="grid" width="44" height="44" patternUnits="userSpaceOnUse">
-      <path d="M44 0H0V44" stroke="#FFFFFF" stroke-opacity="0.04" stroke-width="1"/>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" stroke="#E2E8F0" stroke-opacity="0.045"/>
     </pattern>
+    <clipPath id="clip"><rect x="0" y="0" width="1600" height="520" rx="42"/></clipPath>
+    <style>
+      .title { font-family: Inter, Segoe UI, Arial, sans-serif; font-weight: 950; letter-spacing: -2px; }
+      .ui { font-family: Inter, Segoe UI, Arial, sans-serif; }
+      .tiny { font-family: Inter, Segoe UI, Arial, sans-serif; font-weight: 900; letter-spacing: 4px; }
+      @keyframes floaty { 0%,100% { transform: translateY(0px); } 50% { transform: translateY(-12px); } }
+      @keyframes pulse { 0%,100% { opacity: .45; } 50% { opacity: 1; } }
+      @keyframes dash { to { stroke-dashoffset: -260; } }
+      .float { animation: floaty 5.5s ease-in-out infinite; }
+      .pulse { animation: pulse 2.8s ease-in-out infinite; }
+      .flow { stroke-dasharray: 14 18; animation: dash 9s linear infinite; }
+    </style>
   </defs>
+  
+  <g clip-path="url(#clip)">
+    <rect width="1600" height="520" fill="url(#page)"/>
+    <rect width="1600" height="520" fill="url(#dots)"/>
+    <rect width="1600" height="520" fill="url(#glowCyan)"/>
+    <rect x="70" y="62" width="1460" height="396" rx="44" fill="#08111F" fill-opacity="0.92" stroke="#243B53" filter="url(#shadow)"/>
+    <rect x="70" y="62" width="1460" height="396" rx="44" fill="url(#aurora)" opacity="0.10"/>
 
-  <rect width="1600" height="420" fill="#050505"/>
-  <rect width="1600" height="420" fill="url(#grain)"/>
-  <rect x="54" y="48" width="1492" height="324" rx="36" fill="#0A0A0B" stroke="#2A2A2D" filter="url(#shadow)"/>
-  <rect x="54" y="48" width="10" height="324" rx="5" fill="#FF2A2A"/>
+    <text class="tiny" x="130" y="132" fill="#FFB86B" font-size="18">CASE 04</text>
+    <text class="title" x="130" y="222" fill="#F8FAFC" font-size="68">Fallen Asteri</text>
+    <text class="ui" x="132" y="270" fill="#FFB86B" font-size="27" font-weight="950">2D Godot platformer</text>
+    <text class="ui" x="132" y="322" fill="#C7D5E5" font-size="27" font-weight="760">Movement, combat, and scene systems beyond CRUD.</text>
+    <text class="ui" x="132" y="360" fill="#9FB1C5" font-size="23" font-weight="700">Shows game-feel thinking and system design practice.</text>
 
-  <text x="112" y="126" fill="#FF2A2A" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="18" font-weight="950" letter-spacing="5">CASE 04</text>
-  <text x="112" y="214" fill="#FFFFFF" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="76" font-weight="950" letter-spacing="-2">Fallen Asteri</text>
-  <text x="114" y="258" fill="#FF2A2A" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="26" font-weight="900">2D Godot platformer</text>
+    <rect x="130" y="392" width="620" height="48" rx="24" fill="#07101D" stroke="#304E68"/>
+    <text class="ui" x="160" y="423" fill="#F8FAFC" font-size="20" font-weight="900">Godot · GDScript · Game Dev</text>
 
-  <text x="690" y="156" fill="#FFFFFF" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="36" font-weight="900">Game systems outside normal CRUD.</text>
-  <text x="690" y="202" fill="#B8B8BC" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="28" font-weight="750">Movement, combat, levels, transitions.</text>
+    <g class="float" transform="translate(930 104)">
+      <rect x="0" y="0" width="438" height="316" rx="34" fill="#07101D" stroke="#304E68"/>
+      <rect x="34" y="38" width="156" height="20" rx="10" fill="#FFB86B"/>
+      <rect x="34" y="82" width="336" height="16" rx="8" fill="#42546B"/>
+      <rect x="34" y="116" width="272" height="16" rx="8" fill="#263E58"/>
+      <rect x="34" y="170" width="162" height="86" rx="24" fill="#0B1628" stroke="#263E58"/>
+      <rect x="220" y="170" width="162" height="86" rx="24" fill="#0B1628" stroke="#263E58"/>
+      <path class="flow" d="M58 228 C125 144 215 268 348 194" stroke="#FFB86B" stroke-width="7" stroke-linecap="round" opacity="0.76"/>
+      <circle cx="58" cy="228" r="10" fill="#FFFFFF"/>
+      <circle cx="204" cy="207" r="10" fill="#FFFFFF"/>
+      <circle cx="348" cy="194" r="10" fill="#FFFFFF"/>
+    </g>
 
-  <rect x="690" y="250" width="600" height="56" rx="28" fill="#111113" stroke="#343438"/>
-  <text x="724" y="286" fill="#FFFFFF" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="22" font-weight="850">Godot · GDScript · Game Dev</text>
-
-  <rect x="1320" y="116" width="112" height="112" rx="56" fill="#160608" stroke="#4A161A"/>
-  <path d="M1355 172 L1395 132 M1395 132 H1366 M1395 132 V161" stroke="#FF2A2A" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
-  <text x="1376" y="276" fill="#8D8D95" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="20" font-weight="800" text-anchor="middle">tap</text>
+    <rect x="1432" y="102" width="54" height="54" rx="18" fill="#07101D" stroke="#304E68"/>
+    <path d="M1450 129 L1468 111 M1468 111 H1454 M1468 111 V125" stroke="#FFB86B" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
 
 </svg>

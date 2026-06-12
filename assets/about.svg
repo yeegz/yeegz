@@ -1,68 +1,102 @@
-<svg width="1600" height="760" viewBox="0 0 1600 760" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="About Yousof Selim">
+<svg width="1600" height="820" viewBox="0 0 1600 820" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Recruiter snapshot">
   <defs>
-    <linearGradient id="fade" x1="0" y1="0" x2="1600" y2="760" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#050505"/>
-      <stop offset="0.58" stop-color="#101010"/>
-      <stop offset="1" stop-color="#1A0003"/>
+    <linearGradient id="page" x1="0" y1="0" x2="1600" y2="820" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#050816"/>
+      <stop offset="0.42" stop-color="#07111F"/>
+      <stop offset="0.78" stop-color="#0A1630"/>
+      <stop offset="1" stop-color="#111827"/>
     </linearGradient>
-    <linearGradient id="panel" x1="0" y1="0" x2="1600" y2="760" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#0A0A0B"/>
-      <stop offset="0.68" stop-color="#101114"/>
-      <stop offset="1" stop-color="#190407"/>
+    <linearGradient id="aurora" x1="0" y1="0" x2="1600" y2="820" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#00E5FF" stop-opacity="0.46"/>
+      <stop offset="0.44" stop-color="#7C3AED" stop-opacity="0.34"/>
+      <stop offset="0.75" stop-color="#00FFA3" stop-opacity="0.30"/>
+      <stop offset="1" stop-color="#FFB86B" stop-opacity="0.18"/>
+      <animate attributeName="x1" values="0;160;0" dur="8s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="1600;1420;1600" dur="8s" repeatCount="indefinite"/>
     </linearGradient>
-    <linearGradient id="redline" x1="0" y1="0" x2="1" y2="0">
-      <stop stop-color="#FF2A2A"/>
-      <stop offset="0.5" stop-color="#FF4D4D"/>
-      <stop offset="1" stop-color="#FFFFFF"/>
+    <linearGradient id="line" x1="0" y1="0" x2="1" y2="0">
+      <stop stop-color="#00E5FF"/>
+      <stop offset="0.45" stop-color="#7C3AED"/>
+      <stop offset="1" stop-color="#00FFA3"/>
     </linearGradient>
-    <filter id="shadow" x="-15%" y="-20%" width="130%" height="140%">
-      <feDropShadow dx="0" dy="22" stdDeviation="22" flood-color="#000000" flood-opacity="0.48"/>
+    <radialGradient id="glowCyan" cx="78%" cy="18%" r="70%">
+      <stop stop-color="#00E5FF" stop-opacity="0.35"/>
+      <stop offset="0.45" stop-color="#00E5FF" stop-opacity="0.09"/>
+      <stop offset="1" stop-color="#00E5FF" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowViolet" cx="18%" cy="82%" r="65%">
+      <stop stop-color="#7C3AED" stop-opacity="0.30"/>
+      <stop offset="0.55" stop-color="#7C3AED" stop-opacity="0.07"/>
+      <stop offset="1" stop-color="#7C3AED" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="shadow" x="-20%" y="-25%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="22" stdDeviation="22" flood-color="#000000" flood-opacity="0.40"/>
     </filter>
-    <filter id="smallShadow" x="-15%" y="-20%" width="130%" height="140%">
-      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#000000" flood-opacity="0.32"/>
+    <filter id="soft" x="-20%" y="-25%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#00E5FF" flood-opacity="0.12"/>
     </filter>
-    <pattern id="grain" width="18" height="18" patternUnits="userSpaceOnUse">
-      <circle cx="2" cy="2" r="0.75" fill="#FFFFFF" opacity="0.055"/>
-      <circle cx="13" cy="9" r="0.55" fill="#FF2A2A" opacity="0.05"/>
+    <pattern id="dots" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.1" fill="#E2E8F0" opacity="0.09"/>
     </pattern>
-    <pattern id="grid" width="44" height="44" patternUnits="userSpaceOnUse">
-      <path d="M44 0H0V44" stroke="#FFFFFF" stroke-opacity="0.04" stroke-width="1"/>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" stroke="#E2E8F0" stroke-opacity="0.045"/>
     </pattern>
+    <clipPath id="clip"><rect x="0" y="0" width="1600" height="820" rx="42"/></clipPath>
+    <style>
+      .title { font-family: Inter, Segoe UI, Arial, sans-serif; font-weight: 950; letter-spacing: -2px; }
+      .ui { font-family: Inter, Segoe UI, Arial, sans-serif; }
+      .tiny { font-family: Inter, Segoe UI, Arial, sans-serif; font-weight: 900; letter-spacing: 4px; }
+      @keyframes floaty { 0%,100% { transform: translateY(0px); } 50% { transform: translateY(-12px); } }
+      @keyframes pulse { 0%,100% { opacity: .45; } 50% { opacity: 1; } }
+      @keyframes dash { to { stroke-dashoffset: -260; } }
+      .float { animation: floaty 5.5s ease-in-out infinite; }
+      .pulse { animation: pulse 2.8s ease-in-out infinite; }
+      .flow { stroke-dasharray: 14 18; animation: dash 9s linear infinite; }
+    </style>
   </defs>
+  
+  <g clip-path="url(#clip)">
+    <rect width="1600" height="820" fill="url(#page)"/>
+    <rect width="1600" height="820" fill="url(#dots)"/>
+    <rect width="1600" height="820" fill="url(#glowCyan)"/>
+    <rect x="70" y="70" width="1460" height="680" rx="44" fill="#08111F" fill-opacity="0.90" stroke="#243B53" filter="url(#shadow)"/>
 
-  <rect width="1600" height="760" fill="#050505"/>
-  <rect width="1600" height="760" fill="url(#grain)"/>
-  <rect x="54" y="54" width="1492" height="652" rx="36" fill="#0A0A0B" stroke="#2A2A2D" filter="url(#shadow)"/>
+    <text class="tiny" x="130" y="142" fill="#00E5FF" font-size="18">RECRUITER SNAPSHOT</text>
+    <text class="title" x="130" y="226" fill="#F8FAFC" font-size="62">Product taste + engineering depth.</text>
+    <text class="ui" x="132" y="276" fill="#B9C8D9" font-size="29" font-weight="760">I care about the full product: UI, backend, data, edge cases, and the feeling of using it.</text>
 
-  <text x="112" y="128" fill="#FF2A2A" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="18" font-weight="950" letter-spacing="5">ABOUT / PRODUCT ENGINEERING</text>
-  <text x="112" y="214" fill="#FFFFFF" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="66" font-weight="950" letter-spacing="-2">I build finished-feeling apps.</text>
-  <text x="114" y="270" fill="#B8B8BC" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="30" font-weight="750">Not just screens. The flow, backend, data, polish, and product logic behind them.</text>
+    <g transform="translate(130 350)">
+      <rect width="330" height="220" rx="30" fill="#0B1628" stroke="#263E58"/>
+      <text class="ui" x="34" y="58" fill="#00E5FF" font-size="20" font-weight="950">01</text>
+      <text class="ui" x="34" y="112" fill="#FFFFFF" font-size="36" font-weight="950">Mobile apps</text>
+      <text class="ui" x="34" y="154" fill="#AFC0D2" font-size="22" font-weight="700">Flutter-first builds</text>
+      <text class="ui" x="34" y="184" fill="#AFC0D2" font-size="22" font-weight="700">with polished UX.</text>
+    </g>
+    <g transform="translate(492 350)">
+      <rect width="330" height="220" rx="30" fill="#0B1628" stroke="#263E58"/>
+      <text class="ui" x="34" y="58" fill="#00FFA3" font-size="20" font-weight="950">02</text>
+      <text class="ui" x="34" y="112" fill="#FFFFFF" font-size="36" font-weight="950">Full-stack</text>
+      <text class="ui" x="34" y="154" fill="#AFC0D2" font-size="22" font-weight="700">APIs, auth, storage,</text>
+      <text class="ui" x="34" y="184" fill="#AFC0D2" font-size="22" font-weight="700">and real-time sync.</text>
+    </g>
+    <g transform="translate(854 350)">
+      <rect width="330" height="220" rx="30" fill="#0B1628" stroke="#263E58"/>
+      <text class="ui" x="34" y="58" fill="#B794F4" font-size="20" font-weight="950">03</text>
+      <text class="ui" x="34" y="112" fill="#FFFFFF" font-size="36" font-weight="950">AI workflow</text>
+      <text class="ui" x="34" y="154" fill="#AFC0D2" font-size="22" font-weight="700">Claude, Cursor, and</text>
+      <text class="ui" x="34" y="184" fill="#AFC0D2" font-size="22" font-weight="700">Copilot used openly.</text>
+    </g>
+    <g transform="translate(1216 350)">
+      <rect width="254" height="220" rx="30" fill="#0B1628" stroke="#263E58"/>
+      <text class="ui" x="34" y="58" fill="#FFB86B" font-size="20" font-weight="950">04</text>
+      <text class="ui" x="34" y="112" fill="#FFFFFF" font-size="36" font-weight="950">2027</text>
+      <text class="ui" x="34" y="154" fill="#AFC0D2" font-size="22" font-weight="700">Software Eng.</text>
+      <text class="ui" x="34" y="184" fill="#AFC0D2" font-size="22" font-weight="700">Sunway × Lancaster</text>
+    </g>
 
-  <g transform="translate(112 350)">
-    <rect width="420" height="188" rx="28" fill="#111113" stroke="#353539"/>
-    <text x="34" y="56" fill="#FF2A2A" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="18" font-weight="950" letter-spacing="3">MOBILE</text>
-    <text x="34" y="108" fill="#FFFFFF" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="42" font-weight="950">Flutter-first</text>
-    <text x="34" y="148" fill="#AFAFB5" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="22" font-weight="700">Cross-platform apps with</text>
-    <text x="34" y="177" fill="#AFAFB5" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="22" font-weight="700">clean responsive UI.</text>
+    <rect x="130" y="622" width="1340" height="74" rx="37" fill="#07101D" stroke="#304E68"/>
+    <text class="ui" x="170" y="668" fill="#F8FAFC" font-size="24" font-weight="900">Current edge: shipping freelance products since 2023 while studying software engineering.</text>
+    <path class="flow" d="M1270 660 C1330 600 1390 700 1470 630" stroke="url(#line)" stroke-width="5" opacity="0.65"/>
   </g>
-
-  <g transform="translate(590 350)">
-    <rect width="420" height="188" rx="28" fill="#111113" stroke="#353539"/>
-    <text x="34" y="56" fill="#FF2A2A" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="18" font-weight="950" letter-spacing="3">BACKEND</text>
-    <text x="34" y="108" fill="#FFFFFF" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="42" font-weight="950">APIs + data</text>
-    <text x="34" y="148" fill="#AFAFB5" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="22" font-weight="700">Node.js, REST APIs,</text>
-    <text x="34" y="177" fill="#AFAFB5" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="22" font-weight="700">Supabase, Firebase.</text>
-  </g>
-
-  <g transform="translate(1068 350)">
-    <rect width="420" height="188" rx="28" fill="#111113" stroke="#353539"/>
-    <text x="34" y="56" fill="#FF2A2A" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="18" font-weight="950" letter-spacing="3">TASTE</text>
-    <text x="34" y="108" fill="#FFFFFF" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="42" font-weight="950">UI polish</text>
-    <text x="34" y="148" fill="#AFAFB5" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="22" font-weight="700">Minimal, modern, and</text>
-    <text x="34" y="177" fill="#AFAFB5" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="22" font-weight="700">intentional interfaces.</text>
-  </g>
-
-  <rect x="112" y="592" width="1376" height="62" rx="31" fill="#160608" stroke="#4A161A"/>
-  <text x="146" y="632" fill="#FFFFFF" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="22" font-weight="850">Software Engineering @ Sunway × Lancaster · graduating 2027 · Digital Marketing Exec @ Sunway Cybersecurity Club</text>
 
 </svg>

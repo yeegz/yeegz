@@ -1,68 +1,116 @@
-<svg width="1600" height="650" viewBox="0 0 1600 650" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Yousof Selim hero">
+<svg width="1600" height="760" viewBox="0 0 1600 760" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Yousof Selim animated hero">
   <defs>
-    <linearGradient id="fade" x1="0" y1="0" x2="1600" y2="650" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#050505"/>
-      <stop offset="0.58" stop-color="#101010"/>
-      <stop offset="1" stop-color="#1A0003"/>
+    <linearGradient id="page" x1="0" y1="0" x2="1600" y2="760" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#050816"/>
+      <stop offset="0.42" stop-color="#07111F"/>
+      <stop offset="0.78" stop-color="#0A1630"/>
+      <stop offset="1" stop-color="#111827"/>
     </linearGradient>
-    <linearGradient id="panel" x1="0" y1="0" x2="1600" y2="650" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#0A0A0B"/>
-      <stop offset="0.68" stop-color="#101114"/>
-      <stop offset="1" stop-color="#190407"/>
+    <linearGradient id="aurora" x1="0" y1="0" x2="1600" y2="760" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#00E5FF" stop-opacity="0.46"/>
+      <stop offset="0.44" stop-color="#7C3AED" stop-opacity="0.34"/>
+      <stop offset="0.75" stop-color="#00FFA3" stop-opacity="0.30"/>
+      <stop offset="1" stop-color="#FFB86B" stop-opacity="0.18"/>
+      <animate attributeName="x1" values="0;160;0" dur="8s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="1600;1420;1600" dur="8s" repeatCount="indefinite"/>
     </linearGradient>
-    <linearGradient id="redline" x1="0" y1="0" x2="1" y2="0">
-      <stop stop-color="#FF2A2A"/>
-      <stop offset="0.5" stop-color="#FF4D4D"/>
-      <stop offset="1" stop-color="#FFFFFF"/>
+    <linearGradient id="line" x1="0" y1="0" x2="1" y2="0">
+      <stop stop-color="#00E5FF"/>
+      <stop offset="0.45" stop-color="#7C3AED"/>
+      <stop offset="1" stop-color="#00FFA3"/>
     </linearGradient>
-    <filter id="shadow" x="-15%" y="-20%" width="130%" height="140%">
-      <feDropShadow dx="0" dy="22" stdDeviation="22" flood-color="#000000" flood-opacity="0.48"/>
+    <radialGradient id="glowCyan" cx="78%" cy="18%" r="70%">
+      <stop stop-color="#00E5FF" stop-opacity="0.35"/>
+      <stop offset="0.45" stop-color="#00E5FF" stop-opacity="0.09"/>
+      <stop offset="1" stop-color="#00E5FF" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowViolet" cx="18%" cy="82%" r="65%">
+      <stop stop-color="#7C3AED" stop-opacity="0.30"/>
+      <stop offset="0.55" stop-color="#7C3AED" stop-opacity="0.07"/>
+      <stop offset="1" stop-color="#7C3AED" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="shadow" x="-20%" y="-25%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="22" stdDeviation="22" flood-color="#000000" flood-opacity="0.40"/>
     </filter>
-    <filter id="smallShadow" x="-15%" y="-20%" width="130%" height="140%">
-      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#000000" flood-opacity="0.32"/>
+    <filter id="soft" x="-20%" y="-25%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#00E5FF" flood-opacity="0.12"/>
     </filter>
-    <pattern id="grain" width="18" height="18" patternUnits="userSpaceOnUse">
-      <circle cx="2" cy="2" r="0.75" fill="#FFFFFF" opacity="0.055"/>
-      <circle cx="13" cy="9" r="0.55" fill="#FF2A2A" opacity="0.05"/>
+    <pattern id="dots" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.1" fill="#E2E8F0" opacity="0.09"/>
     </pattern>
-    <pattern id="grid" width="44" height="44" patternUnits="userSpaceOnUse">
-      <path d="M44 0H0V44" stroke="#FFFFFF" stroke-opacity="0.04" stroke-width="1"/>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" stroke="#E2E8F0" stroke-opacity="0.045"/>
     </pattern>
+    <clipPath id="clip"><rect x="0" y="0" width="1600" height="760" rx="42"/></clipPath>
+    <style>
+      .title { font-family: Inter, Segoe UI, Arial, sans-serif; font-weight: 950; letter-spacing: -2px; }
+      .ui { font-family: Inter, Segoe UI, Arial, sans-serif; }
+      .tiny { font-family: Inter, Segoe UI, Arial, sans-serif; font-weight: 900; letter-spacing: 4px; }
+      @keyframes floaty { 0%,100% { transform: translateY(0px); } 50% { transform: translateY(-12px); } }
+      @keyframes pulse { 0%,100% { opacity: .45; } 50% { opacity: 1; } }
+      @keyframes dash { to { stroke-dashoffset: -260; } }
+      .float { animation: floaty 5.5s ease-in-out infinite; }
+      .pulse { animation: pulse 2.8s ease-in-out infinite; }
+      .flow { stroke-dasharray: 14 18; animation: dash 9s linear infinite; }
+    </style>
   </defs>
+  
+  <g clip-path="url(#clip)">
+    <rect width="1600" height="760" fill="url(#page)"/>
+    <rect width="1600" height="760" fill="url(#grid)"/>
+    <rect width="1600" height="760" fill="url(#dots)"/>
+    <rect width="1600" height="760" fill="url(#glowCyan)"/>
+    <rect width="1600" height="760" fill="url(#glowViolet)"/>
+    <path class="flow" d="M970 118 C1090 48 1270 80 1456 178" stroke="#00E5FF" stroke-width="3" opacity="0.55"/>
+    <path class="flow" d="M870 612 C1040 520 1198 700 1480 566" stroke="#00FFA3" stroke-width="3" opacity="0.35"/>
 
-  <rect width="1600" height="650" rx="0" fill="#050505"/>
-  <rect width="1600" height="650" fill="url(#fade)"/>
-  <rect width="1600" height="650" fill="url(#grid)" opacity="0.9"/>
-  <rect width="1600" height="650" fill="url(#grain)"/>
+    <rect x="72" y="72" width="1456" height="616" rx="44" fill="#08111F" fill-opacity="0.82" stroke="#243B53" filter="url(#shadow)"/>
+    <rect x="72" y="72" width="1456" height="616" rx="44" fill="url(#aurora)" opacity="0.16"/>
 
-  <rect x="72" y="70" width="1456" height="510" rx="34" fill="#0B0B0C" stroke="#2A2A2D" filter="url(#shadow)"/>
-  <rect x="72" y="70" width="1456" height="510" rx="34" fill="url(#panel)"/>
+    <g transform="translate(136 132)">
+      <text class="tiny" x="0" y="0" fill="#00E5FF" font-size="18">AVAILABLE FOR 2026 INTERNSHIPS</text>
+      <text class="title" x="0" y="92" fill="#F8FAFC" font-size="92">Yousof Selim</text>
+      <text class="ui" x="4" y="150" fill="#D7E3F0" font-size="34" font-weight="850">Full-stack mobile developer</text>
+      <text class="ui" x="4" y="196" fill="#91A4B7" font-size="25" font-weight="650">Flutter · Node.js · Supabase · Firebase · REST APIs</text>
+      <text class="ui" x="4" y="250" fill="#C7D5E5" font-size="29" font-weight="760">I turn messy app ideas into smooth, shippable products.</text>
 
-  <rect x="72" y="70" width="16" height="510" rx="8" fill="#FF2A2A"/>
-  <rect x="128" y="124" width="240" height="42" rx="21" fill="#160608" stroke="#4A161A"/>
-  <circle cx="155" cy="145" r="7" fill="#FF2A2A"/>
-  <text x="176" y="153" fill="#F7F7F7" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="18" font-weight="900" letter-spacing="3">YEEGZ / PROFILE</text>
+      <rect x="4" y="306" width="520" height="64" rx="32" fill="#07101D" stroke="#304E68"/>
+      <circle class="pulse" cx="39" cy="338" r="9" fill="#00FFA3"/>
+      <text class="ui" x="65" y="348" fill="#F8FAFC" font-size="23" font-weight="900">Open to SWE / Technical PM roles</text>
 
-  <text x="128" y="260" fill="#FFFFFF" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="96" font-weight="950" letter-spacing="-3">Yousof Selim</text>
-  <rect x="132" y="286" width="612" height="6" rx="3" fill="url(#redline)"/>
+      <g transform="translate(4 412)">
+        <rect width="210" height="78" rx="22" fill="#0B1628" stroke="#263E58"/>
+        <text class="ui" x="24" y="32" fill="#00E5FF" font-size="17" font-weight="950">SHIPPING SINCE</text>
+        <text class="ui" x="24" y="61" fill="#FFFFFF" font-size="30" font-weight="950">2023</text>
+        <rect x="240" width="300" height="78" rx="22" fill="#0B1628" stroke="#263E58"/>
+        <text class="ui" x="264" y="32" fill="#B794F4" font-size="17" font-weight="950">EDUCATION</text>
+        <text class="ui" x="264" y="61" fill="#FFFFFF" font-size="29" font-weight="950">Sunway × Lancaster</text>
+      </g>
+    </g>
 
-  <text x="128" y="354" fill="#F2F2F2" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="34" font-weight="850">Full-stack mobile developer</text>
-  <text x="128" y="398" fill="#B8B8BC" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="25" font-weight="650">Flutter · Node.js · Supabase · Firebase · REST APIs</text>
-  <text x="128" y="440" fill="#8D8D95" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="22" font-weight="650">Building apps that feel less like templates and more like products.</text>
+    <g class="float" transform="translate(984 128)">
+      <rect x="0" y="0" width="350" height="520" rx="42" fill="#050816" stroke="#3B536D" stroke-width="3"/>
+      <rect x="24" y="28" width="302" height="464" rx="32" fill="#0B1220"/>
+      <rect x="54" y="58" width="242" height="20" rx="10" fill="#18253A"/>
+      <rect x="54" y="108" width="242" height="96" rx="24" fill="#111D30" stroke="#263E58"/>
+      <rect x="78" y="134" width="92" height="14" rx="7" fill="#00E5FF"/>
+      <rect x="78" y="166" width="176" height="12" rx="6" fill="#506176"/>
+      <rect x="54" y="232" width="112" height="132" rx="24" fill="#111D30" stroke="#263E58"/>
+      <rect x="184" y="232" width="112" height="132" rx="24" fill="#111D30" stroke="#263E58"/>
+      <circle cx="110" cy="286" r="28" fill="#7C3AED" opacity="0.85"/>
+      <circle cx="240" cy="286" r="28" fill="#00FFA3" opacity="0.85"/>
+      <rect x="54" y="394" width="242" height="58" rx="20" fill="#00E5FF" opacity="0.18" stroke="#00E5FF"/>
+      <text class="ui" x="88" y="431" fill="#F8FAFC" font-size="22" font-weight="950">build → ship → learn</text>
+    </g>
 
-  <rect x="128" y="486" width="440" height="56" rx="28" fill="#111113" stroke="#36363A"/>
-  <circle cx="160" cy="514" r="8" fill="#FF2A2A"/>
-  <text x="184" y="523" fill="#FFFFFF" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="22" font-weight="900">Open to SWE / Technical PM internships</text>
+    <g transform="translate(1336 248)">
+      <circle cx="0" cy="0" r="8" fill="#00E5FF"><animate attributeName="r" values="8;14;8" dur="2.4s" repeatCount="indefinite"/></circle>
+      <circle cx="74" cy="84" r="8" fill="#00FFA3"><animate attributeName="r" values="8;14;8" dur="3s" repeatCount="indefinite"/></circle>
+      <circle cx="-46" cy="182" r="8" fill="#B794F4"><animate attributeName="r" values="8;14;8" dur="2.7s" repeatCount="indefinite"/></circle>
+      <path d="M0 0 L74 84 L-46 182" stroke="#D7E3F0" stroke-opacity="0.25"/>
+    </g>
 
-  <g transform="translate(980 126)">
-    <rect width="410" height="356" rx="30" fill="#070707" stroke="#343438"/>
-    <text x="42" y="70" fill="#FF2A2A" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="18" font-weight="950" letter-spacing="4">CURRENT SIGNAL</text>
-    <text x="42" y="150" fill="#FFFFFF" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="58" font-weight="950">Shipping</text>
-    <text x="42" y="214" fill="#FFFFFF" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="58" font-weight="950">since 2023</text>
-    <text x="42" y="268" fill="#B8B8BC" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="22" font-weight="700">Freelance builds.</text>
-    <text x="42" y="302" fill="#B8B8BC" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="22" font-weight="700">Real deadlines.</text>
+    <rect x="638" y="682" width="324" height="6" rx="3" fill="url(#line)"/>
   </g>
-
-  <text x="1496" y="540" fill="#2D2D31" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="160" font-weight="950" text-anchor="end">01</text>
 
 </svg>
