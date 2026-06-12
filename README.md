@@ -1,13 +1,13 @@
 <!-- ════════════════════════════════════════════════════════════
      Yousof Selim · @yeegz — liquid-glass profile
-     Setup (2 min):
-       1. This file + the /assets folder go in the repo  yeegz/yeegz
-       2. Add snake.yml at  .github/workflows/snake.yml
-       3. Actions tab → "Generate snake animation" → Run workflow (once)
+     File layout (everything at the ROOT of the yeegz/yeegz repo):
+       README.md · header.svg · divider.svg · footer.svg
+       card-bupples.svg · card-tajweed.svg
+     Snake workflow lives at:  .github/workflows/snake.yml
      Palette: #070B14 canvas · #0D1525 glass · #13B9FD sky · #02569B deep
      ════════════════════════════════════════════════════════════ -->
 
-<img src="assets/header.svg" width="100%" alt="Yousof Selim — Full-Stack & Cross-Platform Developer · open to SWE / technical PM internships" />
+<img src="header.svg" width="100%" alt="Yousof Selim — Full-Stack & Cross-Platform Developer · open to SWE / technical PM internships" />
 
 <p align="center">
   <a href="https://linkedin.com/in/ysf-slm" target="_blank"><img src="https://img.shields.io/badge/LinkedIn-070B14?style=for-the-badge&logo=linkedin&logoColor=13B9FD" alt="LinkedIn" /></a>
@@ -17,7 +17,7 @@
   <a href="mailto:yousofselim2@gmail.com"><img src="https://img.shields.io/badge/Email-070B14?style=for-the-badge&logo=gmail&logoColor=13B9FD" alt="Email" /></a>
 </p>
 
-<img src="assets/divider.svg" width="100%" alt="" />
+<img src="divider.svg" width="100%" alt="" />
 
 ### `about_me.dart`
 
@@ -87,19 +87,21 @@ dev_dependencies:
   godot: ^weekend_game_dev    # see: Fallen Asteri
 ```
 
-<img src="assets/divider.svg" width="100%" alt="" />
+<img src="divider.svg" width="100%" alt="" />
 
 ### `shipped/`
 
-<sub>real products with live repo data — tap any card</sub>
+<sub>real products — tap any card</sub>
 
 <table align="center">
   <tr>
     <td align="center" width="50%">
-      <a href="https://github.com/yeegz/Bupples">
-        <img src="https://github-readme-stats.vercel.app/api/pin/?username=yeegz&repo=Bupples&bg_color=0D1525&title_color=13B9FD&icon_color=13B9FD&text_color=94A3B8&hide_border=true&border_radius=24" alt="Bupples" />
+      <!-- Private repo → custom card. When Bupples goes public, swap back to:
+           https://github-readme-stats.vercel.app/api/pin/?username=yeegz&repo=Bupples&bg_color=0D1525&title_color=13B9FD&icon_color=13B9FD&text_color=94A3B8&hide_border=true&border_radius=24 -->
+      <a href="https://yeegz.github.io">
+        <img src="card-bupples.svg" alt="Bupples" />
       </a><br/>
-      <sub><b>💸 Bupples</b> — group expense-splitting · Flutter + Supabase/Firebase real-time sync · shipped to <b>iOS & Android</b></sub>
+      <sub><b>💸 Bupples</b> — group expense-splitting · Flutter + Supabase/Firebase real-time sync · built for <b>iOS & Android</b></sub>
     </td>
     <td align="center" width="50%">
       <a href="https://github.com/yeegz/yeegz.github.io">
@@ -124,15 +126,17 @@ dev_dependencies:
   </tr>
   <tr>
     <td align="center" colspan="2">
-      <a href="https://github.com/HatemSamad/Tajweed">
-        <img src="https://github-readme-stats.vercel.app/api/pin/?username=HatemSamad&repo=Tajweed&show_owner=true&bg_color=0D1525&title_color=13B9FD&icon_color=13B9FD&text_color=94A3B8&hide_border=true&border_radius=24" alt="Tajweed" />
+      <!-- Private/renamed repo → custom card. If it goes public, swap back to:
+           https://github-readme-stats.vercel.app/api/pin/?username=HatemSamad&repo=Tajweed&show_owner=true&bg_color=0D1525&title_color=13B9FD&icon_color=13B9FD&text_color=94A3B8&hide_border=true&border_radius=24 -->
+      <a href="https://yeegz.github.io">
+        <img src="card-tajweed.svg" alt="Tajweed" />
       </a><br/>
       <sub><b>📖 Tajweed</b> — UI/UX redesign of a Quranic-recitation learning platform · navigation & information architecture</sub>
     </td>
   </tr>
 </table>
 
-<img src="assets/divider.svg" width="100%" alt="" />
+<img src="divider.svg" width="100%" alt="" />
 
 ### `analytics/`
 
@@ -149,8 +153,7 @@ dev_dependencies:
   <img width="100%" src="https://github-readme-activity-graph.vercel.app/graph?username=yeegz&hide_border=true&radius=24&bg_color=0D1525&color=94A3B8&title_color=13B9FD&line=13B9FD&point=F1F5F9&area=true&area_color=13B9FD" alt="Contribution activity" />
 </p>
 
-<!-- 🐍 contribution snake, recolored to the palette
-     (appears after snake.yml has run once — see comment at top) -->
+<!-- 🐍 appears once .github/workflows/snake.yml has run -->
 
 <p align="center">
   <picture>
@@ -160,4 +163,4 @@ dev_dependencies:
   </picture>
 </p>
 
-<img src="assets/footer.svg" width="100%" alt="Let's build something — open to SWE & technical PM internships · yeegz.github.io" />
+<img src="footer.svg" width="100%" alt="Let's build something — open to SWE & technical PM internships · yeegz.github.io" />
