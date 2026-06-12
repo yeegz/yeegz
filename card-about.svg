@@ -1,0 +1,33 @@
+<svg width="1100" height="300" viewBox="0 0 1100 300" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Yousof Selim">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1100" y2="300" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0D1525"/>
+      <stop offset="0.58" stop-color="#0B1729"/>
+      <stop offset="1" stop-color="#093C58"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="75%" cy="12%" r="80%">
+      <stop stop-color="#13B9FD" stop-opacity="0.28"/>
+      <stop offset="0.42" stop-color="#13B9FD" stop-opacity="0.08"/>
+      <stop offset="1" stop-color="#13B9FD" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#000000" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+  <rect width="1100" height="300" rx="34" fill="#070B14"/>
+  <rect x="22" y="22" width="1056" height="256" rx="30" fill="url(#g)" stroke="#1E3A52" filter="url(#shadow)"/>
+  <rect x="22" y="22" width="1056" height="256" rx="30" fill="url(#glow)"/>
+  <circle cx="945" cy="58" r="78" fill="#13B9FD" opacity="0.08"/>
+  <text x="72" y="82" fill="#13B9FD" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="18" font-weight="800" letter-spacing="4">PROFILE</text>
+  <text x="72" y="118" fill="#F1F5F9" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="42" font-weight="800">Yousof Selim</text>
+  <text x="74" y="146" fill="#94A3B8" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="18" font-weight="500">Full-Stack &amp; Cross-Platform Developer · Software Engineering Undergraduate</text>
+  
+        <rect x="72" y="152" width="133" height="32" rx="16" fill="#0D1525" stroke="#193B52"/>
+        <text x="86" y="173" fill="#9FD9FF" font-size="15" font-weight="600">Flutter + Dart</text>
+        <rect x="216.79999999999998" y="152" width="174" height="32" rx="16" fill="#0D1525" stroke="#193B52"/>
+        <text x="230.79999999999998" y="173" fill="#9FD9FF" font-size="15" font-weight="600">Node.js + REST APIs</text>
+        <rect x="402.59999999999997" y="152" width="174" height="32" rx="16" fill="#0D1525" stroke="#193B52"/>
+        <text x="416.59999999999997" y="173" fill="#9FD9FF" font-size="15" font-weight="600">Supabase + Firebase</text>
+        <rect x="588.4" y="152" width="330" height="32" rx="16" fill="#0D1525" stroke="#193B52"/>
+        <text x="602.4" y="173" fill="#9FD9FF" font-size="15" font-weight="600">Open to SWE / Technical PM internships</text>
+</svg>
