@@ -8,7 +8,9 @@
      Palette:
        #070B14 canvas · #0D1525 glass · #13B9FD sky · #02569B deep
      ════════════════════════════════════════════════════════════ -->
+
 <img src="header.svg" width="100%" alt="Yousof Selim — Full-Stack & Cross-Platform Developer · open to SWE / technical PM internships" />
+
 <p align="center">
   <a href="https://linkedin.com/in/ysf-slm" target="_blank">
     <img src="https://img.shields.io/badge/LinkedIn-070B14?style=for-the-badge&logo=linkedin&logoColor=13B9FD" alt="LinkedIn" />
@@ -22,33 +24,41 @@
     <img src="https://img.shields.io/badge/Email-070B14?style=for-the-badge&logo=gmail&logoColor=13B9FD" alt="Email" />
   </a>
 </p>
+
 <img src="divider.svg" width="100%" alt="" />
 
-about_me.dart
+### about_me.dart
 
+```dart
 class YousofSelim extends Developer {
   @override
   final String role =
       'Full-Stack & Cross-Platform Mobile Developer';
+
   final Degree education = const Degree(
     'BSc (Hons) Software Engineering',
     at: 'Sunway University × Lancaster University',
     graduating: 2027,
   );
+
   final int shippingSince = 2023;
+
   final String sideQuest =
       'Digital Marketing Exec @ Sunway Cybersecurity Club';
+
   @override
   List<String> get drivenBy => [
         'minimalist, modern UI/UX',
         'liquid-glass interfaces',
         'the gap between "it works" and "it feels right"',
       ];
+
   final List<String> aiPairProgrammers = [
     'Claude',
     'Cursor',
     'Copilot',
   ];
+
   Future<Internship> get nextChapter => apply(
         roles: [
           'Software Engineering',
@@ -56,33 +66,40 @@ class YousofSelim extends Developer {
         ],
       );
 }
+```
 
-toolkit.yaml
+### toolkit.yaml
 
+```yaml
 name: yousof_selim
 description: >
   Cross-platform apps with full-stack plumbing,
   clean UX, and obsessive UI polish.
+
 environment:
   shipping_since: "February 2023"
   degree: "BSc Software Engineering"
   university: "Sunway × Lancaster"
   graduating: 2027
+
 mobile_and_frontend:
   flutter: "primary"
   dart: "fluent"
   react_native: "when needed"
   tailwind_css: "utility-first"
+
 backend_and_data:
   node_js: "services"
   rest_apis: "hand-designed"
   supabase: "real-time sync"
   postgresql: "relational"
   firebase: "firestore"
+
 languages:
   typescript: "typed"
   javascript: "ES2023"
   python: "scripts and tools"
+
 tools:
   claude: "AI pair programmer"
   cursor: "daily driver"
@@ -91,11 +108,13 @@ tools:
   git: "non-negotiable"
   xcode: "simulators"
   godot: "weekend game dev"
+```
+
 <img src="divider.svg" width="100%" alt="" />
 
-shipped/
+### shipped/
 
-real products — tap any card
+<sub>real products — tap any card</sub>
 
 <table align="center">
   <tr>
@@ -158,20 +177,24 @@ real products — tap any card
     </td>
   </tr>
 </table>
+
 <img src="divider.svg" width="100%" alt="" />
 
-analytics/
+### analytics/
 
 <p align="center">
   <img height="170" src="https://github-readme-stats.vercel.app/api?username=yeegz&show_icons=true&include_all_commits=true&count_private=true&hide_border=true&bg_color=0D1525&title_color=13B9FD&icon_color=13B9FD&text_color=94A3B8&ring_color=13B9FD&border_radius=24" alt="GitHub stats" />
   <img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=yeegz&layout=compact&langs_count=8&hide_border=true&bg_color=0D1525&title_color=13B9FD&text_color=94A3B8&border_radius=24" alt="Top languages" />
 </p>
+
 <p align="center">
   <img src="https://streak-stats.demolab.com?user=yeegz&hide_border=true&border_radius=24&background=0D1525&stroke=1E293B&ring=13B9FD&fire=13B9FD&currStreakNum=F1F5F9&currStreakLabel=13B9FD&sideNums=F1F5F9&sideLabels=94A3B8&dates=64748B" alt="Contribution streak" />
 </p>
+
 <p align="center">
   <img width="100%" src="https://github-readme-activity-graph.vercel.app/graph?username=yeegz&hide_border=true&radius=24&bg_color=0D1525&color=94A3B8&title_color=13B9FD&line=13B9FD&point=F1F5F9&area=true&area_color=13B9FD" alt="Contribution activity" />
 </p>
+
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/yeegz/yeegz/output/github-snake-dark.svg" />
@@ -179,4 +202,5 @@ analytics/
     <img alt="Contribution snake animation" src="https://raw.githubusercontent.com/yeegz/yeegz/output/github-snake-dark.svg" />
   </picture>
 </p>
+
 <img src="footer.svg" width="100%" alt="Let's build something — open to SWE & technical PM internships · yeegz.github.io" />
