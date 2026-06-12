@@ -1,87 +1,68 @@
-<svg width="1400" height="520" viewBox="0 0 1400 520" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Yousof Selim profile hero">
+<svg width="1600" height="650" viewBox="0 0 1600 650" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Yousof Selim hero">
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1400" y2="520" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#05070D"/>
-      <stop offset="0.38" stop-color="#08111F"/>
-      <stop offset="0.72" stop-color="#061A2A"/>
-      <stop offset="1" stop-color="#042B3F"/>
+    <linearGradient id="fade" x1="0" y1="0" x2="1600" y2="650" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#050505"/>
+      <stop offset="0.58" stop-color="#101010"/>
+      <stop offset="1" stop-color="#1A0003"/>
     </linearGradient>
-    <linearGradient id="panel" x1="20" y1="20" x2="1380" y2="500" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#0B1220"/>
-      <stop offset="0.55" stop-color="#0A1424"/>
-      <stop offset="1" stop-color="#082B40"/>
+    <linearGradient id="panel" x1="0" y1="0" x2="1600" y2="650" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0A0A0B"/>
+      <stop offset="0.68" stop-color="#101114"/>
+      <stop offset="1" stop-color="#190407"/>
     </linearGradient>
-    <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
-      <stop stop-color="#FFFFFF" stop-opacity="0.13"/>
-      <stop offset="0.45" stop-color="#FFFFFF" stop-opacity="0.035"/>
-      <stop offset="1" stop-color="#13B9FD" stop-opacity="0.12"/>
+    <linearGradient id="redline" x1="0" y1="0" x2="1" y2="0">
+      <stop stop-color="#FF2A2A"/>
+      <stop offset="0.5" stop-color="#FF4D4D"/>
+      <stop offset="1" stop-color="#FFFFFF"/>
     </linearGradient>
-    <linearGradient id="cyan" x1="0" y1="0" x2="1" y2="1">
-      <stop stop-color="#19D3FF"/>
-      <stop offset="1" stop-color="#13B9FD"/>
-    </linearGradient>
-    <linearGradient id="mint" x1="0" y1="0" x2="1" y2="1">
-      <stop stop-color="#54F0B8"/>
-      <stop offset="1" stop-color="#13B9FD"/>
-    </linearGradient>
-    <linearGradient id="violet" x1="0" y1="0" x2="1" y2="1">
-      <stop stop-color="#A78BFA"/>
-      <stop offset="1" stop-color="#13B9FD"/>
-    </linearGradient>
-    <radialGradient id="glowA" cx="72%" cy="18%" r="62%">
-      <stop stop-color="#13B9FD" stop-opacity="0.32"/>
-      <stop offset="0.48" stop-color="#13B9FD" stop-opacity="0.08"/>
-      <stop offset="1" stop-color="#13B9FD" stop-opacity="0"/>
-    </radialGradient>
-    <radialGradient id="glowB" cx="15%" cy="92%" r="58%">
-      <stop stop-color="#54F0B8" stop-opacity="0.16"/>
-      <stop offset="0.55" stop-color="#54F0B8" stop-opacity="0.04"/>
-      <stop offset="1" stop-color="#54F0B8" stop-opacity="0"/>
-    </radialGradient>
-    <filter id="softShadow" x="-20%" y="-30%" width="140%" height="160%">
-      <feDropShadow dx="0" dy="22" stdDeviation="18" flood-color="#000000" flood-opacity="0.38"/>
+    <filter id="shadow" x="-15%" y="-20%" width="130%" height="140%">
+      <feDropShadow dx="0" dy="22" stdDeviation="22" flood-color="#000000" flood-opacity="0.48"/>
     </filter>
-    <filter id="tinyShadow" x="-20%" y="-30%" width="140%" height="160%">
-      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#000000" flood-opacity="0.28"/>
+    <filter id="smallShadow" x="-15%" y="-20%" width="130%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#000000" flood-opacity="0.32"/>
     </filter>
-    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
-      <path d="M 32 0 L 0 0 0 32" fill="none" stroke="#9FD9FF" stroke-opacity="0.045" stroke-width="1"/>
+    <pattern id="grain" width="18" height="18" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="0.75" fill="#FFFFFF" opacity="0.055"/>
+      <circle cx="13" cy="9" r="0.55" fill="#FF2A2A" opacity="0.05"/>
     </pattern>
-    <pattern id="dots" width="26" height="26" patternUnits="userSpaceOnUse">
-      <circle cx="2" cy="2" r="1.05" fill="#9FD9FF" opacity="0.12"/>
+    <pattern id="grid" width="44" height="44" patternUnits="userSpaceOnUse">
+      <path d="M44 0H0V44" stroke="#FFFFFF" stroke-opacity="0.04" stroke-width="1"/>
     </pattern>
   </defs>
-  
-  <rect width="1400" height="520" rx="42" fill="url(#bg)"/>
-  <rect width="1400" height="520" rx="42" fill="url(#grid)"/>
-  <rect width="1400" height="520" rx="42" fill="url(#glowA)"/>
-  <rect width="1400" height="520" rx="42" fill="url(#glowB)"/>
 
-  <path d="M1040 70 C1130 105 1215 80 1308 138" stroke="#13B9FD" stroke-opacity="0.45" stroke-width="2"/>
-  <path d="M1010 112 C1115 165 1212 147 1340 220" stroke="#54F0B8" stroke-opacity="0.23" stroke-width="2"/>
-  <circle cx="1087" cy="87" r="5" fill="#13B9FD"/>
-  <circle cx="1222" cy="89" r="5" fill="#54F0B8"/>
-  <circle cx="1308" cy="138" r="5" fill="#13B9FD"/>
+  <rect width="1600" height="650" rx="0" fill="#050505"/>
+  <rect width="1600" height="650" fill="url(#fade)"/>
+  <rect width="1600" height="650" fill="url(#grid)" opacity="0.9"/>
+  <rect width="1600" height="650" fill="url(#grain)"/>
 
-  <rect x="76" y="72" width="1248" height="376" rx="38" fill="url(#panel)" stroke="#234C67" filter="url(#softShadow)"/>
-  <rect x="76" y="72" width="1248" height="376" rx="38" fill="url(#glass)"/>
-  <rect x="76" y="72" width="1248" height="376" rx="38" fill="url(#dots)" opacity="0.45"/>
+  <rect x="72" y="70" width="1456" height="510" rx="34" fill="#0B0B0C" stroke="#2A2A2D" filter="url(#shadow)"/>
+  <rect x="72" y="70" width="1456" height="510" rx="34" fill="url(#panel)"/>
 
-  <text x="125" y="150" fill="#13B9FD" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="18" font-weight="900" letter-spacing="5">YE E G Z  /  BUILDER PROFILE</text>
-  <text x="125" y="232" fill="#F8FAFC" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="76" font-weight="900" letter-spacing="-2">Yousof Selim</text>
-  <text x="129" y="277" fill="#B8C7D8" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="26" font-weight="650">Full-stack &amp; cross-platform developer building polished mobile products.</text>
-  <text x="129" y="316" fill="#7E94AA" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="22" font-weight="600">Flutter · Dart · Node.js · Supabase · Firebase · REST APIs</text>
+  <rect x="72" y="70" width="16" height="510" rx="8" fill="#FF2A2A"/>
+  <rect x="128" y="124" width="240" height="42" rx="21" fill="#160608" stroke="#4A161A"/>
+  <circle cx="155" cy="145" r="7" fill="#FF2A2A"/>
+  <text x="176" y="153" fill="#F7F7F7" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="18" font-weight="900" letter-spacing="3">YEEGZ / PROFILE</text>
 
-  <rect x="125" y="354" width="358" height="54" rx="27" fill="#07101D" stroke="#1C4763"/>
-  <circle cx="154" cy="381" r="7" fill="#54F0B8"/>
-  <text x="174" y="389" fill="#E2F3FF" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="20" font-weight="800">Open to SWE / Technical PM internships</text>
+  <text x="128" y="260" fill="#FFFFFF" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="96" font-weight="950" letter-spacing="-3">Yousof Selim</text>
+  <rect x="132" y="286" width="612" height="6" rx="3" fill="url(#redline)"/>
 
-  <rect x="890" y="164" width="318" height="186" rx="30" fill="#07101D" stroke="#255875"/>
-  <text x="930" y="214" fill="#13B9FD" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="18" font-weight="900" letter-spacing="3">CURRENT SIGNAL</text>
-  <text x="930" y="264" fill="#F8FAFC" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="44" font-weight="900">Shipping since 2023</text>
-  <text x="930" y="305" fill="#9FB1C5" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="20" font-weight="650">Freelance apps, real users, real deadlines.</text>
+  <text x="128" y="354" fill="#F2F2F2" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="34" font-weight="850">Full-stack mobile developer</text>
+  <text x="128" y="398" fill="#B8B8BC" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="25" font-weight="650">Flutter · Node.js · Supabase · Firebase · REST APIs</text>
+  <text x="128" y="440" fill="#8D8D95" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="22" font-weight="650">Building apps that feel less like templates and more like products.</text>
 
-  <path d="M0 488 H1400" stroke="#13B9FD" stroke-opacity="0.35"/>
-  <path d="M620 488 H780" stroke="#13B9FD" stroke-width="4" stroke-linecap="round"/>
+  <rect x="128" y="486" width="440" height="56" rx="28" fill="#111113" stroke="#36363A"/>
+  <circle cx="160" cy="514" r="8" fill="#FF2A2A"/>
+  <text x="184" y="523" fill="#FFFFFF" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="22" font-weight="900">Open to SWE / Technical PM internships</text>
+
+  <g transform="translate(980 126)">
+    <rect width="410" height="356" rx="30" fill="#070707" stroke="#343438"/>
+    <text x="42" y="70" fill="#FF2A2A" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="18" font-weight="950" letter-spacing="4">CURRENT SIGNAL</text>
+    <text x="42" y="150" fill="#FFFFFF" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="58" font-weight="950">Shipping</text>
+    <text x="42" y="214" fill="#FFFFFF" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="58" font-weight="950">since 2023</text>
+    <text x="42" y="268" fill="#B8B8BC" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="22" font-weight="700">Freelance builds.</text>
+    <text x="42" y="302" fill="#B8B8BC" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="22" font-weight="700">Real deadlines.</text>
+  </g>
+
+  <text x="1496" y="540" fill="#2D2D31" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="160" font-weight="950" text-anchor="end">01</text>
 
 </svg>
