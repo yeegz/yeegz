@@ -1,69 +1,57 @@
-<svg width="1600" height="480" viewBox="0 0 1600 480" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="CTA">
+<svg width="1600" height="420" viewBox="0 0 1600 420" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="CTA">
   <defs>
-    <linearGradient id="page" x1="0" y1="0" x2="1600" y2="480" gradientUnits="userSpaceOnUse">
+    <linearGradient id="bg" x1="0" y1="0" x2="1600" y2="420" gradientUnits="userSpaceOnUse">
       <stop stop-color="#050816"/>
-      <stop offset="0.42" stop-color="#07111F"/>
-      <stop offset="0.78" stop-color="#0A1630"/>
-      <stop offset="1" stop-color="#111827"/>
+      <stop offset="0.52" stop-color="#09111F"/>
+      <stop offset="1" stop-color="#0B1E2D"/>
     </linearGradient>
-    <linearGradient id="aurora" x1="0" y1="0" x2="1600" y2="480" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#00E5FF" stop-opacity="0.46"/>
-      <stop offset="0.44" stop-color="#7C3AED" stop-opacity="0.34"/>
-      <stop offset="0.75" stop-color="#00FFA3" stop-opacity="0.30"/>
-      <stop offset="1" stop-color="#FFB86B" stop-opacity="0.18"/>
-      <animate attributeName="x1" values="0;160;0" dur="8s" repeatCount="indefinite"/>
-      <animate attributeName="x2" values="1600;1420;1600" dur="8s" repeatCount="indefinite"/>
+    <linearGradient id="panel" x1="0" y1="0" x2="1600" y2="420" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0A1020"/>
+      <stop offset="0.62" stop-color="#0B1220"/>
+      <stop offset="1" stop-color="#0A2737"/>
     </linearGradient>
-    <linearGradient id="line" x1="0" y1="0" x2="1" y2="0">
-      <stop stop-color="#00E5FF"/>
-      <stop offset="0.45" stop-color="#7C3AED"/>
-      <stop offset="1" stop-color="#00FFA3"/>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop stop-color="#22D3EE"/>
+      <stop offset="0.48" stop-color="#8B5CF6"/>
+      <stop offset="1" stop-color="#34D399"/>
     </linearGradient>
-    <radialGradient id="glowCyan" cx="78%" cy="18%" r="70%">
-      <stop stop-color="#00E5FF" stop-opacity="0.35"/>
-      <stop offset="0.45" stop-color="#00E5FF" stop-opacity="0.09"/>
-      <stop offset="1" stop-color="#00E5FF" stop-opacity="0"/>
+    <radialGradient id="cyanGlow" cx="82%" cy="16%" r="66%">
+      <stop stop-color="#22D3EE" stop-opacity="0.34"/>
+      <stop offset="0.45" stop-color="#22D3EE" stop-opacity="0.08"/>
+      <stop offset="1" stop-color="#22D3EE" stop-opacity="0"/>
     </radialGradient>
-    <radialGradient id="glowViolet" cx="18%" cy="82%" r="65%">
-      <stop stop-color="#7C3AED" stop-opacity="0.30"/>
-      <stop offset="0.55" stop-color="#7C3AED" stop-opacity="0.07"/>
-      <stop offset="1" stop-color="#7C3AED" stop-opacity="0"/>
+    <radialGradient id="violetGlow" cx="12%" cy="88%" r="66%">
+      <stop stop-color="#8B5CF6" stop-opacity="0.28"/>
+      <stop offset="0.48" stop-color="#8B5CF6" stop-opacity="0.07"/>
+      <stop offset="1" stop-color="#8B5CF6" stop-opacity="0"/>
     </radialGradient>
-    <filter id="shadow" x="-20%" y="-25%" width="140%" height="150%">
-      <feDropShadow dx="0" dy="22" stdDeviation="22" flood-color="#000000" flood-opacity="0.40"/>
-    </filter>
-    <filter id="soft" x="-20%" y="-25%" width="140%" height="150%">
-      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#00E5FF" flood-opacity="0.12"/>
+    <filter id="shadow" x="-15%" y="-20%" width="130%" height="140%">
+      <feDropShadow dx="0" dy="20" stdDeviation="18" flood-color="#000000" flood-opacity="0.38"/>
     </filter>
     <pattern id="dots" width="28" height="28" patternUnits="userSpaceOnUse">
-      <circle cx="2" cy="2" r="1.1" fill="#E2E8F0" opacity="0.09"/>
+      <circle cx="2" cy="2" r="1" fill="#E2E8F0" opacity="0.08"/>
     </pattern>
-    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
-      <path d="M48 0H0V48" stroke="#E2E8F0" stroke-opacity="0.045"/>
+    <pattern id="grid" width="44" height="44" patternUnits="userSpaceOnUse">
+      <path d="M44 0H0V44" stroke="#E2E8F0" stroke-opacity="0.04"/>
     </pattern>
-    <clipPath id="clip"><rect x="0" y="0" width="1600" height="480" rx="42"/></clipPath>
     <style>
+      .font { font-family: Inter, Segoe UI, Arial, sans-serif; }
       .title { font-family: Inter, Segoe UI, Arial, sans-serif; font-weight: 950; letter-spacing: -2px; }
-      .ui { font-family: Inter, Segoe UI, Arial, sans-serif; }
-      .tiny { font-family: Inter, Segoe UI, Arial, sans-serif; font-weight: 900; letter-spacing: 4px; }
-      @keyframes floaty { 0%,100% { transform: translateY(0px); } 50% { transform: translateY(-12px); } }
-      @keyframes pulse { 0%,100% { opacity: .45; } 50% { opacity: 1; } }
-      @keyframes dash { to { stroke-dashoffset: -260; } }
-      .float { animation: floaty 5.5s ease-in-out infinite; }
+      .kicker { font-family: Inter, Segoe UI, Arial, sans-serif; font-weight: 950; letter-spacing: 4px; }
       .pulse { animation: pulse 2.8s ease-in-out infinite; }
-      .flow { stroke-dasharray: 14 18; animation: dash 9s linear infinite; }
+      .dash { stroke-dasharray: 12 14; animation: dash 8s linear infinite; }
+      @keyframes pulse { 0%,100% { opacity: .55; } 50% { opacity: 1; } }
+      @keyframes dash { to { stroke-dashoffset: -180; } }
     </style>
   </defs>
   
-  <g clip-path="url(#clip)">
-    <rect width="1600" height="480" fill="url(#page)"/>
-    <rect width="1600" height="480" fill="url(#dots)"/>
-    <rect width="1600" height="480" fill="url(#glowCyan)"/>
-    <rect x="70" y="70" width="1460" height="340" rx="44" fill="#08111F" fill-opacity="0.90" stroke="#243B53" filter="url(#shadow)"/>
-    <text class="tiny" x="800" y="152" fill="#00E5FF" font-size="18" text-anchor="middle">NEXT CHAPTER</text>
-    <text class="title" x="800" y="240" fill="#F8FAFC" font-size="64" text-anchor="middle">Let’s build something people remember.</text>
-    <text class="ui" x="800" y="296" fill="#B9C8D9" font-size="28" font-weight="800" text-anchor="middle">Open to Software Engineering and Technical PM internships.</text>
-    <path class="flow" d="M514 340 C650 300 740 380 894 334 C990 306 1060 318 1144 280" stroke="url(#line)" stroke-width="6" stroke-linecap="round"/>
-  </g>
+  <rect width="1600" height="420" rx="44" fill="url(#bg)"/>
+  <rect width="1600" height="420" rx="44" fill="url(#dots)"/>
+  <rect width="1600" height="420" rx="44" fill="url(#cyanGlow)"/>
+  <rect x="70" y="70" width="1460" height="280" rx="44" fill="url(#panel)" stroke="#23364D" filter="url(#shadow)"/>
+  <text class="kicker" x="800" y="142" fill="#22D3EE" font-size="18" text-anchor="middle">NEXT CHAPTER</text>
+  <text class="title" x="800" y="224" fill="#F8FAFC" font-size="58" text-anchor="middle">Let’s build something people remember.</text>
+  <text class="font" x="800" y="278" fill="#B9C8D9" font-size="27" font-weight="800" text-anchor="middle">Open to Software Engineering and Technical PM internships.</text>
+  <path class="dash" d="M520 320 C650 282 742 360 890 316 C1000 284 1088 296 1180 258" stroke="url(#accent)" stroke-width="5" stroke-linecap="round"/>
 
 </svg>

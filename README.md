@@ -1,6 +1,6 @@
 <!--
   Yousof Selim · @yeegz
-  Alive recruiter-focused GitHub profile README.
+  Safe animated profile README.
   Upload README.md and the entire /assets folder to the root of yeegz/yeegz.
 -->
 
@@ -10,15 +10,15 @@
 
 <p align="center">
   <a href="https://linkedin.com/in/ysf-slm">
-    <img src="https://img.shields.io/badge/LinkedIn-08111F?style=for-the-badge&logo=linkedin&logoColor=00E5FF&labelColor=08111F&color=00E5FF" alt="LinkedIn" />
+    <img src="https://img.shields.io/badge/LinkedIn-08111F?style=for-the-badge&logo=linkedin&logoColor=22D3EE&labelColor=08111F&color=22D3EE" alt="LinkedIn" />
   </a>
   &nbsp;
   <a href="https://yeegz.github.io">
-    <img src="https://img.shields.io/badge/Portfolio-08111F?style=for-the-badge&logo=googlechrome&logoColor=00FFA3&labelColor=08111F&color=00FFA3" alt="Portfolio" />
+    <img src="https://img.shields.io/badge/Portfolio-08111F?style=for-the-badge&logo=googlechrome&logoColor=34D399&labelColor=08111F&color=34D399" alt="Portfolio" />
   </a>
   &nbsp;
   <a href="mailto:yousofselim2@gmail.com">
-    <img src="https://img.shields.io/badge/Email-08111F?style=for-the-badge&logo=gmail&logoColor=B794F4&labelColor=08111F&color=B794F4" alt="Email" />
+    <img src="https://img.shields.io/badge/Email-08111F?style=for-the-badge&logo=gmail&logoColor=A78BFA&labelColor=08111F&color=A78BFA" alt="Email" />
   </a>
 </p>
 
@@ -28,7 +28,7 @@
 
 <img src="./assets/about.svg" width="100%" alt="Recruiter snapshot for Yousof Selim" />
 
-<img src="./assets/stack.svg" width="100%" alt="Animated stack map for Yousof Selim" />
+<img src="./assets/stack.svg" width="100%" alt="Stack map for Yousof Selim" />
 
 <br />
 
@@ -61,8 +61,8 @@
 <img src="./assets/proof.svg" width="100%" alt="Why recruiters should care" />
 
 <p align="center">
-  <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=yeegz&layout=compact&langs_count=8&hide_border=true&bg_color=08111F&title_color=00E5FF&text_color=C7D5E5&border_radius=18" alt="Top languages" />
-  <img height="165" src="https://streak-stats.demolab.com?user=yeegz&hide_border=true&border_radius=18&background=08111F&stroke=243B53&ring=00E5FF&fire=00FFA3&currStreakNum=FFFFFF&currStreakLabel=00E5FF&sideNums=FFFFFF&sideLabels=C7D5E5&dates=91A4B7" alt="GitHub contribution streak" />
+  <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=yeegz&layout=compact&langs_count=8&hide_border=true&bg_color=08111F&title_color=22D3EE&text_color=C7D5E5&border_radius=18" alt="Top languages" />
+  <img height="165" src="https://streak-stats.demolab.com?user=yeegz&hide_border=true&border_radius=18&background=08111F&stroke=243B53&ring=22D3EE&fire=34D399&currStreakNum=FFFFFF&currStreakLabel=22D3EE&sideNums=FFFFFF&sideLabels=C7D5E5&dates=91A4B7" alt="GitHub contribution streak" />
 </p>
 
 <br />
