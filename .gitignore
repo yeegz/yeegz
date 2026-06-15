@@ -1,0 +1,5 @@
+tools/fonts/
+tools/__pycache__/
+tools/*.html
+.DS_Store
+.claude/
