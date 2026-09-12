@@ -13,13 +13,11 @@
   <a href="https://yeegz.github.io/Yousof-Selim-Resume.pdf"><img src="assets/nav-resume.svg" height="46" alt="Read my résumé"></a>
 </p>
 
-<br>
-
 👋 **I’m Yousof.** I design and build mobile and web products, from the first user flow through the backend, testing and release.
 
 📱 Founder and sole developer of **[Bupples](https://yeegz.github.io/work/bupples/)**, live on iOS and Android.
 
-🎓 Software Engineering student at **Sunway University / Lancaster University**.
+🎓 BSc (Hons) Software Engineering at **Sunway University / Lancaster University** · graduating **August 2027**.
 
 🤝 **Open to selected freelance projects** and a **software engineering internship, January–April 2027**.
 
