@@ -1,29 +1,16 @@
-# Build pipeline — @yeegz profile README
+# Profile artwork
 
-Every visual in the profile `README.md` is a **hand-built, self-contained SVG**.
-Nothing loads from a third-party badge or stats service. This is deliberate:
-GitHub renders README SVGs inside a sandboxed `<img>`, which strips JavaScript and
-blocks external fonts/images. So the build inlines everything —
+The current profile uses a static header for light and dark themes, followed by readable Markdown. The graphics use the portfolio’s Archivo, Space Grotesk and Instrument Serif typefaces; text is converted to vector paths so GitHub does not need to load fonts. Every image has a descriptive text alternative in the README.
 
-- **Fonts** (Archivo / JetBrains Mono / Space Grotesk / Amiri) are subsetted to the
-  exact glyphs used and embedded as base64 `woff2` via `@font-face` data-URIs.
-- **The halftone portrait** in the hero is sampled from a photo into vector dots
-  (`yzlib.halftone`) — not an embedded raster.
-- **Motion** (the pulse dots, the green scan sweep) is SMIL, which the sandbox plays.
+## Rebuild
 
-The result is one cohesive "specimen archive" identity that matches yeegz.github.io
-and renders identically for every viewer, on GitHub light **and** dark.
+Requires Python 3 and FontTools:
 
-## Regenerate
-
-Requires Python 3 with `pillow`, `fonttools`, and `brotli`:
-
-```bash
-pip install pillow fonttools brotli
-./fetch-fonts.sh            # downloads the 4 source fonts into ./fonts
-python3 build.py            # writes all SVGs into ../assets
+```sh
+python3 -m pip install fonttools
+python3 tools/build_profile.py
 ```
 
-- `yzlib.py` — design tokens, font subsetting/embedding, text measurement, halftone.
-- `build.py` — composes every asset (hero, profile, stack, project cards, proof, CTA).
-- Override paths with env vars `YZ_OUT`, `YZ_FONTS`, `YZ_NICHE` if needed.
+The three source fonts and their SIL Open Font Licenses are in `profile-fonts/`. Output is `assets/profile-dark.svg` and `assets/profile-light.svg`. The artwork has no scripts, external resources or continuous animation.
+
+`build.py`, `yzlib.py` and the other SVGs belong to the previous profile treatment. They are retained as editable historical assets and are not used by the current README.
