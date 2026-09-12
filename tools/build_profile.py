@@ -34,14 +34,6 @@ NS = {'s':'http://www.w3.org/2000/svg'}
 def panel(width, height, title, theme='dark'):
     bg, ink, accent, muted = ('#0a0a0b','#f2efe9','#9bcfa5','#a7a59e') if theme=='dark' else ('#ece8dd','#121b14','#3f6748','#596354')
     return [f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" role="img"><title>{escape(title)}</title><rect width="{width}" height="{height}" rx="12" fill="{bg}"/>'], ink, accent, muted
-s,ink,accent,muted=panel(1200,252,'How I work — product design, implementation and release')
-s += [text(SERIF,'From the first flow to the final release.',48,80,48,accent),text(BODY,'Product design, mobile and web development, native integration,',48,137,28,ink),text(BODY,'backend systems and tests tied to real behaviour.',48,181,28,ink),text(BODY,'Flutter / Dart / Firebase / TypeScript / SwiftUI / Kotlin / Electron / WebGL2',48,227,23,muted),'</svg>']
-(ROOT/'assets/profile-practice.svg').write_text(''.join(s))
-s,ink,accent,muted=panel(1200,216,'Start a conversation — project enquiries and January–April 2027 internships')
-s += [text(DISPLAY,'Let’s make it happen.',48,89,60,ink),text(BODY,'A product to build, improve or introduce? Send me a short brief.',50,143,28,muted),text(BODY,'yousofselim2@gmail.com',50,188,26,accent),'<path d="M1070 136l58-58m-48 0h48v48" stroke="'+accent+'" stroke-width="3" fill="none"/>','</svg>']
-(ROOT/'assets/profile-contact.svg').write_text(''.join(s))
-
-
 # Icon-led navigation and product presentations. Source images are embedded
 # unchanged; all interactivity is provided by separate README anchors.
 import base64
@@ -139,48 +131,6 @@ import re, io, copy
 original=ET.parse(ROOT/'assets/hero.svg').getroot()
 style=original.find('.//s:style',NS).text
 embedded={name:TTFont(io.BytesIO(base64.b64decode(data))) for name,data in re.findall(r"font-family:'([^']+)'.*?base64,([A-Za-z0-9+/=]+)",style)}
-replacements={
- 'KUALA LUMPUR · MY':'SUBANG JAYA · MY',
- 'I design, build & ship real products —':'Product engineer. Founder of Bupples.',
- 'end to end, since 2023.':'Mobile, web and the details in between.',
- 'Open to SWE / Technical PM internships':'Freelance + Jan–Apr 2027 internships',
-}
-for theme in ['dark','light']:
-    root=copy.deepcopy(original)
-    root.attrib.update({'width':'1200','height':'600','aria-label':'Yousof Selim — product engineer, founder of Bupples, based in Subang Jaya'})
-    root.find('s:title',NS).text='Yousof Selim — product engineer and founder of Bupples'
-    for parent in list(root.iter()):
-        for child in list(parent):
-            if child.tag.endswith('animate') or child.attrib.get('fill')=='url(#scan)':parent.remove(child)
-    for parent in list(root.iter()):
-        for child in list(parent):
-            if child.tag!='{http://www.w3.org/2000/svg}text':continue
-            value=replacements.get(child.text,child.text);child.text=value
-            family=child.attrib['font-family']
-            if family=='AR':continue
-            f=embedded[family];size=float(child.attrib['font-size']);spacing=float(child.attrib.get('letter-spacing',0))
-            x=float(child.attrib['x']);y=float(child.attrib['y']);color=child.attrib['fill']
-            width=measure(f,value,size)+spacing*max(0,len(value)-1)
-            anchor=child.attrib.get('text-anchor','start')
-            if anchor=='end':x-=width
-            elif anchor=='middle':x-=width/2
-            group=ET.Element('{http://www.w3.org/2000/svg}g')
-            if 'opacity' in child.attrib:group.set('opacity',child.attrib['opacity'])
-            for char in value:
-                glyph=ET.fromstring(text(f,char,x,y,size,color))
-                glyph.tag='{http://www.w3.org/2000/svg}path'
-                group.append(glyph)
-                x+=measure(f,char,size)+spacing
-            index=list(parent).index(child);parent.remove(child);parent.insert(index,group)
-    # Only the Arabic font remains necessary after outlining the Latin type.
-    root.find('.//s:style',NS).text=''.join(re.findall(r"@font-face\{font-family:'AR'.*?\}",style))
-    output=ET.tostring(root,encoding='unicode')
-    if theme=='light':
-        palette={'#0d0d0f':'#ece8dd','#cfccc3':'#26352a','#86847c':'#596354','#0a0a0b':'#ece8dd','#101012':'#ece8dd','#111113':'#e6e2d8','#f2efe9':'#172019','#9bcfa5':'#3f6748','#8f8d87':'#586052','#a7a59e':'#596354'}
-        for before,after in palette.items():output=output.replace(before,after)
-    (ROOT/'assets'/f'profile-{theme}.svg').write_text(output)
-print('Restored the original header composition with current identity and availability.')
-
 # Restore a designed skills section with concrete, current technologies.
 skills=[('apple','Mobile + native',['Flutter / Dart','SwiftUI / WidgetKit / Kotlin']),('globe2','Web + desktop',['TypeScript / React / Next.js','Electron / WebGL2']),('code-slash','Backend + data',['Firebase / NestJS','PostgreSQL / Testing'])]
 s,ink,accent,muted=panel(1200,270,'Tools I build with — mobile, web, desktop and backend')
@@ -197,3 +147,49 @@ for i,(mark,title,lines) in enumerate(skills):
     s += [icon(mark,30,y,28,accent),text(BODY,title,74,y+25,27,ink),text(BODY,' / '.join(lines),30,y+67,19,muted)]
     if i<2:s += [f'<path d="M28 {y+93}H572" stroke="#9bcfa5" stroke-opacity=".2"/>']
 s += ['</svg>'];(ROOT/'assets/profile-practice-mobile.svg').write_text(''.join(s))
+
+# A closing invitation in the same visual language as the portfolio footer.
+for mobile,w,h in [(False,1200,350),(True,600,360)]:
+    s,ink,accent,muted=panel(w,h,'Let’s build something memorable. Tell me what you’re building.')
+    s += [f'<rect x="1" y="1" width="{w-2}" height="{h-2}" rx="18" fill="#111413" stroke="#9bcfa5" stroke-opacity=".35"/>']
+    for x,y,dx,dy in [(16,16,1,1),(w-16,16,-1,1),(16,h-16,1,-1),(w-16,h-16,-1,-1)]:
+        s += [f'<path d="M{x} {y+12*dy}V{y}H{x+12*dx}" fill="none" stroke="#9bcfa5" stroke-opacity=".4"/>']
+    for value,font,size,y,color in [('Have a project in mind?',BODY,21 if mobile else 23,55,muted),('Let’s build',DISPLAY,68 if mobile else 88,147,ink),('something memorable.',SERIF,59 if mobile else 92,233 if mobile else 249,accent),('Tell me what you’re building.',BODY,26 if mobile else 28,309,ink)]:
+        s += [text(font,value,(w-measure(font,value,size))/2,y,size,color)]
+    s += ['</svg>'];(ROOT/'assets'/('profile-contact-mobile.svg' if mobile else 'profile-contact.svg')).write_text(''.join(s))
+
+# Refined header: preserve identity/content while separating the crowded footer.
+portrait=next(g for g in original.findall('.//s:g',NS) if len(g.findall('s:circle',NS))>100)
+arabic=next(t for t in original.findall('.//s:text',NS) if t.attrib.get('font-family')=='AR')
+arabic_css=''.join(re.findall(r"@font-face\{font-family:'AR'.*?\}",style))
+
+def header(theme,mobile=False):
+    w,h=(600,700) if mobile else (1200,646)
+    bg,ink,accent,muted=('#0d0d0f','#f2efe9','#9bcfa5','#a7a59e') if theme=='dark' else ('#ece8dd','#172019','#3f6748','#596354')
+    s=[f'<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" viewBox="0 0 {w} {h}" role="img"><title>Yousof Selim — product engineer and founder of Bupples, Subang Jaya</title>',
+       '<defs><style>'+arabic_css+'@keyframes portrait-enter{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}.portrait-enter{animation:portrait-enter .85s cubic-bezier(.16,1,.3,1) both}@media(prefers-reduced-motion:reduce){.portrait-enter{animation:none}}</style>'+f'<pattern id="texture" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.15" fill="{ink}" opacity=".035"/></pattern></defs>',
+       f'<rect x="1" y="1" width="{w-2}" height="{h-2}" rx="20" fill="{bg}" stroke="{accent}" stroke-opacity=".25"/>',f'<rect x="12" y="12" width="{w-24}" height="{h-24}" fill="url(#texture)"/>']
+    for x,y,dx,dy in [(16,16,1,1),(w-16,16,-1,1),(16,h-16,1,-1),(w-16,h-16,-1,-1)]:s += [f'<path d="M{x} {y+10*dy}V{y}H{x+10*dx}" stroke="{accent}" stroke-opacity=".4" fill="none"/>']
+    x=32 if mobile else 48
+    s += [f'<circle cx="{x}" cy="{40 if mobile else 54}" r="4" fill="{accent}"/>',text(BODY,'@yeegz',x+14,48 if mobile else 62,22 if mobile else 24,ink)]
+    if not mobile:s += [text(BODY,'/ github profile',175,62,18,muted)]
+    a=copy.deepcopy(arabic);a.attrib.update({'x':str(w-x),'y':'49' if mobile else '65','font-size':'35' if mobile else '40','fill':ink});s += [ET.tostring(a,encoding='unicode'),text(BODY,'SUBANG JAYA · MY',w-x-measure(BODY,'SUBANG JAYA · MY',14 if mobile else 18),76 if mobile else 98,14 if mobile else 18,muted)]
+    s += [text(BODY,'FLUTTER  /  FULL-STACK  /  PRODUCT',x,108 if mobile else 160,18 if mobile else 21,accent)]
+    size=88 if mobile else 112;namefont=embedded['AX'];namew=measure(namefont,'YOUSOF',size)
+    s += [text(namefont,'YOUSOF',x-4,197 if mobile else 279,size,ink)]
+    spacing=(namew-measure(namefont,'SELIM',size))/4;penx=x-4
+    for c in 'SELIM':s += [text(namefont,c,penx,282 if mobile else 390,size,ink)];penx+=measure(namefont,c,size)+spacing
+    px,py,sc=(359,322,.40) if mobile else (748,189,.82)
+    s += [f'<g transform="translate({px} {py}) scale({sc})"><g class="portrait-enter">']
+    for c in portrait.findall('s:circle',NS):s += [f'<circle cx="{c.attrib["cx"]}" cy="{c.attrib["cy"]}" r="{c.attrib["r"]}" fill="{ink}"/>']
+    s += ['</g></g>']
+    copylines=[('Product engineer.',334),('Founder of Bupples.',369),('Mobile, web and',415),('the details in between.',450)] if mobile else [('Product engineer. Founder of Bupples.',446),('Mobile, web and the details in between.',483)]
+    for value,y in copylines:s += [text(BODY,value,x,y,23 if mobile else 26,ink if y in [334,369,446] else muted)]
+    liney=492 if mobile else 531
+    s += [f'<path d="M{x} {liney}H{w-x}" stroke="{accent}" stroke-opacity=".25"/>']
+    s += [text(BODY,'Selected freelance projects',x,534 if mobile else 577,23 if mobile else 25,accent),text(BODY,'Internships / Jan–Apr 2027',x,570 if mobile else 612,23 if mobile else 24,ink)]
+    dx=x if mobile else 640
+    s += [text(BODY,'BSc (Hons) Software Engineering',dx,627 if mobile else 577,21 if mobile else 24,ink),text(BODY,'Sunway × Lancaster / August 2027',dx,659 if mobile else 612,21 if mobile else 23,muted),'</svg>']
+    (ROOT/'assets'/f'profile-{theme}{"-mobile" if mobile else ""}.svg').write_text(''.join(s))
+for theme in ['dark','light']:
+    header(theme);header(theme,True)
