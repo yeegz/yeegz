@@ -296,11 +296,11 @@ def build_projects():
     project("portfolio","03","03","Portfolio","LIVE", True,
             "Award-style personal site: a living halftone identity, WebGL shaders, and a hidden platformer easter-egg.",
             "Vanilla JS · GSAP · WebGL", "design + build", "Web",
-            "yeegz.github.io")
+            "yousofselim.com")
     project("tajweed","04","04","Tajweed","IN PROGRESS", True,
             "Quranic-recitation learning platform — rebuilt information architecture, navigation and core lesson flows.",
             "Frontend · UI/UX", "design lead", "Web",
-            "yeegz.github.io")
+            "yousofselim.com")
     project("taskboard","05","05","Task Board","ARCHIVE", False,
             "ClickUp-style task manager: drag-and-drop, category tags, priority sorting, state-driven UI.",
             "HTML · CSS · JavaScript", "solo", "Web",
@@ -348,7 +348,7 @@ def build_cta():
     for (tx, ty, dx, dy) in [(24,24,1,1),(1176,24,-1,1),(24,186,1,-1),(1176,186,-1,-1)]:
         s.append(f'<path d="M{tx} {ty+11*dy}L{tx} {ty}L{tx+11*dx} {ty}" fill="none" stroke="{GRNL2}" stroke-width="1"/>')
     s.append(T(VW/2, 88, "Let's build something people remember.", 33, "ax", BONE, anchor="middle"))
-    s.append(T(VW/2, 130, "yousofselim2@gmail.com    ·    yeegz.github.io    ·    linkedin.com/in/ysf-slm",
+    s.append(T(VW/2, 130, "yousofselim2@gmail.com    ·    yousofselim.com    ·    linkedin.com/in/ysf-slm",
               14, "jm", MUT, anchor="middle"))
     txt = "AVAILABLE FOR 2027 INTERNSHIPS"
     pw = measure("jmb", txt, 12, tracking=2) + 56
