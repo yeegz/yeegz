@@ -1,47 +1,36 @@
-<!--
-  @yeegz · Yousof Selim — GitHub profile README
-  Every visual is a hand-built, self-contained SVG (fonts embedded as data-URIs,
-  halftone drawn as sampled vector dots, motion via SMIL). No third-party badge
-  or stats services. Edit the .svg files in /assets; regenerate with build.py.
--->
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/profile-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/profile-light.svg">
+  <img src="assets/profile-dark.svg" width="1200" alt="Yousof Selim — Product engineer and founder of Bupples. Design. Build. Ship.">
+</picture>
 
-<p align="center">
-  <img src="./assets/hero.svg" width="100%" alt="Yousof Selim (@yeegz) — Flutter & full-stack engineer, open to 2027 internships" />
-</p>
+[Portfolio](https://yeegz.github.io) · [LinkedIn](https://www.linkedin.com/in/ysf-slm/) · [Email](mailto:yousofselim2@gmail.com) · [Résumé](https://yeegz.github.io/Yousof-Selim-Resume.pdf)
 
-<p align="center">
-  <a href="https://yeegz.github.io"><img src="./assets/btn-portfolio.svg" height="46" alt="Portfolio — yeegz.github.io" /></a>&nbsp;&nbsp;
-  <a href="https://linkedin.com/in/ysf-slm"><img src="./assets/btn-linkedin.svg" height="46" alt="LinkedIn — in/ysf-slm" /></a>&nbsp;&nbsp;
-  <a href="mailto:yousofselim2@gmail.com"><img src="./assets/btn-email.svg" height="46" alt="Email — yousofselim2@gmail.com" /></a>&nbsp;&nbsp;
-  <a href="https://yeegz.github.io/Yousof-Selim-Resume.pdf"><img src="./assets/btn-resume.svg" height="46" alt="Résumé (PDF)" /></a>
-</p>
+I design and build mobile and web products, from the first user flow through the backend, testing and release. I’m the founder and sole developer of **Bupples**, live on iOS and Android, and a Software Engineering student at Sunway University / Lancaster University.
 
-&nbsp;
+**Open to selected freelance projects** and a **software engineering internship, January–April 2027**. My work centres on Flutter, Firebase and TypeScript, with SwiftUI, WidgetKit and Kotlin where a product needs native integration.
 
-<img src="./assets/about.svg" width="100%" alt="Profile — software-engineering undergrad who ships real products end to end" />
+### Selected work
 
-<img src="./assets/stack.svg" width="100%" alt="Stack — languages, frontend, backend & data, AI workflow, tools" />
+| Product | What I built | Explore |
+| :--- | :--- | :--- |
+| **Bupples** | Social expense sharing with receipt scanning, a cent-exact ledger, private splits and native widgets. Live on iOS and Android. | [Case study](https://yeegz.github.io/work/bupples/) · [Showcase](https://github.com/yeegz/Bupples-showcase) |
+| **Photoshoot** | A local-first browser and desktop photobooth with WebGL2 effects and on-device face tracking. The web app is live. | [Try it](https://photoshoot-yeegz.web.app/app/) · [Source](https://github.com/yeegz/photoshoot) |
+| **WayClub** | Club workspaces for events, members and committee handovers. Explore the real interface with fictional demo data. | [Guided demo](https://wayclub-live-demo.web.app/home?tour=1) · [Engineering](https://github.com/yeegz/WayClub-showcase) |
+| **CodeAtlas** | TypeScript/JavaScript change analysis, explainable test selection and reproducible evidence. In active development. | [Repository](https://github.com/yeegz/CodeAtlas) |
+| **Adelante** | A Flutter motivation app with native iOS and Android widgets, offline content and a live widget studio. In development. | [Case study](https://yeegz.github.io/work/adelante/) · [Showcase](https://github.com/yeegz/adelante-showcase) |
+| **Fallen Asteri** | Team-built Godot platformer. I worked on movement, combat, scene transitions and repository structure. | [Play](https://yeegz.itch.io/fallenasteri) · [Source](https://github.com/yeegz/Fallen-Asteri) |
 
-&nbsp;
+### What I bring to a project
 
-<img src="./assets/sec-shipped.svg" width="100%" alt="Shipped — selected work, concept to deployment" />
+- **Product engineering:** interfaces, core flows, backend integration and release handover.
+- **Careful implementation:** deterministic money handling, scoped access, native integrations and tests tied to real behaviour.
+- **Presentation:** product demos and short launch edits that explain how the product works.
 
-<a href="https://github.com/yeegz/Bupples-showcase"><img src="./assets/project-bupples.svg" width="100%" alt="Bupples — group expense-splitter with AI receipt scanning, Flutter + Firebase (TestFlight)" /></a>
+The [portfolio case studies](https://yeegz.github.io/work/) show my contribution, technical decisions, current screenshots and dated verification. Bupples, Adelante and WayClub have public showcases; their application source is private.
 
-<a href="https://photoshoot-yeegz.web.app"><img src="./assets/project-photoshoot.svg" width="100%" alt="Photoshoot — webcam photobooth with live WebGL2 effects & face-mesh (live)" /></a>
+### Start a conversation
 
-<a href="https://yeegz.github.io"><img src="./assets/project-portfolio.svg" width="100%" alt="Portfolio — award-style personal site with a living halftone identity (live)" /></a>
+[Send me a short brief](mailto:yousofselim2@gmail.com?subject=Project%20enquiry): what you’re building, where it stands and what you need next. For internship opportunities, include the team, role and dates.
 
-<a href="https://yeegz.github.io"><img src="./assets/project-tajweed.svg" width="100%" alt="Tajweed — Quranic-recitation learning platform, UX & IA redesign (in progress)" /></a>
-
-<a href="https://github.com/yeegz/To-Do-List-Board"><img src="./assets/project-taskboard.svg" width="100%" alt="Task Board — ClickUp-style task manager with drag-and-drop (archive)" /></a>
-
-<a href="https://yeegz.itch.io/fallenasteri"><img src="./assets/project-asteri.svg" width="100%" alt="Fallen Asteri — 2D souls-like platformer, Godot + GDScript (playable)" /></a>
-
-&nbsp;
-
-<img src="./assets/proof.svg" width="100%" alt="Proof — 4 products shipped, 3+ years freelance, iOS/Android/Web, 150+ tests, real-time sync, WebGL2 + AI" />
-
-&nbsp;
-
-<a href="mailto:yousofselim2@gmail.com"><img src="./assets/cta.svg" width="100%" alt="Let's build something people remember — available for 2027 internships" /></a>
+<sub>Selected work updated September 2026. [About this profile’s artwork](tools/README.md).</sub>
