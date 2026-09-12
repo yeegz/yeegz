@@ -17,7 +17,7 @@
 
 📱 Founder and sole developer of **[Bupples](https://yousofselim.com/work/bupples/)**, live on iOS and Android.
 
-🎓 BSc (Hons) Software Engineering at **BSc (Hons) Software Engineering at Sunway University, in partnership with Lancaster University** · graduating **August 2027**.
+🎓 **BSc (Hons) Software Engineering at Sunway University, in partnership with Lancaster University** · graduating **August 2027**.
 
 🤝 **Open to selected freelance projects** and a **software engineering internship, January–April 2027**.
 
