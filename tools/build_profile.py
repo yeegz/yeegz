@@ -78,22 +78,22 @@ projects=[
 
 for key,name,status,tag,lines,role,stack,caption in projects:
     s,ink,accent,muted=panel(1200,510,name+' — '+status)
-    s += ['<defs><pattern id="dots" width="18" height="18" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#9bcfa5" opacity=".12"/></pattern><clipPath id="visual"><rect x="644" y="48" width="514" height="365" rx="14"/></clipPath></defs>',
+    s += ['<defs><pattern id="dots" width="18" height="18" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#9bcfa5" opacity=".12"/></pattern><clipPath id="visual"><rect x="644" y="48" width="514" height="337" rx="14"/></clipPath></defs>',
           '<rect x="1" y="1" width="1198" height="508" rx="16" fill="#111413" stroke="#9bcfa5" stroke-opacity=".25"/>',
           '<rect x="618" y="20" width="562" height="390" fill="url(#dots)"/>',
           f'<circle cx="48" cy="48" r="4" fill="{accent}"/>',text(BODY,status,63,55,22,accent),text(DISPLAY,name,44,146,65 if key=='asteri' else 70,ink),text(SERIF,tag,48,202,38,ink)]
     s += [text(BODY,line,48,267+i*37,28,muted) for i,line in enumerate(lines)]
-    s += [text(BODY,role,48,380,21,muted),'<path d="M48 433H1152" stroke="#9bcfa5" stroke-opacity=".25"/>',text(BODY,stack,48,478,24,ink)]
+    s += [text(BODY,role,48,380,21,muted),'<path d="M48 447H1152" stroke="#9bcfa5" stroke-opacity=".25"/>',text(BODY,stack,48,478,24,ink)]
     if key=='bupples':
         s += [phone('bupples-settings.webp',652,85,138,299),phone('bupples-accent.webp',1000,85,138,299),phone('bupples-profile.webp',811,39,164,356)]
     elif key=='adelante':
         s += [phone('adelante-today.webp',735,58,153,332),phone('adelante-widgets.webp',931,58,153,332)]
     elif key=='photoshoot':
-        s += [screenshot('photoshoot-artwork.webp',644,48,514,365,'visual')]
+        s += [screenshot('photoshoot-artwork.webp',644,48,514,337,'visual')]
     elif key=='wayclub':
-        s += [screenshot('wayclub-workspace.png',644,48,514,365,'visual')]
+        s += [screenshot('wayclub-workspace.png',644,48,514,337,'visual')]
     elif key=='asteri':
-        s += [screenshot('fallenasteri.webp',644,48,514,365,'visual')]
+        s += [screenshot('fallenasteri.webp',644,48,514,337,'visual')]
     else:
         for y,label,small in [(55,'Code change','Base + head'),(164,'Evidence map','Symbols + paths'),(273,'Test selection','Explainable coverage')]:
             s += [f'<rect x="718" y="{y}" width="383" height="86" rx="12" fill="#151b17" stroke="#9bcfa5" stroke-opacity=".4"/>',icon('code-slash' if y==55 else 'journal-text',738,y+26,27,accent),text(BODY,label,788,y+37,28,ink),text(BODY,small,788,y+66,20,muted)]
@@ -158,38 +158,35 @@ for mobile,w,h in [(False,1200,350),(True,600,360)]:
         s += [text(font,value,(w-measure(font,value,size))/2,y,size,color)]
     s += ['</svg>'];(ROOT/'assets'/('profile-contact-mobile.svg' if mobile else 'profile-contact.svg')).write_text(''.join(s))
 
-# Refined header: preserve identity/content while separating the crowded footer.
+# Compact identity banner; education and availability live in the native intro.
 portrait=next(g for g in original.findall('.//s:g',NS) if len(g.findall('s:circle',NS))>100)
 arabic=next(t for t in original.findall('.//s:text',NS) if t.attrib.get('font-family')=='AR')
 arabic_css=''.join(re.findall(r"@font-face\{font-family:'AR'.*?\}",style))
 
 def header(theme,mobile=False):
-    w,h=(600,700) if mobile else (1200,646)
+    w,h=(600,332) if mobile else (1200,430)
     bg,ink,accent,muted=('#0d0d0f','#f2efe9','#9bcfa5','#a7a59e') if theme=='dark' else ('#ece8dd','#172019','#3f6748','#596354')
     s=[f'<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" viewBox="0 0 {w} {h}" role="img"><title>Yousof Selim — product engineer and founder of Bupples, Subang Jaya</title>',
        '<defs><style>'+arabic_css+'@keyframes portrait-enter{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}.portrait-enter{animation:portrait-enter .85s cubic-bezier(.16,1,.3,1) both}@media(prefers-reduced-motion:reduce){.portrait-enter{animation:none}}</style>'+f'<pattern id="texture" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.15" fill="{ink}" opacity=".035"/></pattern></defs>',
        f'<rect x="1" y="1" width="{w-2}" height="{h-2}" rx="20" fill="{bg}" stroke="{accent}" stroke-opacity=".25"/>',f'<rect x="12" y="12" width="{w-24}" height="{h-24}" fill="url(#texture)"/>']
     for x,y,dx,dy in [(16,16,1,1),(w-16,16,-1,1),(16,h-16,1,-1),(w-16,h-16,-1,-1)]:s += [f'<path d="M{x} {y+10*dy}V{y}H{x+10*dx}" stroke="{accent}" stroke-opacity=".4" fill="none"/>']
-    x=32 if mobile else 48
-    s += [f'<circle cx="{x}" cy="{40 if mobile else 54}" r="4" fill="{accent}"/>',text(BODY,'@yeegz',x+14,48 if mobile else 62,22 if mobile else 24,ink)]
-    if not mobile:s += [text(BODY,'/ github profile',175,62,18,muted)]
-    a=copy.deepcopy(arabic);a.attrib.update({'x':str(w-x),'y':'49' if mobile else '65','font-size':'35' if mobile else '40','fill':ink});s += [ET.tostring(a,encoding='unicode'),text(BODY,'SUBANG JAYA · MY',w-x-measure(BODY,'SUBANG JAYA · MY',14 if mobile else 18),76 if mobile else 98,14 if mobile else 18,muted)]
-    s += [text(BODY,'FLUTTER  /  FULL-STACK  /  PRODUCT',x,108 if mobile else 160,18 if mobile else 21,accent)]
-    size=88 if mobile else 112;namefont=embedded['AX'];namew=measure(namefont,'YOUSOF',size)
-    s += [text(namefont,'YOUSOF',x-4,197 if mobile else 279,size,ink)]
+    x=28 if mobile else 48
+    s += [f'<circle cx="{x}" cy="{32 if mobile else 40}" r="4" fill="{accent}"/>',text(BODY,'@yeegz',x+14,40 if mobile else 48,22 if mobile else 24,ink)]
+    if not mobile:s += [text(BODY,'/ github profile',175,48,18,muted)]
+    a=copy.deepcopy(arabic);a.attrib.update({'x':str(w-x),'y':'42' if mobile else '50','font-size':'30' if mobile else '36','fill':ink});s += [ET.tostring(a,encoding='unicode'),text(BODY,'SUBANG JAYA · MY',w-x-measure(BODY,'SUBANG JAYA · MY',14 if mobile else 18),66 if mobile else 80,14 if mobile else 18,muted)]
+    s += [text(BODY,'FLUTTER  /  FULL-STACK  /  PRODUCT',x,95 if mobile else 120,17 if mobile else 21,accent)]
+    size=57 if mobile else 100;namefont=embedded['AX'];namew=measure(namefont,'YOUSOF',size)
+    s += [text(namefont,'YOUSOF',x-4,156 if mobile else 228,size,ink)]
     spacing=(namew-measure(namefont,'SELIM',size))/4;penx=x-4
-    for c in 'SELIM':s += [text(namefont,c,penx,282 if mobile else 390,size,ink)];penx+=measure(namefont,c,size)+spacing
-    px,py,sc=(359,322,.40) if mobile else (748,189,.82)
+    for c in 'SELIM':s += [text(namefont,c,penx,218 if mobile else 326,size,ink)];penx+=measure(namefont,c,size)+spacing
+    px,py,sc=(402,119,.30) if mobile else (800,132,.65)
     s += [f'<g transform="translate({px} {py}) scale({sc})"><g class="portrait-enter">']
     for c in portrait.findall('s:circle',NS):s += [f'<circle cx="{c.attrib["cx"]}" cy="{c.attrib["cy"]}" r="{c.attrib["r"]}" fill="{ink}"/>']
     s += ['</g></g>']
-    copylines=[('Product engineer.',334),('Founder of Bupples.',369),('Mobile, web and',415),('the details in between.',450)] if mobile else [('Product engineer. Founder of Bupples.',446),('Mobile, web and the details in between.',483)]
-    for value,y in copylines:s += [text(BODY,value,x,y,23 if mobile else 26,ink if y in [334,369,446] else muted)]
-    liney=492 if mobile else 531
-    s += [f'<path d="M{x} {liney}H{w-x}" stroke="{accent}" stroke-opacity=".25"/>']
-    s += [text(BODY,'Selected freelance projects',x,534 if mobile else 577,23 if mobile else 25,accent),text(BODY,'Internships / Jan–Apr 2027',x,570 if mobile else 612,23 if mobile else 24,ink)]
-    dx=x if mobile else 640
-    s += [text(BODY,'BSc (Hons) Software Engineering',dx,627 if mobile else 577,21 if mobile else 24,ink),text(BODY,'Sunway × Lancaster / August 2027',dx,659 if mobile else 612,21 if mobile else 23,muted),'</svg>']
+    copylines=[('Product engineer. Founder of Bupples.',267 if mobile else 372),('Mobile, web and the details in between.',302 if mobile else 405)]
+    for i,(value,y) in enumerate(copylines):
+        s += [text(BODY,value,x,y,21 if mobile else 25,ink if i==0 else muted)]
+    s += ['</svg>']
     (ROOT/'assets'/f'profile-{theme}{"-mobile" if mobile else ""}.svg').write_text(''.join(s))
 for theme in ['dark','light']:
     header(theme);header(theme,True)
