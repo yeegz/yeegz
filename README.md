@@ -7,15 +7,15 @@
 </picture>
 
 <p align="center">
-  <a href="https://yeegz.github.io"><img src="assets/nav-portfolio.svg" height="46" alt="Explore my portfolio"></a>&nbsp;
+  <a href="https://yousofselim.com"><img src="assets/nav-portfolio.svg" height="46" alt="Explore my portfolio"></a>&nbsp;
   <a href="https://www.linkedin.com/in/ysf-slm/"><img src="assets/nav-linkedin.svg" height="46" alt="Connect on LinkedIn"></a>&nbsp;
   <a href="mailto:yousofselim2@gmail.com"><img src="assets/nav-email.svg" height="46" alt="Email Yousof"></a>&nbsp;
-  <a href="https://yeegz.github.io/Yousof-Selim-Resume.pdf"><img src="assets/nav-resume.svg" height="46" alt="Read my résumé"></a>
+  <a href="https://yousofselim.com/Yousof-Selim-Resume.pdf"><img src="assets/nav-resume.svg" height="46" alt="Read my résumé"></a>
 </p>
 
 👋 **I’m Yousof.** I design and build mobile and web products, from the first user flow through the backend, testing and release.
 
-📱 Founder and sole developer of **[Bupples](https://yeegz.github.io/work/bupples/)**, live on iOS and Android.
+📱 Founder and sole developer of **[Bupples](https://yousofselim.com/work/bupples/)**, live on iOS and Android.
 
 🎓 BSc (Hons) Software Engineering at **Sunway University / Lancaster University** · graduating **August 2027**.
 
@@ -41,7 +41,7 @@
   <a href="https://apps.apple.com/my/app/bupples/id6777620291"><img src="assets/action-app-store.svg" height="42" alt="Download Bupples on the App Store"></a>
   <a href="https://play.google.com/store/apps/details?id=com.bupples.bupples"><img src="assets/action-google-play.svg" height="42" alt="Download Bupples on Google Play"></a>
   <a href="https://bupples.web.app/"><img src="assets/action-product-site.svg" height="42" alt="Visit the Bupples product site"></a>
-  <a href="https://yeegz.github.io/work/bupples/"><img src="assets/action-case-study.svg" height="42" alt="Read the Bupples case study"></a>
+  <a href="https://yousofselim.com/work/bupples/"><img src="assets/action-case-study.svg" height="42" alt="Read the Bupples case study"></a>
   <a href="https://github.com/yeegz/Bupples-showcase"><img src="assets/action-showcase.svg" height="42" alt="Browse the Bupples showcase"></a>
 </p>
 
@@ -58,7 +58,7 @@
 
 <p align="center">
   <a href="https://adelante-yeegz.web.app/"><img src="assets/action-product-site.svg" height="42" alt="Visit the Adelante product site"></a>
-  <a href="https://yeegz.github.io/work/adelante/"><img src="assets/action-case-study.svg" height="42" alt="Read the Adelante case study"></a>
+  <a href="https://yousofselim.com/work/adelante/"><img src="assets/action-case-study.svg" height="42" alt="Read the Adelante case study"></a>
   <a href="https://github.com/yeegz/adelante-showcase"><img src="assets/action-showcase.svg" height="42" alt="Browse the Adelante showcase"></a>
 </p>
 
@@ -75,7 +75,7 @@
 
 <p align="center">
   <a href="https://photoshoot-yeegz.web.app/app/"><img src="assets/action-live-app.svg" height="42" alt="Open the Photoshoot web app"></a>
-  <a href="https://yeegz.github.io/work/photoshoot/"><img src="assets/action-case-study.svg" height="42" alt="Read the Photoshoot case study"></a>
+  <a href="https://yousofselim.com/work/photoshoot/"><img src="assets/action-case-study.svg" height="42" alt="Read the Photoshoot case study"></a>
   <a href="https://github.com/yeegz/photoshoot"><img src="assets/action-source.svg" height="42" alt="Browse Photoshoot source"></a>
 </p>
 
@@ -134,11 +134,11 @@
 
 | Project | Current status | Engineering |
 | :--- | :--- | :--- |
-| Bupples | Live on iOS and Android | [Showcase](https://github.com/yeegz/Bupples-showcase) · [Case study](https://yeegz.github.io/work/bupples/) |
-| Photoshoot | Live web app; Electron source available | [Source](https://github.com/yeegz/photoshoot) · [Case study](https://yeegz.github.io/work/photoshoot/) |
+| Bupples | Live on iOS and Android | [Showcase](https://github.com/yeegz/Bupples-showcase) · [Case study](https://yousofselim.com/work/bupples/) |
+| Photoshoot | Live web app; Electron source available | [Source](https://github.com/yeegz/photoshoot) · [Case study](https://yousofselim.com/work/photoshoot/) |
 | WayClub | Guided interface demo with fictional data | [Showcase](https://github.com/yeegz/WayClub-showcase) |
 | CodeAtlas | Active development | [Source and implementation status](https://github.com/yeegz/CodeAtlas) |
-| Adelante | In development | [Showcase](https://github.com/yeegz/adelante-showcase) · [Case study](https://yeegz.github.io/work/adelante/) |
+| Adelante | In development | [Showcase](https://github.com/yeegz/adelante-showcase) · [Case study](https://yousofselim.com/work/adelante/) |
 | Fallen Asteri | Playable team project | [Source](https://github.com/yeegz/Fallen-Asteri) |
 
 Bupples, Adelante and WayClub have public showcases; their application source is private. The portfolio case studies document my contribution, current screenshots and dated verification.
@@ -152,7 +152,7 @@ Bupples, Adelante and WayClub have public showcases; their application source is
 
 <p align="center">
   <a href="mailto:yousofselim2@gmail.com?subject=Project%20enquiry"><img src="assets/nav-email.svg" height="46" alt="Email Yousof about your project"></a>
-  <a href="https://yeegz.github.io"><img src="assets/nav-portfolio.svg" height="46" alt="Explore Yousof’s portfolio"></a>
+  <a href="https://yousofselim.com"><img src="assets/nav-portfolio.svg" height="46" alt="Explore Yousof’s portfolio"></a>
   <a href="https://www.linkedin.com/in/ysf-slm/"><img src="assets/nav-linkedin.svg" height="46" alt="Connect with Yousof on LinkedIn"></a>
 </p>
 
