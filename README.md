@@ -108,7 +108,7 @@
 
 <p align="center">
   <a href="https://github.com/yeegz/CodeAtlas#current-implementation-status"><img src="assets/action-implementation.svg" height="42" alt="Read CodeAtlas implementation status"></a>
-  <a href="https://github.com/yeegz/CodeAtlas/tree/codex/codeatlas-evidence-core"><img src="assets/action-source.svg" height="42" alt="Browse the CodeAtlas implementation source"></a>
+  <a href="https://github.com/yeegz/CodeAtlas"><img src="assets/action-source.svg" height="42" alt="Browse the CodeAtlas implementation source"></a>
 </p>
 
 <br>
