@@ -70,11 +70,11 @@ def phone(name,x,y,w,h):
 
 projects=[
 ('bupples','Bupples','Live on iOS + Android','Money, made social.',['Shared hangouts, scanned receipts','and clear settlement history.'],'Sole developer · design through release','Flutter / Firebase / Native widgets','Current device captures'),
-('adelante','Adelante','In development','A little forward, every day.',['Motivation made for your home screen,','with native widgets and offline content.'],'Sole developer · native integration','Flutter / SwiftUI / Kotlin','Current app + widget screens'),
+('adelante','Adelante','Live on the App Store','A little forward, every day.',['Motivation made for your home screen,','with native widgets and offline content.'],'Sole developer · native integration','Flutter / SwiftUI / Kotlin','Current app + widget screens'),
 ('photoshoot','Photoshoot','Live web app','A photobooth, all yours.',['Capture photos, strips and video','with effects that run on your device.'],'Solo · concept through deployment','TypeScript / Electron / WebGL2','Portfolio product artwork'),
 ('wayclub','WayClub','Guided demo','A home for your club.',['Events, members and committee','handovers in one workspace.'],'Product design + full-stack development','Next.js / NestJS / PostgreSQL','Demo capture · fictional sample data'),
 ('codeatlas','CodeAtlas','In development','Follow the evidence.',['Map a code change, explain its impact','and select the tests that matter.'],'Architecture + implementation','TypeScript / Static analysis / Test selection','Evidence flow · architecture diagram'),
-('asteri','Fallen Asteri','Playable team project','Build the world. Feel the fight.',['A Godot platformer built with a team.','My work spans movement and combat.'],'Gameplay · transitions · repository structure','Godot / GDScript','Gameplay capture')]
+('asteri','Fallen Asteri','Playable team project','Build the world. Feel the fight.',['A Godot platformer built by three.','I set up our repository workflow.'],'Levels · animation · HUD · combat tuning','Godot / GDScript','Gameplay capture')]
 
 for key,name,status,tag,lines,role,stack,caption in projects:
     s,ink,accent,muted=panel(1200,510,name+' — '+status)
@@ -132,15 +132,15 @@ original=ET.parse(ROOT/'assets/hero.svg').getroot()
 style=original.find('.//s:style',NS).text
 embedded={name:TTFont(io.BytesIO(base64.b64decode(data))) for name,data in re.findall(r"font-family:'([^']+)'.*?base64,([A-Za-z0-9+/=]+)",style)}
 # Restore a designed skills section with concrete, current technologies.
-skills=[('apple','Mobile + native',['Flutter / Dart','SwiftUI / WidgetKit / Kotlin']),('globe2','Web + desktop',['TypeScript / React / Next.js','Electron / WebGL2']),('code-slash','Backend + data',['Firebase / NestJS','PostgreSQL / Testing'])]
-s,ink,accent,muted=panel(1200,270,'Tools I build with — mobile, web, desktop and backend')
+skills=[('apple','Mobile',['Flutter / Dart','SwiftUI / Kotlin']),('globe2','Web',['TypeScript / React','Next.js']),('code-slash','Backend + data',['NestJS / PostgreSQL','Firebase / Java'])]
+s,ink,accent,muted=panel(1200,270,'Tools I build with: Flutter and Dart; TypeScript, React and Next.js; NestJS, PostgreSQL, Firebase and Java')
 s += [text(SERIF,'Tools I build with.',40,64,40,ink)]
 for i,(mark,title,lines) in enumerate(skills):
     x=40+i*394
     s += [icon(mark,x,105,30,accent),text(BODY,title,x+44,130,28,ink),text(BODY,lines[0],x,186,24,muted),text(BODY,lines[1],x,224,23,muted)]
     if i<2:s += [f'<path d="M{x+369} 102v138" stroke="#9bcfa5" stroke-opacity=".2"/>']
 s += ['</svg>'];(ROOT/'assets/profile-practice.svg').write_text(''.join(s))
-s,ink,accent,muted=panel(600,480,'Tools I build with — mobile, web, desktop and backend')
+s,ink,accent,muted=panel(600,480,'Tools I build with: Flutter and Dart; TypeScript, React and Next.js; NestJS, PostgreSQL, Firebase and Java')
 s += [text(SERIF,'Tools I build with.',28,63,38,ink)]
 for i,(mark,title,lines) in enumerate(skills):
     y=102+i*123
@@ -150,11 +150,11 @@ s += ['</svg>'];(ROOT/'assets/profile-practice-mobile.svg').write_text(''.join(s
 
 # A closing invitation in the same visual language as the portfolio footer.
 for mobile,w,h in [(False,1200,350),(True,600,360)]:
-    s,ink,accent,muted=panel(w,h,'Let’s build something memorable. Tell me what you’re building.')
+    s,ink,accent,muted=panel(w,h,'Hiring interns for January 2027? Email me or read my résumé.')
     s += [f'<rect x="1" y="1" width="{w-2}" height="{h-2}" rx="18" fill="#111413" stroke="#9bcfa5" stroke-opacity=".35"/>']
     for x,y,dx,dy in [(16,16,1,1),(w-16,16,-1,1),(16,h-16,1,-1),(w-16,h-16,-1,-1)]:
         s += [f'<path d="M{x} {y+12*dy}V{y}H{x+12*dx}" fill="none" stroke="#9bcfa5" stroke-opacity=".4"/>']
-    for value,font,size,y,color in [('Have a project in mind?',BODY,21 if mobile else 23,55,muted),('Let’s build',DISPLAY,68 if mobile else 88,147,ink),('something memorable.',SERIF,59 if mobile else 92,233 if mobile else 249,accent),('Tell me what you’re building.',BODY,26 if mobile else 28,309,ink)]:
+    for value,font,size,y,color in [('Software Engineering Intern · January to April 2027',BODY,17 if mobile else 23,55,muted),('Hiring interns',DISPLAY,56 if mobile else 88,147,ink),('for January 2027?',SERIF,52 if mobile else 92,233 if mobile else 249,accent),('Email me or read my résumé.',BODY,26 if mobile else 28,309,ink)]:
         s += [text(font,value,(w-measure(font,value,size))/2,y,size,color)]
     s += ['</svg>'];(ROOT/'assets'/('profile-contact-mobile.svg' if mobile else 'profile-contact.svg')).write_text(''.join(s))
 
@@ -166,7 +166,7 @@ arabic_css=''.join(re.findall(r"@font-face\{font-family:'AR'.*?\}",style))
 def header(theme,mobile=False):
     w,h=(600,332) if mobile else (1200,430)
     bg,ink,accent,muted=('#0d0d0f','#f2efe9','#9bcfa5','#a7a59e') if theme=='dark' else ('#ece8dd','#172019','#3f6748','#596354')
-    s=[f'<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" viewBox="0 0 {w} {h}" role="img"><title>Yousof Selim — product engineer and founder of Bupples, Subang Jaya</title>',
+    s=[f'<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" viewBox="0 0 {w} {h}" role="img"><title>Yousof Selim, Software Engineering Intern, January to April 2027. Mobile and full-stack; founder of Bupples.</title>',
        '<defs><style>'+arabic_css+'@keyframes portrait-enter{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}.portrait-enter{animation:portrait-enter .85s cubic-bezier(.16,1,.3,1) both}@media(prefers-reduced-motion:reduce){.portrait-enter{animation:none}}</style>'+f'<pattern id="texture" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.15" fill="{ink}" opacity=".035"/></pattern></defs>',
        f'<rect x="1" y="1" width="{w-2}" height="{h-2}" rx="20" fill="{bg}" stroke="{accent}" stroke-opacity=".25"/>',f'<rect x="12" y="12" width="{w-24}" height="{h-24}" fill="url(#texture)"/>']
     for x,y,dx,dy in [(16,16,1,1),(w-16,16,-1,1),(16,h-16,1,-1),(w-16,h-16,-1,-1)]:s += [f'<path d="M{x} {y+10*dy}V{y}H{x+10*dx}" stroke="{accent}" stroke-opacity=".4" fill="none"/>']
@@ -174,7 +174,7 @@ def header(theme,mobile=False):
     s += [f'<circle cx="{x}" cy="{32 if mobile else 40}" r="4" fill="{accent}"/>',text(BODY,'@yeegz',x+14,40 if mobile else 48,22 if mobile else 24,ink)]
     if not mobile:s += [text(BODY,'/ github profile',175,48,18,muted)]
     a=copy.deepcopy(arabic);a.attrib.update({'x':str(w-x),'y':'42' if mobile else '50','font-size':'30' if mobile else '36','fill':ink});s += [ET.tostring(a,encoding='unicode'),text(BODY,'SUBANG JAYA · MY',w-x-measure(BODY,'SUBANG JAYA · MY',14 if mobile else 18),66 if mobile else 80,14 if mobile else 18,muted)]
-    s += [text(BODY,'FLUTTER  /  FULL-STACK  /  PRODUCT',x,95 if mobile else 120,17 if mobile else 21,accent)]
+    s += [text(BODY,'MOBILE  /  FULL-STACK  /  BACKEND',x,95 if mobile else 120,17 if mobile else 21,accent)]
     size=57 if mobile else 100;namefont=embedded['AX'];namew=measure(namefont,'YOUSOF',size)
     s += [text(namefont,'YOUSOF',x-4,156 if mobile else 228,size,ink)]
     spacing=(namew-measure(namefont,'SELIM',size))/4;penx=x-4
@@ -183,7 +183,7 @@ def header(theme,mobile=False):
     s += [f'<g transform="translate({px} {py}) scale({sc})"><g class="portrait-enter">']
     for c in portrait.findall('s:circle',NS):s += [f'<circle cx="{c.attrib["cx"]}" cy="{c.attrib["cy"]}" r="{c.attrib["r"]}" fill="{ink}"/>']
     s += ['</g></g>']
-    copylines=[('Product engineer. Founder of Bupples.',267 if mobile else 372),('Mobile, web and the details in between.',302 if mobile else 405)]
+    copylines=[('Software Engineering Intern, January to April 2027.',267 if mobile else 372),('Mobile and full-stack. Founder of Bupples.',302 if mobile else 405)]
     for i,(value,y) in enumerate(copylines):
         s += [text(BODY,value,x,y,21 if mobile else 25,ink if i==0 else muted)]
     s += ['</svg>']
