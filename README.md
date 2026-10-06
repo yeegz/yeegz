@@ -74,11 +74,12 @@
 </picture>
 </p>
 
-<p align="center">Photos, strips and video with on-device effects.<br>Live web app; Electron desktop source is available.</p>
+<p align="center">Photos, strips and video with on-device effects.<br>Live web app; Windows 1.0.1 released.</p>
 
 <p align="center">
   <a href="https://photoshoot-yeegz.web.app/app/"><img src="assets/action-live-app.svg" height="42" alt="Open the Photoshoot web app"></a>
   <a href="https://yousofselim.com/work/photoshoot/"><img src="assets/action-case-study.svg" height="42" alt="Read the Photoshoot case study"></a>
+  <a href="https://github.com/yeegz/photoshoot/releases/tag/v1.0.1"><img src="assets/action-play.svg" height="42" alt="Download Photoshoot 1.0.1 for Windows"></a>
   <a href="https://github.com/yeegz/photoshoot"><img src="assets/action-source.svg" height="42" alt="Browse Photoshoot source"></a>
 </p>
 
@@ -104,13 +105,14 @@
 <p align="center">
 <picture>
   <source media="(max-width: 600px)" srcset="assets/selected-codeatlas-mobile.svg">
-  <img src="assets/selected-codeatlas.svg" width="1200" alt="CodeAtlas, change analysis in development. Diagram: code change to evidence map to test selection.">
+  <img src="assets/selected-codeatlas.svg" width="1200" alt="CodeAtlas, change analysis, local implementation on main. Diagram: code change to evidence map to test selection.">
 </picture>
 </p>
 
-<p align="center">TypeScript and JavaScript change analysis with inspectable evidence.<br>Active development; see the implementation status.</p>
+<p align="center">TypeScript and JavaScript change analysis with inspectable evidence.<br>Local CLI and evidence workspace on main; see the implementation status.</p>
 
 <p align="center">
+  <a href="https://yousofselim.com/work/codeatlas/"><img src="assets/action-case-study.svg" height="42" alt="Read the CodeAtlas case study"></a>
   <a href="https://github.com/yeegz/CodeAtlas#current-implementation-status"><img src="assets/action-implementation.svg" height="42" alt="Read CodeAtlas implementation status"></a>
   <a href="https://github.com/yeegz/CodeAtlas"><img src="assets/action-source.svg" height="42" alt="Browse the CodeAtlas implementation source"></a>
 </p>
@@ -139,9 +141,9 @@
 | Project | Current status | Engineering |
 | :--- | :--- | :--- |
 | Bupples | Live on iOS and Android | [Showcase](https://github.com/yeegz/Bupples-showcase) · [Case study](https://yousofselim.com/work/bupples/) |
-| Photoshoot | Live web app; Electron source available | [Source](https://github.com/yeegz/photoshoot) · [Case study](https://yousofselim.com/work/photoshoot/) |
+| Photoshoot | Live web app; Windows 1.0.1 released | [Source](https://github.com/yeegz/photoshoot) · [Case study](https://yousofselim.com/work/photoshoot/) |
 | WayClub | Guided interface demo with fictional data | [Showcase](https://github.com/yeegz/WayClub-showcase) · [Case study](https://yousofselim.com/work/wayclub/) |
-| CodeAtlas | Active development | [Source and implementation status](https://github.com/yeegz/CodeAtlas) |
+| CodeAtlas | Local implementation on main | [Source](https://github.com/yeegz/CodeAtlas) · [Case study](https://yousofselim.com/work/codeatlas/) |
 | Adelante | Live on the App Store | [Showcase](https://github.com/yeegz/adelante-showcase) · [Case study](https://yousofselim.com/work/adelante/) |
 | Fallen Asteri | Playable team project | [Source](https://github.com/yeegz/Fallen-Asteri) |
 
