@@ -77,7 +77,7 @@ projects=[
 ('asteri','Fallen Asteri','Playable team project','Build the world. Feel the fight.',['A Godot platformer built by three.','I set up our repository workflow.'],'Levels · animation · HUD · combat tuning','Godot / GDScript','Gameplay capture')]
 
 for key,name,status,tag,lines,role,stack,caption in projects:
-    s,ink,accent,muted=panel(1200,510,name+' — '+status)
+    s,ink,accent,muted=panel(1200,510,name+', '+status)
     s += ['<defs><pattern id="dots" width="18" height="18" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#9bcfa5" opacity=".12"/></pattern><clipPath id="visual"><rect x="644" y="48" width="514" height="337" rx="14"/></clipPath></defs>',
           '<rect x="1" y="1" width="1198" height="508" rx="16" fill="#111413" stroke="#9bcfa5" stroke-opacity=".25"/>',
           '<rect x="618" y="20" width="562" height="390" fill="url(#dots)"/>',
@@ -106,7 +106,7 @@ print('Built icon buttons and six project presentations with separate destinatio
 
 # Mobile artwork uses a stacked composition instead of shrinking desktop text.
 for key,name,status,tag,lines,role,stack,caption in projects:
-    s,ink,accent,muted=panel(600,710,name+' — '+status)
+    s,ink,accent,muted=panel(600,710,name+', '+status)
     s += ['<rect x="1" y="1" width="598" height="708" rx="16" fill="#111413" stroke="#9bcfa5" stroke-opacity=".3"/>',f'<circle cx="29" cy="34" r="3" fill="{accent}"/>',text(BODY,status,42,41,19,accent),text(DISPLAY,name,25,111,52 if key=='asteri' else 60,ink),text(SERIF,tag,28,160,31,ink)]
     s += [text(BODY,line,28,210+i*33,25,muted) for i,line in enumerate(lines)]
     if key=='bupples':
