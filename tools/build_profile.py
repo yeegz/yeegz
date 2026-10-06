@@ -71,9 +71,9 @@ def phone(name,x,y,w,h):
 projects=[
 ('bupples','Bupples','Live on iOS + Android','Money, made social.',['Shared hangouts, scanned receipts','and clear settlement history.'],'Sole developer · design through release','Flutter / Firebase / Native widgets','Current device captures'),
 ('adelante','Adelante','Live on the App Store','A little forward, every day.',['Motivation made for your home screen,','with native widgets and offline content.'],'Sole developer · native integration','Flutter / SwiftUI / Kotlin','Current app + widget screens'),
-('photoshoot','Photoshoot','Live web app','A photobooth, all yours.',['Capture photos, strips and video','with effects that run on your device.'],'Solo · concept through deployment','TypeScript / Electron / WebGL2','Portfolio product artwork'),
+('photoshoot','Photoshoot','Live web app · Windows 1.0.1','A photobooth, all yours.',['Capture photos, strips and video','with effects that run on your device.'],'Solo · concept through deployment','TypeScript / Electron / WebGL2','Portfolio product artwork'),
 ('wayclub','WayClub','Guided demo','A home for your club.',['Events, members and committee','handovers in one workspace.'],'Product design + full-stack development','Next.js / NestJS / PostgreSQL','Demo capture · fictional sample data'),
-('codeatlas','CodeAtlas','In development','Follow the evidence.',['Map a code change, explain its impact','and select the tests that matter.'],'Architecture + implementation','TypeScript / Static analysis / Test selection','Evidence flow · architecture diagram'),
+('codeatlas','CodeAtlas','Local implementation on main','Follow the evidence.',['Map a code change, explain its impact','and select the tests that matter.'],'Architecture + implementation','TypeScript / Static analysis / Test selection','Evidence flow · architecture diagram'),
 ('asteri','Fallen Asteri','Playable team project','Build the world. Feel the fight.',['A Godot platformer built by three.','I set up our repository workflow.'],'Levels · animation · HUD · combat tuning','Godot / GDScript','Gameplay capture')]
 
 for key,name,status,tag,lines,role,stack,caption in projects:
