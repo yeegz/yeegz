@@ -1,166 +1,152 @@
+<p>
 <picture>
   <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="assets/profile-dark-mobile.svg">
   <source media="(max-width: 600px) and (prefers-color-scheme: light)" srcset="assets/profile-light-mobile.svg">
   <source media="(prefers-color-scheme: dark)" srcset="assets/profile-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="assets/profile-light.svg">
-  <img src="assets/profile-dark.svg" width="1200" alt="Yousof Selim, Software Engineering Intern, January to April 2027. Mobile and full-stack; founder of Bupples.">
+  <img src="assets/profile-light.svg" width="1200" alt="Yousof Selim, Software Engineering student in Subang Jaya, Malaysia. I build and ship real apps. Two are live on the App Store.">
 </picture>
-
-<p align="center">
-  <a href="https://yousofselim.com"><img src="assets/nav-portfolio.svg" height="46" alt="Explore my portfolio"></a>&nbsp;
-  <a href="https://www.linkedin.com/in/ysf-slm/"><img src="assets/nav-linkedin.svg" height="46" alt="Connect on LinkedIn"></a>&nbsp;
-  <a href="mailto:yousofselim2@gmail.com"><img src="assets/nav-email.svg" height="46" alt="Email Yousof"></a>&nbsp;
-  <a href="https://yousofselim.com/Yousof-Selim-Resume.pdf"><img src="assets/nav-resume.svg" height="46" alt="Read my résumé"></a>
 </p>
 
-**Software Engineering Intern, January to April 2027.** Full-time, Klang Valley onsite or remote; a compulsory part of my degree, with no sponsorship needed.
+<p>
+<a href="https://yousofselim.com/Yousof-Selim-Resume.pdf"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/link-resume-dark.svg"><img src="assets/link-resume-light.svg" height="42" alt="Read my résumé"></picture></a>
+<a href="https://yousofselim.com/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/link-portfolio-dark.svg"><img src="assets/link-portfolio-light.svg" height="42" alt="Explore my portfolio"></picture></a>
+<a href="https://yousofselim.com/simple/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/link-recruiters-dark.svg"><img src="assets/link-recruiters-light.svg" height="42" alt="Read the recruiter overview"></picture></a>
+</p>
 
-👋 **I’m Yousof.** I build mobile and full-stack products, from the first user flow through the backend, testing and release.
+I build mobile and full-stack products, from the first user flow through the backend, testing and release. Founder and sole developer of **Bupples**.
 
-📱 Founder and sole developer of **[Bupples](https://yousofselim.com/work/bupples/)**, live on iOS and Android.
+**Available for a full-time internship, 25 January to 23 April 2027.** Based in Subang Jaya, Malaysia; open to remote or on-site roles.
 
-🎓 **BSc (Hons) Software Engineering at Sunway University, in partnership with Lancaster University** · graduating **August 2027**.
+## Selected work
 
-📨 Hiring for January 2027? [Email me](mailto:yousofselim2@gmail.com?subject=Software%20Engineering%20internship%2C%20January%202027) or [read my résumé](https://yousofselim.com/Yousof-Selim-Resume.pdf).
-
+<p>
+<a href="https://yousofselim.com/work/bupples/" aria-label="Read the bupples case study">
 <picture>
-  <source media="(max-width: 600px)" srcset="assets/profile-practice-mobile.svg">
-  <img src="assets/profile-practice.svg" width="1200" alt="Tools I build with: Flutter and Dart, with SwiftUI and Kotlin, for mobile; TypeScript, React and Next.js for web; NestJS, PostgreSQL, Firebase and Java for backend and data.">
+  <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="assets/selected-bupples-dark-mobile.svg">
+  <source media="(max-width: 600px) and (prefers-color-scheme: light)" srcset="assets/selected-bupples-light-mobile.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="assets/selected-bupples-dark.svg">
+  <img src="assets/selected-bupples-light.svg" width="1200" alt="Bupples — shared expenses and clear settlements. Flutter, Firebase and Vertex AI. Current app screenshots show the profile, accent editor and settings.">
 </picture>
+</a>
+</p>
 
-### Selected work
+**Live on iOS and Android.** I designed and built the app, its multi-currency ledger, native integrations and store releases.
 
-<p align="center">
+<p>
+<a href="https://apps.apple.com/my/app/bupples/id6777620291"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/link-app-store-dark.svg"><img src="assets/link-app-store-light.svg" height="42" alt="Download Bupples on the App Store"></picture></a>
+<a href="https://play.google.com/store/apps/details?id=com.bupples.bupples"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/link-google-play-dark.svg"><img src="assets/link-google-play-light.svg" height="42" alt="Download Bupples on Google Play"></picture></a>
+<a href="https://yousofselim.com/work/bupples/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/link-case-study-dark.svg"><img src="assets/link-case-study-light.svg" height="42" alt="Read the Bupples case study"></picture></a>
+<a href="https://github.com/yeegz/Bupples-showcase"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/link-showcase-dark.svg"><img src="assets/link-showcase-light.svg" height="42" alt="Browse the Bupples showcase"></picture></a>
+</p>
+
+<p>
+<a href="https://yousofselim.com/work/adelante/" aria-label="Read the adelante case study">
 <picture>
-  <source media="(max-width: 600px)" srcset="assets/selected-bupples-mobile.svg">
-  <img src="assets/selected-bupples.svg" width="1200" alt="Bupples, shared expenses, live on iOS and Android. Current supplied screenshots.">
+  <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="assets/selected-adelante-dark-mobile.svg">
+  <source media="(max-width: 600px) and (prefers-color-scheme: light)" srcset="assets/selected-adelante-light-mobile.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="assets/selected-adelante-dark.svg">
+  <img src="assets/selected-adelante-light.svg" width="1200" alt="Adelante — a daily quote, right on your home screen. Flutter, SwiftUI and Kotlin. Current screenshots show native widgets and the Today screen.">
 </picture>
+</a>
 </p>
 
-<p align="center">Sole developer, from product design and the ledger to native widgets and store releases.</p>
+**Live on the App Store.** A Flutter app with native widgets and offline content, built to keep working when the app stays closed.
 
-<p align="center">
-  <a href="https://apps.apple.com/my/app/bupples/id6777620291"><img src="assets/action-app-store.svg" height="42" alt="Download Bupples on the App Store"></a>
-  <a href="https://play.google.com/store/apps/details?id=com.bupples.bupples"><img src="assets/action-google-play.svg" height="42" alt="Download Bupples on Google Play"></a>
-  <a href="https://bupples.web.app/"><img src="assets/action-product-site.svg" height="42" alt="Visit the Bupples product site"></a>
-  <a href="https://yousofselim.com/work/bupples/"><img src="assets/action-case-study.svg" height="42" alt="Read the Bupples case study"></a>
-  <a href="https://github.com/yeegz/Bupples-showcase"><img src="assets/action-showcase.svg" height="42" alt="Browse the Bupples showcase"></a>
+<p>
+<a href="https://apps.apple.com/us/app/adelante-daily-quotes/id6816598027"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/link-app-store-dark.svg"><img src="assets/link-app-store-light.svg" height="42" alt="Download Adelante on the App Store"></picture></a>
+<a href="https://yousofselim.com/work/adelante/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/link-case-study-dark.svg"><img src="assets/link-case-study-light.svg" height="42" alt="Read the Adelante case study"></picture></a>
+<a href="https://github.com/yeegz/adelante-showcase"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/link-showcase-dark.svg"><img src="assets/link-showcase-light.svg" height="42" alt="Browse the Adelante showcase"></picture></a>
 </p>
 
-<br>
-
-<p align="center">
+<p>
+<a href="https://yousofselim.com/work/photoshoot/" aria-label="Read the photoshoot case study">
 <picture>
-  <source media="(max-width: 600px)" srcset="assets/selected-adelante-mobile.svg">
-  <img src="assets/selected-adelante.svg" width="1200" alt="Adelante, native motivation widgets. Live on the App Store. Current app and widget screens.">
+  <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="assets/selected-photoshoot-dark-mobile.svg">
+  <source media="(max-width: 600px) and (prefers-color-scheme: light)" srcset="assets/selected-photoshoot-light-mobile.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="assets/selected-photoshoot-dark.svg">
+  <img src="assets/selected-photoshoot-light.svg" width="1200" alt="Photoshoot — your camera, your device, your photos. TypeScript, Electron and WebGL2. The actual red photobooth landing page.">
 </picture>
+</a>
 </p>
 
-<p align="center">A Flutter app with native SwiftUI/WidgetKit and Kotlin integration.<br>Live on the App Store since 4 October 2026.</p>
+**Live web app; Windows 1.0.1 released.** A photobooth with 17 real-time effects. No camera frame leaves the device.
 
-<p align="center">
-  <a href="https://apps.apple.com/us/app/adelante-daily-quotes/id6816598027"><img src="assets/action-app-store.svg" height="42" alt="Download Adelante on the App Store"></a>
-  <a href="https://adelante-yeegz.web.app/"><img src="assets/action-product-site.svg" height="42" alt="Visit the Adelante product site"></a>
-  <a href="https://yousofselim.com/work/adelante/"><img src="assets/action-case-study.svg" height="42" alt="Read the Adelante case study"></a>
-  <a href="https://github.com/yeegz/adelante-showcase"><img src="assets/action-showcase.svg" height="42" alt="Browse the Adelante showcase"></a>
+<p>
+<a href="https://photoshoot-yeegz.web.app/app/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/link-open-app-dark.svg"><img src="assets/link-open-app-light.svg" height="42" alt="Open Photoshoot in your browser"></picture></a>
+<a href="https://github.com/yeegz/photoshoot/releases/tag/v1.0.1"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/link-download-dark.svg"><img src="assets/link-download-light.svg" height="42" alt="Download Photoshoot 1.0.1 for Windows"></picture></a>
+<a href="https://yousofselim.com/work/photoshoot/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/link-case-study-dark.svg"><img src="assets/link-case-study-light.svg" height="42" alt="Read the Photoshoot case study"></picture></a>
+<a href="https://github.com/yeegz/photoshoot"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/link-source-dark.svg"><img src="assets/link-source-light.svg" height="42" alt="Browse the Photoshoot source"></picture></a>
 </p>
-
-<br>
-
-<p align="center">
-<picture>
-  <source media="(max-width: 600px)" srcset="assets/selected-photoshoot-mobile.svg">
-  <img src="assets/selected-photoshoot.svg" width="1200" alt="Photoshoot, a local photobooth. Live web app, shown with the portfolio product artwork.">
-</picture>
-</p>
-
-<p align="center">Photos, strips and video with on-device effects.<br>Live web app; Windows 1.0.1 released.</p>
-
-<p align="center">
-  <a href="https://photoshoot-yeegz.web.app/app/"><img src="assets/action-live-app.svg" height="42" alt="Open the Photoshoot web app"></a>
-  <a href="https://yousofselim.com/work/photoshoot/"><img src="assets/action-case-study.svg" height="42" alt="Read the Photoshoot case study"></a>
-  <a href="https://github.com/yeegz/photoshoot/releases/tag/v1.0.1"><img src="assets/action-play.svg" height="42" alt="Download Photoshoot 1.0.1 for Windows"></a>
-  <a href="https://github.com/yeegz/photoshoot"><img src="assets/action-source.svg" height="42" alt="Browse Photoshoot source"></a>
-</p>
-
-<br>
-
-<p align="center">
-<picture>
-  <source media="(max-width: 600px)" srcset="assets/selected-wayclub-mobile.svg">
-  <img src="assets/selected-wayclub.svg" width="1200" alt="WayClub, club workspaces. Guided demo showing fictional sample data.">
-</picture>
-</p>
-
-<p align="center">Events, members and committee handovers.<br>The guided interface demo uses fictional sample data.</p>
-
-<p align="center">
-  <a href="https://wayclub-live-demo.web.app/home?tour=1"><img src="assets/action-demo.svg" height="42" alt="Try the WayClub guided demo"></a>
-  <a href="https://yousofselim.com/work/wayclub/"><img src="assets/action-case-study.svg" height="42" alt="Read the WayClub case study"></a>
-  <a href="https://github.com/yeegz/WayClub-showcase"><img src="assets/action-showcase.svg" height="42" alt="Browse the WayClub showcase"></a>
-</p>
-
-<br>
-
-<p align="center">
-<picture>
-  <source media="(max-width: 600px)" srcset="assets/selected-codeatlas-mobile.svg">
-  <img src="assets/selected-codeatlas.svg" width="1200" alt="CodeAtlas, change analysis, local implementation on main. Diagram: code change to evidence map to test selection.">
-</picture>
-</p>
-
-<p align="center">TypeScript and JavaScript change analysis with inspectable evidence.<br>Local CLI and evidence workspace on main; see the implementation status.</p>
-
-<p align="center">
-  <a href="https://yousofselim.com/work/codeatlas/"><img src="assets/action-case-study.svg" height="42" alt="Read the CodeAtlas case study"></a>
-  <a href="https://github.com/yeegz/CodeAtlas#current-implementation-status"><img src="assets/action-implementation.svg" height="42" alt="Read CodeAtlas implementation status"></a>
-  <a href="https://github.com/yeegz/CodeAtlas"><img src="assets/action-source.svg" height="42" alt="Browse the CodeAtlas implementation source"></a>
-</p>
-
-<br>
-
-<p align="center">
-<picture>
-  <source media="(max-width: 600px)" srcset="assets/selected-asteri-mobile.svg">
-  <img src="assets/selected-asteri.svg" width="1200" alt="Fallen Asteri, playable team-built Godot platformer. Real gameplay capture.">
-</picture>
-</p>
-
-<p align="center">One of three developers: I set up the repository workflow and built levels, animation, the HUD and combat tuning.</p>
-
-<p align="center">
-  <a href="https://yeegz.itch.io/fallenasteri"><img src="assets/action-play.svg" height="42" alt="Play Fallen Asteri on itch.io"></a>
-  <a href="https://github.com/yeegz/Fallen-Asteri"><img src="assets/action-source.svg" height="42" alt="Browse Fallen Asteri source"></a>
-</p>
-
-<br>
 
 <details>
-<summary>Project details, source and release status</summary>
+<summary><b>Under the hood</b> — engineering notes and more projects</summary>
 
-| Project | Current status | Engineering |
-| :--- | :--- | :--- |
-| Bupples | Live on iOS and Android | [Showcase](https://github.com/yeegz/Bupples-showcase) · [Case study](https://yousofselim.com/work/bupples/) |
-| Photoshoot | Live web app; Windows 1.0.1 released | [Source](https://github.com/yeegz/photoshoot) · [Case study](https://yousofselim.com/work/photoshoot/) |
-| WayClub | Guided interface demo with fictional data | [Showcase](https://github.com/yeegz/WayClub-showcase) · [Case study](https://yousofselim.com/work/wayclub/) |
-| CodeAtlas | Local implementation on main | [Source](https://github.com/yeegz/CodeAtlas) · [Case study](https://yousofselim.com/work/codeatlas/) |
-| Adelante | Live on the App Store | [Showcase](https://github.com/yeegz/adelante-showcase) · [Case study](https://yousofselim.com/work/adelante/) |
-| Fallen Asteri | Playable team project | [Source](https://github.com/yeegz/Fallen-Asteri) |
+### Bupples: a payment that disappeared
 
-Bupples, Adelante and WayClub have public showcases; their application source is private. The portfolio case studies document my contribution, current screenshots and dated verification.
+A simplified settlement plan can ask A to pay C even when the original debts were A → B → C. Reducing only a direct A → C debt found nothing. I changed the settlement path to reduce the original debt edges while preserving everyone’s net balance. Money stays in integer minor units throughout.
+
+[Read the ledger decision and its trade-offs](https://yousofselim.com/work/bupples/#challenges)
+
+### Adelante: widgets that agree without talking
+
+Flutter, WidgetKit and Android RemoteViews run in separate processes. They use the same time-based rotation rule so widgets can advance offline without waiting for the app to open. iOS also receives a precomputed timeline within WidgetKit’s refresh budget.
+
+[Read the native-widget architecture](https://yousofselim.com/work/adelante/#architecture)
+
+### CodeAtlas: from a changed function to a reproduced regression
+
+Maps a code change to the tests that reach it, runs both revisions and signs the evidence. The supported authentication fixture reproduces an expired-session response changing from HTTP 401 to HTTP 500.
+
+<picture>
+  <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="assets/selected-codeatlas-dark-mobile.svg">
+  <source media="(max-width: 600px) and (prefers-color-scheme: light)" srcset="assets/selected-codeatlas-light-mobile.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="assets/selected-codeatlas-dark.svg">
+  <img src="assets/selected-codeatlas-light.svg" width="1200" alt="CodeAtlas evidence workspace on a fixture repository. Local tooling, not a hosted service.">
+</picture>
+
+**Local CLI and evidence workspace**, built with TypeScript, Node.js and Vitest. Inferred relationships and observed behavior are shown separately, with a replay command for the supported fixture.
+
+[Case study](https://yousofselim.com/work/codeatlas/) · [Implementation status](https://github.com/yeegz/CodeAtlas#current-implementation-status) · [Source](https://github.com/yeegz/CodeAtlas)
+
+### WayClub: shared infrastructure, separate club data
+
+A workspace for student clubs to plan events, approve proposals and manage registrations. I built the Next.js web app, NestJS API and PostgreSQL schema, with transaction-scoped tenant context and database-enforced access policies.
+
+<picture>
+  <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="assets/selected-wayclub-dark-mobile.svg">
+  <source media="(max-width: 600px) and (prefers-color-scheme: light)" srcset="assets/selected-wayclub-light-mobile.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="assets/selected-wayclub-dark.svg">
+  <img src="assets/selected-wayclub-light.svg" width="1200" alt="WayClub club workspace with events, proposals and committee members. The guided interface demo uses fictional sample data.">
+</picture>
+
+**Guided interface demo with fictional sample data.** The case study explains the isolation constraints and the trade-off of failing closed.
+
+[Case study](https://yousofselim.com/work/wayclub/) · [Try the demo](https://wayclub-live-demo.web.app/home?tour=1) · [Showcase](https://github.com/yeegz/WayClub-showcase)
+
+Bupples, Adelante and WayClub have public showcases; their application source is private.
 
 </details>
 
-<picture>
-  <source media="(max-width: 600px)" srcset="assets/profile-contact-mobile.svg">
-  <img src="assets/profile-contact.svg" width="1200" alt="Hiring interns for January 2027? Email me or read my résumé.">
-</picture>
+**Tools I build with:** Flutter, Dart, SwiftUI, Kotlin, TypeScript, React, Next.js, NestJS, PostgreSQL and Firebase. Testing and delivery with Vitest, Playwright and GitHub Actions.
 
-<p align="center">
-  <a href="mailto:yousofselim2@gmail.com?subject=Software%20Engineering%20internship%2C%20January%202027"><img src="assets/nav-email.svg" height="46" alt="Email Yousof about an internship"></a>
-  <a href="https://yousofselim.com/Yousof-Selim-Resume.pdf"><img src="assets/nav-resume.svg" height="46" alt="Read Yousof’s résumé"></a>
-  <a href="https://yousofselim.com"><img src="assets/nav-portfolio.svg" height="46" alt="Explore Yousof’s portfolio"></a>
-  <a href="https://www.linkedin.com/in/ysf-slm/"><img src="assets/nav-linkedin.svg" height="46" alt="Connect with Yousof on LinkedIn"></a>
+<details>
+<summary>Take a detour</summary>
+
+My portfolio has [a working terminal](https://yousofselim.com/terminal/). Start with `help` and see where it takes you.
+
+Or play **[Fallen Asteri](https://yeegz.itch.io/fallenasteri)**, a Godot platformer built by three developers. I set up the repository workflow and worked on levels, animation, the HUD and combat tuning. [Source](https://github.com/yeegz/Fallen-Asteri).
+
+</details>
+
+## Let’s build something useful
+
+Hiring an intern for January 2027? I’d like to hear what your team is building.
+
+<p>
+<a href="mailto:yousofselim2@gmail.com?subject=Software%20Engineering%20internship%2C%20January%202027"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/link-email-dark.svg"><img src="assets/link-email-light.svg" height="42" alt="Email Yousof about an internship"></picture></a>
+<a href="https://www.linkedin.com/in/ysf-slm/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/link-linkedin-dark.svg"><img src="assets/link-linkedin-light.svg" height="42" alt="Connect with Yousof on LinkedIn"></picture></a>
 </p>
 
-<sub>Selected work updated October 2026. [About this profile’s artwork](tools/README.md).</sub>
+<sub>Sunway University / Lancaster University · Graduating August 2027.<br>Compulsory university internship; placement requirements to be confirmed with Sunway.</sub>
+
+<sub>Updated October 2026. [About the artwork](tools/README.md).</sub>
