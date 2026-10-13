@@ -1,215 +1,609 @@
-"""Build GitHub-safe artwork from the October 2026 portfolio design.
+"""Build the GitHub profile README and its artwork from the yousofselim.com design.
 
 Run: python3 tools/build_profile.py
-Requires fonttools and brotli. All type is outlined and all media embedded,
-so GitHub's image renderer never needs an external font, image or script.
+Needs fonttools, brotli, uharfbuzz and Pillow (python3 -m pip install fonttools brotli uharfbuzz pillow).
+
+Every SVG is drawn at the size GitHub shows it, so a 14px label in the source
+is a 14px label on screen. Three widths cover the README column:
+
+  phone  320  viewports up to 591px, and 768-879px (sidebar layout)
+  mid    600  everything else up to 1153px
+  wide   846  1154px and up (846px is the README column from 1280px)
+
+Each width is used only where the column is at least ~85% of it, and art is
+never scaled up, so type stays within 15% of its drawn size.
+
+Backgrounds are transparent, so the art sits on GitHub's own page colour in
+every theme; only media panels carry a fill. Type is Hanken Grotesk, shaped
+with HarfBuzz (kerning included) and outlined to paths. Media is embedded.
+Nothing loads at view time, and there are no scripts or animation.
+
+The script also writes README.md, so copy, alt text and image names cannot drift.
 """
 import base64
+import io
 from functools import lru_cache
 from html import escape
 from pathlib import Path
-import xml.etree.ElementTree as ET
+
+import uharfbuzz as hb
 from fontTools.pens.svgPathPen import SVGPathPen
-from fontTools.pens.transformPen import TransformPen
 from fontTools.ttLib import TTFont
-from fontTools.varLib.instancer import instantiateVariableFont
+from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[1]
 ASSETS = ROOT / "assets"
 MEDIA = ROOT / "tools/profile-media"
 FONT = ROOT / "tools/profile-fonts/HankenGrotesk.woff2"
-# Exact paper, ink, secondary text and accent values from styles.css.
+
+# Portfolio colours (styles.css and ui/css/00-tokens.css). Hairlines are ink at
+# a fixed opacity, like the site's color-mix() hairlines, so they suit any ground.
 THEMES = {
-    "light": dict(paper="#f3efe6", ink="#17150f", muted="#5c574c", accent="#a83c12", surface="#faf8f4", edge="#d6d2c8"),
-    "dark": dict(paper="#12110e", ink="#f1ece1", muted="#a7a093", accent="#f28b63", surface="#24231f", edge="#393730"),
+    "light": dict(ink="#17150f", muted="#5c574c", panel="#e4e0d7", on_ink="#f3efe6"),
+    "dark": dict(ink="#f1ece1", muted="#a7a093", panel="#070705", on_ink="#12110e"),
+}
+HAIR, HAIR_STRONG = .12, .20
+TIERS = {"phone": 320, "mid": 600, "wide": 846}
+# Where each width is NOT shown. These sources must not mention the colour
+# scheme: GitHub's <themed-picture> rewrites every source that does when a
+# signed-in visitor has picked a theme, which would erase the width condition.
+HIDE = {
+    "phone": "(min-width: 592px) and (max-width: 767px), (min-width: 880px)",
+    "mid": "(max-width: 591px), (min-width: 768px) and (max-width: 879px), (min-width: 1154px)",
+    "wide": "(max-width: 1153px)",
 }
 
+SITE = "https://yousofselim.com"
+RESUME = f"{SITE}/Yousof-Selim-Resume.pdf"
+
+# Stroke icons from the portfolio (tools/build.mjs): 24px grid, 1.6 stroke.
+ICONS = {
+    "doc": '<path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9Z"/><path d="M14 3v6h6M8 13h8m-8 4h5"/>',
+    "globe": '<circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4" ry="9"/><path d="M3 12h18"/>',
+    "github": '<path d="M9 19c-4 1-4-2-6-2m12 5v-4a3.5 3.5 0 0 0-1-3c3-.3 6-1.5 6-6a4.5 4.5 0 0 0-1.3-3.1A4 4 0 0 0 18.6 2S17.4 1.6 15 3a13 13 0 0 0-6 0C6.6 1.6 5.4 2 5.4 2a4 4 0 0 0-.1 3.9A4.5 4.5 0 0 0 4 9c0 4.5 3 5.7 6 6a3.5 3.5 0 0 0-1 3v4"/>',
+    "linkedin": '<rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7 10v7m0-10v.1M11 17v-7m0 3a3 3 0 0 1 6 0v4"/>',
+    "play": '<path d="m5 3 15 9L5 21Z"/><path d="m5 3 10 12m-10 6 10-12"/>',
+    "appstore": '<rect x="3" y="3" width="18" height="18" rx="5"/><path d="m10 7 7 12M14 7 7 19M6 15h12"/>',
+    "mail": '<rect x="3" y="5" width="18" height="14" rx="3"/><path d="m3 7 9 6 9-6"/>',
+    "download": '<path d="M12 4v11m-4.5-4.5L12 15l4.5-4.5M5 20h14"/>',
+    "pin": '<path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/>',
+}
+
+PROJECTS = [
+    dict(key="bupples", name="Bupples", status="Live on the App Store and Google Play",
+         blurb="Shared expenses, receipt review and settlement plans, backed by a multi-currency ledger.",
+         chips=["Flutter", "Firebase", "Vertex AI"],
+         phones=["bupples-profile.webp", "bupples-accent.webp", "bupples-settings.webp"],
+         alt="the profile, accent editor and settings screens",
+         links=[("case-study", f"{SITE}/work/bupples/"),
+                ("app-store", "https://apps.apple.com/my/app/bupples/id6777620291"),
+                ("google-play", "https://play.google.com/store/apps/details?id=com.bupples.bupples"),
+                ("showcase", "https://github.com/yeegz/Bupples-showcase")]),
+    dict(key="adelante", name="Adelante", status="Live on the App Store",
+         blurb="Daily quotes as iPhone and Apple Watch widgets, with one rotation rule across Dart, Swift and Kotlin.",
+         chips=["Flutter", "Swift/SwiftUI", "Kotlin"],
+         phones=["adelante-widgets.webp", "adelante-today.webp", "adelante-discover.webp"],
+         alt="the widget gallery, Today and Discover screens",
+         links=[("case-study", f"{SITE}/work/adelante/"),
+                ("app-store", "https://apps.apple.com/us/app/adelante-daily-quotes/id6816598027"),
+                ("showcase", "https://github.com/yeegz/adelante-showcase")]),
+    dict(key="wayclub", name="WayClub", status="Guided demo with sample data",
+         blurb="A workspace for student clubs to plan events, approve proposals and manage registrations, "
+               "with PostgreSQL policies that keep each club’s data separate.",
+         chips=["Next.js", "NestJS", "PostgreSQL"],
+         shot="wayclub-workspace.webp",
+         alt="a club workspace with events, proposals and committee members, using fictional data",
+         links=[("case-study", f"{SITE}/work/wayclub/"),
+                ("demo", "https://wayclub-live-demo.web.app/home?tour=1"),
+                ("showcase", "https://github.com/yeegz/WayClub-showcase")]),
+    dict(key="photoshoot", name="Photoshoot", status="Live in the browser · Windows 1.0.1",
+         blurb="A photobooth with 17 real-time WebGL2 effects, where no camera frame leaves the device.",
+         chips=["TypeScript", "Electron", "MediaPipe"],
+         shot="photoshoot-landing.webp",
+         alt="the red photobooth landing page",
+         links=[("case-study", f"{SITE}/work/photoshoot/"),
+                ("open-app", "https://photoshoot-yeegz.web.app/app/"),
+                ("windows", "https://github.com/yeegz/photoshoot/releases/tag/v1.0.1"),
+                ("source", "https://github.com/yeegz/photoshoot")]),
+    dict(key="codeatlas", name="CodeAtlas", status="Local CLI and workspace",
+         blurb="Maps a code change to the tests that reach it, runs both revisions and signs the evidence.",
+         chips=["TypeScript", "Node.js", "Vitest"],
+         shot="codeatlas-workspace.webp",
+         alt="the evidence workspace on a fixture repository",
+         links=[("case-study", f"{SITE}/work/codeatlas/"),
+                ("source", "https://github.com/yeegz/CodeAtlas")]),
+]
+
+# Text links under each project: (label, icon, primary, alt with NAME placeholder).
+LINKS = {
+    "case-study": ("Case study", "doc", True, "Read the NAME case study"),
+    "app-store": ("App Store", "appstore", False, "Get NAME on the App Store"),
+    "google-play": ("Google Play", "play", False, "Get NAME on Google Play"),
+    "showcase": ("Showcase", "github", False, "Browse the NAME showcase on GitHub"),
+    "demo": ("Try the demo", "globe", False, "Try the NAME demo"),
+    "open-app": ("Open the app", "globe", False, "Open NAME in your browser"),
+    "windows": ("Windows", "download", False, "Download NAME 1.0.1 for Windows"),
+    "source": ("Source", "github", False, "Browse the NAME source on GitHub"),
+}
+
+# Pill buttons: (label, icon or None, primary).
+BUTTONS = {
+    "resume": ("Résumé", None, True),
+    "recruiters": ("For recruiters", "doc", False),
+    "portfolio": ("Portfolio", "globe", False),
+    "email": ("Email me", "mail", True),
+    "linkedin": ("LinkedIn", "linkedin", False),
+}
+
+SKILLS = [
+    ("Mobile", ["Flutter", "Dart", "Riverpod", "Swift/SwiftUI", "Kotlin"]),
+    ("Backend and data", ["TypeScript", "NestJS", "PostgreSQL", "Firebase", "REST APIs"]),
+    ("Web", ["React", "Next.js", "JavaScript", "HTML/CSS", "WebGL2", "Electron"]),
+    ("Testing and delivery", ["Flutter tests", "Vitest", "Playwright", "Firebase Emulator Suite",
+                              "GitHub Actions", "App Store and Google Play releases"]),
+    ("Also", ["Python", "Java (working knowledge)", "Vertex AI and Gemini", "MediaPipe", "Git"]),
+]
+
+
+# --- Type -----------------------------------------------------------------
 
 @lru_cache
-def font(weight):
-    return instantiateVariableFont(TTFont(FONT), {"wght": weight}, inplace=True)
-
-
-def text(value, x, y, size, color, weight=400, tracking=0):
-    """Outline Hanken Grotesk; fail instead of emitting missing glyphs."""
-    f = font(weight)
-    glyphs, cmap = f.getGlyphSet(), f.getBestCmap()
-    scale = size / f["head"].unitsPerEm
-    paths = []
-    for char in value:
-        if ord(char) not in cmap:
-            raise ValueError(f"Missing glyph: {char!r}")
-        glyph = glyphs[cmap[ord(char)]]
-        pen = SVGPathPen(glyphs)
-        glyph.draw(TransformPen(pen, (scale, 0, 0, -scale, x, y)))
-        paths.append(pen.getCommands())
-        x += glyph.width * scale + tracking
-    return f'<path fill="{color}" d="{" ".join(paths)}"/>'
-
-
-def rect(x, y, width, height, fill, radius=20, stroke=None):
-    edge = f' stroke="{stroke}"' if stroke else ""
-    return f'<rect x="{x}" y="{y}" width="{width}" height="{height}" rx="{radius}" fill="{fill}"{edge}/>'
+def hb_face():
+    font = TTFont(FONT)
+    font.flavor = None  # HarfBuzz reads TrueType, not WOFF2
+    data = io.BytesIO()
+    font.save(data)
+    return hb.Face(hb.Blob(data.getvalue()))
 
 
 @lru_cache
-def image_data(name):
-    return "data:image/webp;base64," + base64.b64encode((MEDIA / name).read_bytes()).decode()
+def hb_font(weight):
+    font = hb.Font(hb_face())
+    font.set_variations({"wght": weight})
+    return font
 
 
-def image(name, x, y, width, height, key, radius=14, fit="meet"):
-    return (
-        f'<defs><clipPath id="{key}">{rect(x, y, width, height, "white", radius)}</clipPath></defs>'
-        f'<image x="{x}" y="{y}" width="{width}" height="{height}" '
-        f'preserveAspectRatio="xMidYMid {fit}" clip-path="url(#{key})" href="{image_data(name)}"/>'
-    )
+UPEM = 1000
+CAP = .697  # cap height / em, from OS/2
 
 
-def panel(width, height, title, theme):
-    return [
-        f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" '
-        f'viewBox="0 0 {width} {height}" role="img"><title>{escape(title)}</title>',
-        rect(.5, .5, width - 1, height - 1, theme["paper"], 24, theme["edge"]),
-    ]
+def shape(value, weight):
+    font = hb_font(weight)
+    buf = hb.Buffer()
+    buf.add_str(value)
+    buf.guess_segment_properties()
+    hb.shape(font, buf, {"kern": True, "liga": True})
+    for info in buf.glyph_infos:
+        if info.codepoint == 0:
+            raise ValueError(f"Missing glyph in {value!r}")
+    return font, buf.glyph_infos, buf.glyph_positions
 
 
-def save(name, parts):
-    (ASSETS / name).write_text("".join(parts) + "</svg>\n")
+def measure(value, size, weight=400, track=0.0):
+    _, infos, pos = shape(value, weight)
+    return sum(p.x_advance for p in pos) * size / UPEM + track * size * len(infos)
 
 
-def header(theme_name, mobile):
-    t = THEMES[theme_name]
-    w, h = (600, 560) if mobile else (1200, 430)
-    s = panel(w, h, "Yousof Selim. Software Engineering student. I build and ship real apps. Two are live on the App Store. Subang Jaya, Malaysia.", t)
-    if mobile:
-        s += [
-            text("Yousof", 32, 85, 48, t["ink"], 600, -.6),
-            text("Selim", 32, 139, 48, t["ink"], 600, -.6),
-            text("Software Engineering", 32, 204, 24, t["muted"]),
-            text("student", 32, 236, 24, t["muted"]),
-            image("yousof-portrait.webp", 382, 32, 186, 268, "portrait", 18, "slice"),
-            text("I build and ship real apps.", 32, 368, 43, t["ink"], 600, -.6),
-            text("Two are live on the", 32, 422, 43, t["muted"], 600, -.6),
-            text("App Store.", 32, 472, 43, t["muted"], 600, -.6),
-            text("Subang Jaya, Malaysia", 32, 529, 22, t["muted"]),
-        ]
-    else:
-        s += [
-            text("Yousof Selim", 48, 78, 36, t["ink"], 600, -.4),
-            text("Software Engineering student", 48, 116, 24, t["muted"]),
-            text("I build and ship", 48, 218, 66, t["ink"], 600, -1.2),
-            text("real apps.", 48, 288, 66, t["ink"], 600, -1.2),
-            text("Two are live on the App Store.", 48, 340, 31, t["muted"], 500, -.2),
-            text("Subang Jaya, Malaysia", 48, 390, 22, t["muted"]),
-            image("yousof-portrait.webp", 832, 28, 340, 374, "portrait", 20, "slice"),
-        ]
-    save(f'profile-{theme_name}{"-mobile" if mobile else ""}.svg', s)
+def num(v):
+    return f"{v:.2f}".rstrip("0").rstrip(".")
 
 
-def phones(key, theme_name, mobile):
-    t = THEMES[theme_name]
-    w, h = ((600, 600) if mobile else (1200, 460)) if key == "bupples" else ((600, 520) if mobile else (1200, 380))
-    names = {
-        "bupples": ["bupples-profile.webp", "bupples-accent.webp", "bupples-settings.webp"],
-        "adelante": ["adelante-widgets.webp", "adelante-today.webp", "adelante-discover.webp"],
-    }[key]
-    title = "Bupples: profile, accent editor and settings" if key == "bupples" else "Adelante: native widgets, Today and Discover"
-    s = panel(w, h, title, t)
-    name = "Bupples" if key == "bupples" else "Adelante"
-    lines = ["Shared expenses.", "Clear settlements."] if key == "bupples" else ["A daily quote,", "right on your home screen."]
-    stack = "Flutter / Firebase / Vertex AI" if key == "bupples" else "Flutter / SwiftUI / Kotlin"
-    x = 32 if mobile else 48
-    s += [text(name, x, 72 if mobile else 110, 48 if mobile else 58, t["ink"], 600, -.7)]
-    if mobile:
-        line = "Shared expenses. Clear settlements." if key == "bupples" else "A daily quote, right on your home screen."
-        s += [text(line, x, 116, 25, t["muted"])]
-    else:
-        s += [text(line, x, 180 + i * 40, 32, t["muted"], 400, -.2) for i, line in enumerate(lines)]
-    s += [text(stack, x, h - 28 if mobile else h - 46, 21, t["muted"])]
-    # Complete screenshots, arranged around the product instead of repeating a gallery strip.
-    if key == "bupples":
-        placements = [(34, 198, 150), (416, 198, 150), (211, 156, 178)] if mobile else [(635, 106, 135), (1010, 106, 135), (806, 62, 164)]
-        screens = [names[0], names[2], names[1]]
-    else:
-        placements = [(130, 149, 142), (328, 149, 142)] if mobile else [(694, 38, 139), (916, 38, 139)]
-        screens = [names[0], names[1]]
-    for (x, y, width), name in zip(placements, screens):
-        height = width * (2796 / 1290 if key == "bupples" else 1955 / 900)
-        s += [rect(x - 3, y - 3, width + 6, height + 6, t["surface"], 18, t["edge"]),
-              image(name, x, y, width, height, f"screen-{x}", 15)]
-    save(f'selected-{key}-{theme_name}{"-mobile" if mobile else ""}.svg', s)
+GLYPHS = {}  # (weight, glyph id) -> path id, for the SVG being built
 
 
-def workspace(key, theme_name, mobile):
-    t = THEMES[theme_name]
-    w = 600 if mobile else 1200
-    # Preserve entire screenshots and their aspect ratios inside the paper frame.
-    source, ratio, title = {
-        "photoshoot": ("photoshoot-landing.webp", 1.6, "Photoshoot photobooth landing page"),
-        "wayclub": ("wayclub-workspace.webp", 1600 / 1100, "WayClub guided interface demo with fictional club data"),
-        "codeatlas": ("codeatlas-workspace.webp", 1.6, "CodeAtlas evidence workspace on a fixture repository"),
-    }[key]
-    image_w = 552 if mobile else (560 if key == "photoshoot" else 800)
-    image_h = image_w / ratio
-    padding = 24 if mobile else 28
-    h = (552 if mobile else 420) if key == "photoshoot" else round(image_h + padding * 2)
-    s = panel(w, h, title, t)
-    x = (w - image_w) / 2
-    if key == "photoshoot":
-        x = 24 if mobile else 592
-        padding = 150 if mobile else 35
-        s += [text("Photoshoot", 32 if mobile else 48, 72 if mobile else 110, 48 if mobile else 58, t["ink"], 600, -.7)]
-        if mobile:
-            s += [text("Your camera. Your device. Your photos.", 32, 116, 25, t["muted"])]
+@lru_cache(maxsize=None)
+def outline(weight, gid):
+    pen = SVGPathPen(None, ntos=lambda v: num(round(v, 1)))
+    hb_font(weight).draw_glyph_with_pen(gid, pen)
+    return pen.getCommands()
+
+
+def text(value, x, y, size, color, weight=400, track=0.0):
+    """Shaped, kerned and outlined. Each glyph is defined once per SVG in font
+    units and placed with <use>, which keeps files small. `track` is in em."""
+    _, infos, pos = shape(value, weight)
+    uses, ux = [], 0
+    for info, p in zip(infos, pos):
+        if outline(weight, info.codepoint):
+            ref = GLYPHS.setdefault((weight, info.codepoint), f"g{len(GLYPHS):x}")
+            dy = f' y="{p.y_offset}"' if p.y_offset else ""  # font units, y-up inside the flip
+            uses.append(f'<use href="#{ref}" x="{num(ux + p.x_offset)}"{dy}/>')
+        ux += p.x_advance + track * UPEM
+    s = f"{size / UPEM:.5f}".rstrip("0")
+    return f'<g fill="{color}" transform="translate({num(x)} {num(y)}) scale({s} -{s})">{"".join(uses)}</g>'
+
+
+def lines_for(tokens, joiner, size, weight, width, track):
+    lines, current = [], []
+    for token in tokens:
+        if current and measure(joiner.join(current + [token]), size, weight, track) > width:
+            lines.append(current)
+            current = [token]
         else:
-            s += [text("Your camera. Your device.", 48, 180, 32, t["muted"]), text("Your photos.", 48, 220, 32, t["muted"])]
-        s += [text("TypeScript / Electron / WebGL2", 32 if mobile else 48, h - 24 if mobile else 374, 21, t["muted"])]
-    s += [rect(x - 1, padding - 1, image_w + 2, image_h + 2, t["surface"], 15, t["edge"]),
-          image(source, x, padding, image_w, image_h, "workspace", 14)]
-    save(f'selected-{key}-{theme_name}{"-mobile" if mobile else ""}.svg', s)
+            current.append(token)
+    return [joiner.join(line) for line in lines + [current]]
 
 
-def button(key, label, mark, theme_name, primary=False):
-    t = THEMES[theme_name]
-    bg, fg = (t["ink"], t["paper"]) if primary else (t["paper"], t["ink"])
-    f = font(500)
-    glyphs, cmap = f.getGlyphSet(), f.getBestCmap()
-    label_width = sum(glyphs[cmap[ord(c)]].width for c in label) * 20 / f["head"].unitsPerEm
-    width = round(label_width + 76)
-    icon_root = ET.parse(ROOT / "tools/profile-icons" / f"{mark}.svg").getroot()
-    paths = "".join(ET.tostring(child, encoding="unicode") for child in icon_root)
-    s = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="48" viewBox="0 0 {width} 48" role="img"><title>{label}</title>',
-         rect(1, 1, width - 2, 46, bg, 23, t["ink"] if primary else t["edge"]),
-         f'<g transform="translate(19 14) scale(1.25)" fill="{fg}">{paths}</g>',
-         text(label, 50, 31, 20, fg, 500)]
-    save(f"link-{key}-{theme_name}.svg", s)
+def wrap(value, size, weight, width, track=0.0, joiner=" "):
+    """Greedy wrap, then balanced like CSS text-wrap: balance: the narrowest
+    width that keeps the same number of lines. A list wraps between items."""
+    tokens = value if isinstance(value, list) else value.split(" ")
+    lines = lines_for(tokens, joiner, size, weight, width, track)
+    if len(lines) > 1:
+        lo, hi = width / 2, width
+        for _ in range(14):
+            mid = (lo + hi) / 2
+            if len(lines_for(tokens, joiner, size, weight, mid, track)) > len(lines):
+                lo = mid
+            else:
+                hi = mid
+        lines = lines_for(tokens, joiner, size, weight, hi, track)
+    return lines
+
+
+# --- Drawing ----------------------------------------------------------------
+
+def attrs(**kw):
+    return "".join(f' {k.replace("_", "-")}="{num(v) if isinstance(v, float) else v}"' for k, v in kw.items() if v is not None)
+
+
+def rect(x, y, w, h, r, **kw):
+    return f"<rect{attrs(x=float(x), y=float(y), width=float(w), height=float(h), rx=float(r))}{attrs(**kw)}/>"
+
+
+def rule(y, w, color):
+    return f'<path d="M0 {num(y)}H{num(w)}" stroke="{color}" stroke-opacity="{HAIR}"/>'
+
+
+def icon(name, x, y, size, color):
+    return (f'<g transform="translate({num(x)} {num(y)}) scale({num(size / 24)})" fill="none" stroke="{color}" '
+            f'stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">{ICONS[name]}</g>')
+
+
+@lru_cache
+def media(name, width):
+    """Embed a source image at 2x its drawn width (never larger than the source)."""
+    img = Image.open(MEDIA / name)
+    if img.width > width * 2:
+        img = img.resize((round(width * 2), round(img.height * width * 2 / img.width)), Image.LANCZOS)
+    data = io.BytesIO()
+    img.save(data, "WEBP", quality=82, method=6)
+    return "data:image/webp;base64," + base64.b64encode(data.getvalue()).decode()
+
+
+CLIPS = [0]
+
+
+def clip_id():
+    CLIPS[0] += 1
+    return f"c{CLIPS[0]}"
+
+
+def image(name, x, y, w, h, r, align="xMidYMid slice"):
+    cid = clip_id()
+    return (f'<clipPath id="{cid}">{rect(x, y, w, h, r)}</clipPath>'
+            f'<image{attrs(x=float(x), y=float(y), width=float(w), height=float(h))} preserveAspectRatio="{align}" '
+            f'clip-path="url(#{cid})" href="{media(name, round(w))}"/>')
+
+
+def svg(name, w, h, title, body):
+    defs = "".join(f'<path id="{ref}" d="{outline(*key)}"/>' for key, ref in GLYPHS.items())
+    CLIPS[0] = 0
+    GLYPHS.clear()
+    h = round(h)
+    out = (f'<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" viewBox="0 0 {w} {h}" '
+           f'role="img" aria-label="{escape(title)}"><title>{escape(title)}</title>'
+           f'<defs>{defs}</defs>{"".join(body)}</svg>\n')
+    (ASSETS / name).write_text(out)
+
+
+# --- Components -------------------------------------------------------------
+
+def pill(y, h, parts, t, size, pad):
+    """The availability pill: runs of (text, colour key, weight) on a hairline."""
+    gap = size * .45
+    width = pad * 2 + sum(measure(v, size, wt) for v, _, wt in parts) + gap * (len(parts) - 1)
+    body = [rect(.5, y + .5, width - 1, h - 1, (h - 1) / 2, fill="none", stroke=t["ink"], stroke_opacity=HAIR_STRONG)]
+    x, base = pad, y + h / 2 + size * CAP / 2
+    for v, colour, wt in parts:
+        body.append(text(v, x, base, size, t[colour], wt))
+        x += measure(v, size, wt) + gap
+    return body, width
+
+
+def hero(theme, tier):
+    t, W = THEMES[theme], TIERS[tier]
+    title = ("Yousof Selim, Software Engineering student. I build and ship real apps. Two are live on the "
+             "App Store. Available for an internship, 25 January to 23 April 2027. Subang Jaya, Malaysia.")
+    lines = [("I build and", "ink"), ("ship real apps.", "ink"), ("Two are live on", "muted"), ("the App Store.", "muted")]
+    if tier == "phone":
+        # No portrait: on narrow screens GitHub shows the avatar just above the README.
+        body = [text("Yousof Selim", 0, 18, 15, t["ink"], 500), text("Software Engineering student", 0, 39, 15, t["muted"])]
+        size, lh = 32, 35
+        first = 39 + 22 + size * CAP
+        pill_size, pill_h, pad = 12.5, 30, 11
+    else:
+        name = 17 if tier == "wide" else 16
+        body = [text("Yousof Selim", 0, 20, name, t["ink"], 500),
+                text(" · Software Engineering student", measure("Yousof Selim", name, 500), 20, name, t["muted"])]
+        size, lh = (46, 50) if tier == "wide" else (38, 42)
+        first = 20 + 26 + size * CAP
+        pill_size, pill_h, pad = 13, 32, 12
+    for i, (value, colour) in enumerate(lines):
+        body.append(text(value, 0, first + i * lh, size, t[colour], 600, -.025))
+    pill_y = first + 3 * lh + size * .26 + 22
+    parts = [("Available for an internship", "muted", 400), ("25 January to 23 April 2027", "ink", 500)]
+    if pad * 2 + sum(measure(v, pill_size, wt) for v, _, wt in parts) + pill_size * .45 > W:
+        parts = [("Internship", "muted", 400), ("25 January to 23 April 2027", "ink", 500)]
+    pill_body, _ = pill(pill_y, pill_h, parts, t, pill_size, pad)
+    body += pill_body
+    loc = 13 if tier == "phone" else 13.5
+    loc_base = pill_y + pill_h + 24 + loc * CAP
+    if tier != "phone":
+        # Portrait: a hairline frame, a ring of page colour, then the photo, as on the site.
+        iw, frame_r, img_r = (250, 22, 15) if tier == "wide" else (196, 19, 13)
+        ih, pad = iw / .8, 7
+        fw, fh = iw + pad * 2, ih + pad * 2
+        body += [rect(W - fw + .5, .5, fw - 1, fh - 1, frame_r, fill="none", stroke=t["ink"], stroke_opacity=HAIR_STRONG),
+                 image("yousof-portrait.webp", W - fw + pad, pad, iw, ih, img_r)]
+        loc_base = max(loc_base, fh - 3)
+    body += [icon("pin", -1, loc_base - loc * CAP / 2 - 8, 16, t["muted"]),
+             text("Subang Jaya, Malaysia", 21, loc_base, loc, t["muted"])]
+    svg(f"hero-{theme}-{tier}.svg", W, loc_base + 4, title, body)
+    return title
+
+
+def section_head(title, lead, t, tier):
+    W = TIERS[tier]
+    size, lead_size = {"wide": (30, 17), "mid": (28, 16), "phone": (24, 15)}[tier]
+    base = 30 + size * CAP
+    body = [text(title, 0, base, size, t["ink"], 600, -.02)]
+    base += 14
+    for value in wrap(lead, lead_size, 400, W):
+        base += lead_size * 1.55
+        body.append(text(value, 0, base, lead_size, t["muted"]))
+    return body, base + 6
+
+
+def heading(key, title, lead, theme, tier):
+    body, h = section_head(title, lead, THEMES[theme], tier)
+    svg(f"head-{key}-{theme}-{tier}.svg", TIERS[tier], h, f"{title} {lead}", body)
+
+
+def chips(values, y, t, size):
+    h, pad, gap = (28, 10, 8) if size >= 13 else (26, 9, 7)
+    body, x = [], 0
+    for value in values:
+        w = measure(value, size, 500) + pad * 2
+        body += [rect(x + .5, y + .5, w - 1, h - 1, 6, fill="none", stroke=t["ink"], stroke_opacity=HAIR_STRONG),
+                 text(value, x + pad, y + h / 2 + size * CAP / 2, size, t["ink"], 500)]
+        x += w + gap
+    return body, h
+
+
+def phones(names, x, y, w, h, t):
+    """Three screens, the middle one in front, bleeding off the panel's lower edge (the site's media panel)."""
+    cid = clip_id()
+    body = [rect(x, y, w, h, 14, fill=t["panel"]),
+            f'<clipPath id="{cid}">{rect(x, y, w, h, 14)}</clipPath><g clip-path="url(#{cid})">']
+    cw, sw = h * .55, h * .49
+    cx = x + (w - cw) / 2
+    spots = [(cx - sw * .64, y + h * .24, sw, names[0]), (cx + cw - sw * .36, y + h * .24, sw, names[2]),
+             (cx, y + h * .087, cw, names[1])]
+    for px, py, pw, name in spots:
+        ph, bezel = pw * 1300 / 600, pw * .028
+        body += [rect(px - bezel, py - bezel, pw + bezel * 2, ph + bezel * 2, pw * .16, fill="#050505",
+                      stroke="#ffffff", stroke_opacity=.14),
+                 image(name, px, py, pw, ph, pw * .13)]
+    body += ["</g>", rect(x + .5, y + .5, w - 1, h - 1, 13.5, fill="none", stroke=t["ink"], stroke_opacity=HAIR)]
+    return body
+
+
+def shot(name, x, y, w, h, t):
+    return [image(name, x, y, w, h, 14, "xMidYMin slice"),
+            rect(x + .5, y + .5, w - 1, h - 1, 13.5, fill="none", stroke=t["ink"], stroke_opacity=HAIR)]
+
+
+def project(p, theme, tier):
+    t, W = THEMES[theme], TIERS[tier]
+    stack = f"{', '.join(p['chips'][:-1])} and {p['chips'][-1]}"
+    title = f"{p['name']}. {p['status']}. {p['blurb']} Built with {stack}. The screenshot shows {p['alt']}."
+    body = [rule(.5, W, t["ink"])]
+    if tier == "wide":
+        # Media on the right; the text column sits on the baseline so the links continue it.
+        mw, mh, top = 470, 294, 28
+        mx, col = W - mw, W - mw - 40
+        h = top + mh
+        body.append(text(p["status"], 0, top + 10, 13, t["muted"]))
+        chip_body, ch = chips(p["chips"], h - 28, t, 13)
+        blurb = wrap(p["blurb"], 16, 400, col)
+        base = h - ch - 20 - (len(blurb) - 1) * 24
+        body.append(text(p["name"], 0, base - 36, 24, t["ink"], 600, -.015))
+        body += [text(v, 0, base + i * 24, 16, t["ink"]) for i, v in enumerate(blurb)]
+        body += chip_body
+    else:
+        mid = tier == "mid"
+        mx, mw, mh, top = 0, W, (300 if mid else 180), (26 if mid else 22)
+        title_size, blurb_size, lh, chip_size, status = (23, 16, 24, 13, 13) if mid else (20, 15, 22, 12.5, 12.5)
+        base = top + mh + 30
+        body.append(text(p["status"], 0, base, status, t["muted"]))
+        base += 12 + title_size * CAP + 8
+        body.append(text(p["name"], 0, base, title_size, t["ink"], 600, -.015))
+        base += 10
+        for v in wrap(p["blurb"], blurb_size, 400, W):
+            base += lh
+            body.append(text(v, 0, base, blurb_size, t["ink"]))
+        chip_body, ch = chips(p["chips"], base + 16, t, chip_size)
+        body += chip_body
+        h = base + 16 + ch
+    if "phones" in p:
+        body += phones(p["phones"], mx, top, mw, mh, t)
+    else:
+        body += shot(p["shot"], mx, top, mw, mh, t)
+    svg(f"work-{p['key']}-{theme}-{tier}.svg", W, h, title, body)
+    return title
+
+
+def skills(theme, tier):
+    t, W = THEMES[theme], TIERS[tier]
+    lead = "Mostly Flutter and Firebase for the apps, and TypeScript for the web and the servers."
+    body, y = section_head("Skills", lead, t, tier)
+    y += 20
+    size = 14 if tier == "phone" else 15
+    label_w = {"wide": 210, "mid": 180, "phone": 0}[tier]
+    for label, values in SKILLS:
+        body.append(rule(y + .5, W, t["ink"]))
+        if tier == "phone":
+            y += 14 + 13 * CAP
+            body.append(text(label, 0, y, 13, t["muted"]))
+            y += 6
+            for v in wrap(values, size, 400, W, joiner=" · "):
+                y += size * 1.5
+                body.append(text(v, 0, y, size, t["ink"]))
+            y += 15
+        else:
+            rows = wrap(values, size, 400, W - label_w, joiner=" · ")
+            base = y + 15 + size * CAP
+            body.append(text(label, 0, base, size, t["muted"]))
+            body += [text(v, label_w, base + i * size * 1.55, size, t["ink"]) for i, v in enumerate(rows)]
+            y = base + (len(rows) - 1) * size * 1.55 + 16
+    body.append(rule(y + .5, W, t["ink"]))
+    title = "Skills. " + lead + " " + ". ".join(f"{label}: {', '.join(values)}" for label, values in SKILLS) + "."
+    svg(f"skills-{theme}-{tier}.svg", W, y + 1, title, body)
+    return title
+
+
+def button(key, theme):
+    """The site's small button: 36px pill, 14px label, 18px icon, 14px padding."""
+    label, mark, primary = BUTTONS[key]
+    t = THEMES[theme]
+    h, size, pad, isz, gap = 36, 14, 14, 18, 8
+    w = pad * 2 + measure(label, size, 500, -.005) + (isz + gap if mark else 0)
+    fg = t["on_ink"] if primary else t["ink"]
+    body = [rect(.5, .5, w - 1, h - 1, (h - 1) / 2, fill=t["ink"] if primary else "none",
+                 stroke=t["ink"], stroke_opacity=1 if primary else HAIR_STRONG)]
+    x = pad
+    if mark:
+        body.append(icon(mark, x, (h - isz) / 2, isz, fg))
+        x += isz + gap
+    body.append(text(label, x, h / 2 + size * CAP / 2, size, fg, 500, -.005))
+    # 4px of air after the pill; with the space between links that makes an 8px gap.
+    svg(f"btn-{key}-{theme}.svg", round(w + 4), h, label, body)
+
+
+def link(key, theme):
+    """The site's card links: icon and label, no pill; only the first link is ink."""
+    label, mark, primary, _ = LINKS[key]
+    t = THEMES[theme]
+    colour = t["ink"] if primary else t["muted"]
+    h, size, isz, gap = 28, 14, 16, 7
+    w = isz + gap + measure(label, size, 500)
+    body = [icon(mark, 0, (h - isz) / 2, isz, colour), text(label, isz + gap, h / 2 + size * CAP / 2, size, colour, 500)]
+    svg(f"go-{key}-{theme}.svg", round(w + 16), h, label, body)
+
+
+# --- README -----------------------------------------------------------------
+
+def responsive(stem, label, href):
+    """One <picture> per width. Outside its range each resolves to a 0x0 image, so
+    exactly one is visible; inside it, the theme sources pick light or dark. No
+    width attribute: art is shown at its drawn size and only ever shrinks.
+    The link carries the description once, instead of three identical alts."""
+    pictures = "".join(
+        f'<picture><source media="{HIDE[tier]}" srcset="assets/blank.svg">'
+        f'<source media="(prefers-color-scheme: dark)" srcset="assets/{stem}-dark-{tier}.svg">'
+        f'<img src="assets/{stem}-light-{tier}.svg" alt=""></picture>'
+        for tier in TIERS)
+    return f'<a href="{href}" aria-label="{escape(label)}">{pictures}</a>'
+
+
+def themed(prefix, key, alt, href, height):
+    return (f'<a href="{href}"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/{prefix}-{key}-dark.svg">'
+            f'<img src="assets/{prefix}-{key}-light.svg" height="{height}" alt="{escape(alt)}"></picture></a>')
+
+
+def block(inner):
+    return f"<p>\n{inner}\n</p>"
+
+
+NOTES = """<details>
+<summary><b>Engineering notes</b> · four problems, solved</summary>
+
+#### Bupples: a payment that disappeared
+
+A simplified settlement plan can ask A to pay C even when the original debts were A → B → C. Reducing only a direct A → C debt found nothing to reduce. I changed the settlement path to reduce the original debt edges while preserving everyone’s net balance. Money stays in integer minor units throughout. [The ledger decision and its trade-offs](https://yousofselim.com/work/bupples/#challenges)
+
+#### Adelante: widgets that agree without talking
+
+Flutter, WidgetKit and Android RemoteViews run in separate processes. They share one time-based rotation rule, so widgets advance offline without waiting for the app to open, and iOS also gets a precomputed timeline within WidgetKit’s refresh budget. [The native-widget architecture](https://yousofselim.com/work/adelante/#architecture)
+
+#### WayClub: shared infrastructure, separate club data
+
+Each request runs in one transaction that carries the caller’s verified claims, and PostgreSQL row-level security decides what each club can see, under a database role that cannot bypass it. A query that forgets to filter by club still cannot return another club’s rows. [The isolation decision and its trade-offs](https://yousofselim.com/work/wayclub/)
+
+#### CodeAtlas: from a changed function to a reproduced regression
+
+CodeAtlas maps a change to the tests that reach it, runs both revisions and signs the evidence. On the supported authentication fixture it reproduces an expired-session response changing from HTTP 401 to HTTP 500. [Implementation status](https://github.com/yeegz/CodeAtlas#current-implementation-status)
+
+Bupples, Adelante and WayClub have public showcases; their application source is private.
+
+</details>
+
+<details>
+<summary>Take a detour</summary>
+
+My portfolio has [a working terminal](https://yousofselim.com/terminal/). Start with `help` and see where it goes.
+
+Or play [Fallen Asteri](https://yeegz.itch.io/fallenasteri), a Godot platformer built by three developers. I set up the repository workflow and worked on levels, animation, the HUD and combat tuning. [Source](https://github.com/yeegz/Fallen-Asteri)
+
+</details>"""
+
+FOOTER = "<sub>Bachelor of Software Engineering (Hons), Sunway University × Lancaster University. Graduating August 2027.</sub>"
 
 
 def main():
     ASSETS.mkdir(exist_ok=True)
+    alts = {}
+    work_lead = "Five products, and I was the only developer on each."
+    contact_title, contact_lead = "Hiring interns for January 2027?", "I’d like to hear what your team is building. Remote or on site."
     for theme in THEMES:
-        for key, label, mark, primary in [
-            ("resume", "Résumé", "file-earmark-text", True),
-            ("portfolio", "Portfolio", "globe2", False),
-            ("recruiters", "For recruiters", "journal-text", False),
-            ("app-store", "App Store", "apple", True),
-            ("google-play", "Google Play", "google-play", False),
-            ("case-study", "Case study", "journal-text", False),
-            ("showcase", "Showcase", "github", False),
-            ("open-app", "Open app", "play-circle", True),
-            ("source", "Source", "github", False),
-            ("download", "Windows", "download", False),
-            ("email", "Email me", "envelope", True),
-            ("linkedin", "LinkedIn", "linkedin", False),
-        ]:
-            button(key, label, mark, theme, primary)
-        for mobile in (False, True):
-            header(theme, mobile)
-            for key in ("bupples", "adelante"):
-                phones(key, theme, mobile)
-            for key in ("photoshoot", "wayclub", "codeatlas"):
-                workspace(key, theme, mobile)
-    print("Built 48 self-contained SVGs: 24 panels and 24 action buttons.")
+        for key in BUTTONS:
+            button(key, theme)
+        for key in LINKS:
+            link(key, theme)
+        for tier in TIERS:
+            alts["hero"] = hero(theme, tier)
+            heading("work", "Selected work", work_lead, theme, tier)
+            heading("contact", contact_title, contact_lead, theme, tier)
+            alts["skills"] = skills(theme, tier)
+            for p in PROJECTS:
+                alts[p["key"]] = project(p, theme, tier)
+
+    (ASSETS / "blank.svg").write_text('<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0"/>\n')
+
+    sections = [
+        block(responsive("hero", alts["hero"], f"{SITE}/")),
+        block("\n".join([themed("btn", "resume", "Read my résumé (PDF)", RESUME, 36),
+                         themed("btn", "recruiters", "Read the one-page recruiter overview", f"{SITE}/simple/", 36),
+                         themed("btn", "portfolio", "Visit my portfolio at yousofselim.com", f"{SITE}/", 36)])),
+        block(responsive("head-work", f"Selected work. {work_lead}", f"{SITE}/#work")),
+    ]
+    for p in PROJECTS:
+        links = [themed("go", key, LINKS[key][3].replace("NAME", p["name"]), href, 28) for key, href in p["links"]]
+        sections += [block(responsive("work-" + p["key"], alts[p["key"]], p["links"][0][1])),
+                     block("\n".join(links))]
+    sections += [
+        block(responsive("skills", alts["skills"], f"{SITE}/#skills")),
+        NOTES,
+        block(responsive("head-contact", f"{contact_title} {contact_lead}", f"{SITE}/#contact")),
+        block("\n".join([
+            themed("btn", "email", "Email me at yousofselim2@gmail.com",
+                   "mailto:yousofselim2@gmail.com?subject=Software%20Engineering%20internship%2C%20January%202027", 36),
+            themed("btn", "linkedin", "Connect on LinkedIn", "https://www.linkedin.com/in/ysf-slm/", 36)])),
+        FOOTER,
+    ]
+    (ROOT / "README.md").write_text("\n\n".join(sections) + "\n")
+    print(f"Wrote README.md and {len(list(ASSETS.glob('*.svg')))} SVGs in assets/.")
 
 
 if __name__ == "__main__":

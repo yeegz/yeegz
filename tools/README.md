@@ -1,37 +1,34 @@
 # Profile artwork
 
-The profile follows the October 2026 portfolio redesign: Hanken Grotesk, warm paper and charcoal, a single natural portrait, rounded media frames and real product screenshots. The README keeps ownership, status, availability and skills as native text, with descriptive alternatives for artwork and button links so they remain searchable and readable without images.
+The profile follows yousofselim.com: Hanken Grotesk, the portfolio's ink and muted colours, its 36px buttons, 28px chips, availability pill, framed portrait and media panels, and the same copy as the homepage.
 
 ## Rebuild
 
-Requires Python 3, FontTools and Brotli:
-
 ```sh
-python3 -m pip install fonttools brotli
+python3 -m pip install fonttools brotli uharfbuzz pillow
 python3 tools/build_profile.py
 ```
 
-The generator builds 48 SVGs: the header and five project panels in light/dark and desktop/mobile variants, plus twelve custom icon buttons in both themes. `README.md` selects them with `<picture>`, following [GitHub’s documented theme-aware image pattern](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/quickstart-for-writing-on-github#adding-an-image-to-suit-your-visitors). At viewport widths up to 600px, artwork switches to a dedicated mobile composition.
+The script writes `README.md` and every file in `assets/`, so copy, alt text and file names cannot drift apart. Edit the content in `build_profile.py` (`PROJECTS`, `SKILLS`, `NOTES`, the hero and headings), never in `README.md` directly.
 
-Hanken Grotesk and its SIL Open Font License are in `profile-fonts/`. Lettering is converted to paths; source media is embedded. The SVGs have no scripts, external requests or animation. Accessible descriptions live in the README and each SVG title. Links are native HTML or Markdown anchors, outside the artwork.
+## How it fits GitHub
 
-The generator uses the portfolio’s exact paper, ink and muted colors. Screenshots retain their product colors in both themes. Header text and project status are maintained separately in `build_profile.py` and `README.md`; update both when the introduction changes.
+- **Drawn at display size.** Each piece of art exists at three widths: phone (320), mid (600) and wide (846, the README column from 1280px). A width is only used where the column is at least about 85% of it, and images have no `width` attribute, so they are never scaled up. A 14px label in the source is a 14px label on screen, give or take 15%.
+- **Transparent.** Only media panels have a fill. Text, hairlines and frames sit directly on GitHub's own background, so nothing looks pasted on in light, dark or dimmed themes.
+- **Width and theme are chosen separately.** A signed-in visitor who has picked a theme in GitHub settings gets every `<source>` that mentions `prefers-color-scheme` rewritten by GitHub's `<themed-picture>` script, which erases any width condition in that same query. So each width is its own `<picture>`. Its first source hides it outside its range (a 0 × 0 `blank.svg`), and its remaining sources choose only the theme. Exactly one of the three is visible at a time.
+- **One description per artwork.** The three pictures share one link, which carries the description as `aria-label`. The images have empty alt text, so screen readers don't read it three times.
+- **Self-contained.** Type is shaped with HarfBuzz (with kerning) and outlined. Each glyph is defined once per SVG and placed with `<use>`. Media is embedded at 2× its drawn size. No scripts, fonts or network requests are needed at view time.
 
-## Research and content
+Icons are the portfolio's own stroke icons (`tools/build.mjs` in the portfolio repository), copied into `ICONS`. Hanken Grotesk and its SIL Open Font License are in `profile-fonts/`. The portfolio's revision 5 (in progress, uncommitted, 14 October) switches to Schibsted Grotesk; if that ships, point `FONT` at the new woff2 and rebuild.
 
-- Design source: [portfolio](https://yousofselim.com/), including its `docs/design-system.md`, `styles.css` and `ui/css/00-tokens.css` at portfolio commit `244383f`.
-- Content source: the portfolio’s [recruiter page](https://yousofselim.com/simple/) and five linked case studies, reviewed 7 October 2026.
-- Availability uses the portfolio’s exact dates and qualified university-placement wording. It does not repeat the previous unsupported sponsorship claim.
-- Photoshoot uses the actual red photobooth landing page. CodeAtlas uses the fixture-repository evidence workspace and is described as local tooling. WayClub is explicitly a guided interface demo with fictional data.
+## Checking a change
 
-## Validation
+Render the README with GitHub's own Markdown API and look at it at phone, mid and wide widths, in light and dark, and with an explicit GitHub theme:
 
-Rebuild, then check the README at desktop and phone widths in light and dark modes. Verify all 48 SVGs parse, all referenced assets exist, images load, links remain readable, and the document has no horizontal overflow. Check the rendered GitHub preview before publishing because GitHub controls the Markdown styling.
+```sh
+gh api -X POST markdown -F text=@README.md -f mode=gfm -f context=yeegz/yeegz > preview.html
+```
 
-Older unreferenced artwork, font files and build scripts remain in the repository as historical sources. `build_profile.py` is the sole generator for the current README.
+The README column is 846px from a 1280px viewport, `viewport − 434` from 1012 to 1279, `viewport − 370` from 768 to 1011, and `viewport − 82` below 768.
 
-## Custom buttons
-
-The action buttons use Hanken Grotesk, portfolio ink/paper fills, 48px pill geometry and recognizable destination icons. Primary actions are filled; secondary actions are outlined. Bootstrap icon sources and their MIT license live in `profile-icons/`; `download.svg` is an original geometric download icon. Buttons remain real links and each has a project-specific accessible label.
-
-See [design research](design-research.md) for the compared profiles and the choices made for this one.
+Older generators (`build.py`, `yzlib.py`, `fetch-fonts.sh`) and their fonts and icons are historical. `build_profile.py` is the only one used by the current README. See [design research](design-research.md) for the profiles compared in October.
