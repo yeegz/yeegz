@@ -71,7 +71,7 @@ ICONS = {
 
 PROJECTS = [
     dict(key="bupples", name="Bupples", status="Live on the App Store and Google Play",
-         blurb="Shared expenses, receipt review and settlement plans, backed by a multi-currency ledger.",
+         blurb="Split the bill, skip the awkward follow-up. Scan a receipt, tap who had what, and Bupples works out who owes whom.",
          chips=["Flutter", "Firebase", "Vertex AI"],
          phones=["bupples-profile.webp", "bupples-accent.webp", "bupples-settings.webp"],
          alt="the profile, accent editor and settings screens",
@@ -80,7 +80,7 @@ PROJECTS = [
                 ("google-play", "https://play.google.com/store/apps/details?id=com.bupples.bupples"),
                 ("showcase", "https://github.com/yeegz/Bupples-showcase")]),
     dict(key="adelante", name="Adelante", status="Live on the App Store",
-         blurb="Daily quotes as iPhone and Apple Watch widgets, with one rotation rule across Dart, Swift and Kotlin.",
+         blurb="A daily quote on your Home Screen, Lock Screen and Apple Watch, for the days you don\u2019t feel like opening an app.",
          chips=["Flutter", "Swift/SwiftUI", "Kotlin"],
          phones=["adelante-widgets.webp", "adelante-today.webp", "adelante-discover.webp"],
          alt="the widget gallery, Today and Discover screens",
@@ -88,16 +88,16 @@ PROJECTS = [
                 ("app-store", "https://apps.apple.com/us/app/adelante-daily-quotes/id6816598027"),
                 ("showcase", "https://github.com/yeegz/adelante-showcase")]),
     dict(key="wayclub", name="WayClub", status="Guided demo with sample data",
-         blurb="A workspace for student clubs to plan events, approve proposals and manage registrations, "
-               "with PostgreSQL policies that keep each club’s data separate.",
+         blurb="Student clubs plan events, get them approved and run sign-ups in one place, "
+               "not across group chats, forms and spreadsheets.",
          chips=["Next.js", "NestJS", "PostgreSQL"],
          shot="wayclub-workspace.webp",
          alt="a club workspace with events, proposals and committee members, using fictional data",
          links=[("case-study", f"{SITE}/work/wayclub/"),
                 ("demo", "https://wayclub-live-demo.web.app/home?tour=1"),
                 ("showcase", "https://github.com/yeegz/WayClub-showcase")]),
-    dict(key="photoshoot", name="Photoshoot", status="Live in the browser · Windows 1.0.1",
-         blurb="A photobooth with 17 real-time WebGL2 effects, where no camera frame leaves the device.",
+    dict(key="photoshoot", name="Photoshoot", status="Live in your browser · Windows 1.0.1",
+         blurb="Strike a pose, pick from 17 live effects, keep the strip. Nothing from your camera ever leaves your device.",
          chips=["TypeScript", "Electron", "MediaPipe"],
          shot="photoshoot-landing.webp",
          alt="the red photobooth landing page",
@@ -105,8 +105,8 @@ PROJECTS = [
                 ("open-app", "https://photoshoot-yeegz.web.app/app/"),
                 ("windows", "https://github.com/yeegz/photoshoot/releases/tag/v1.0.1"),
                 ("source", "https://github.com/yeegz/photoshoot")]),
-    dict(key="codeatlas", name="CodeAtlas", status="Local CLI and workspace",
-         blurb="Maps a code change to the tests that reach it, runs both revisions and signs the evidence.",
+    dict(key="codeatlas", name="CodeAtlas", status="Runs locally · source on GitHub",
+         blurb="Green tests don\u2019t always mean nothing broke. CodeAtlas finds the tests a change really reaches, runs the code before and after, and signs what it saw.",
          chips=["TypeScript", "Node.js", "Vitest"],
          shot="codeatlas-workspace.webp",
          alt="the evidence workspace on a fixture repository",
@@ -189,6 +189,7 @@ def num(v):
 
 
 GLYPHS = {}  # (weight, glyph id) -> path id, for the SVG being built
+RIGHT = [0.0]  # rightmost text edge in the SVG being built
 
 
 @lru_cache(maxsize=None)
@@ -210,6 +211,7 @@ def text(value, x, y, size, color, weight=400, track=0.0):
             uses.append(f'<use href="#{ref}" x="{num(ux + p.x_offset)}"{dy}/>')
         ux += p.x_advance + track * UPEM
     s = f"{size / UPEM:.5f}".rstrip("0")
+    RIGHT[0] = max(RIGHT[0], x + ux * size / UPEM)
     return f'<g fill="{color}" transform="translate({num(x)} {num(y)}) scale({s} -{s})">{"".join(uses)}</g>'
 
 
@@ -288,7 +290,9 @@ def image(name, x, y, w, h, r, align="xMidYMid slice"):
 
 def svg(name, w, h, title, body):
     defs = "".join(f'<path id="{ref}" d="{outline(*key)}"/>' for key, ref in GLYPHS.items())
-    CLIPS[0] = 0
+    if RIGHT[0] > w + .5:
+        raise ValueError(f"{name}: text runs to {RIGHT[0]:.1f}px, past the {w}px edge")
+    CLIPS[0], RIGHT[0] = 0, 0.0
     GLYPHS.clear()
     h = round(h)
     out = (f'<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" viewBox="0 0 {w} {h}" '
@@ -356,9 +360,10 @@ def hero(theme, tier):
 def section_head(title, lead, t, tier):
     W = TIERS[tier]
     size, lead_size = {"wide": (30, 17), "mid": (28, 16), "phone": (24, 15)}[tier]
-    base = 30 + size * CAP
-    body = [text(title, 0, base, size, t["ink"], 600, -.02)]
-    base += 14
+    base, body = 30 + size * CAP, []
+    for i, value in enumerate(wrap(title, size, 600, W, -.02)):
+        body.append(text(value, 0, base + i * size * 1.15, size, t["ink"], 600, -.02))
+    base += i * size * 1.15 + 14
     for value in wrap(lead, lead_size, 400, W):
         base += lead_size * 1.55
         body.append(text(value, 0, base, lead_size, t["muted"]))
@@ -527,34 +532,34 @@ def block(inner):
 
 
 NOTES = """<details>
-<summary><b>Engineering notes</b> · four problems, solved</summary>
+<summary><b>Under the hood</b> · four problems and how I cracked them</summary>
 
-#### Bupples: a payment that disappeared
+#### Bupples: the payment that went nowhere
 
-A simplified settlement plan can ask A to pay C even when the original debts were A → B → C. Reducing only a direct A → C debt found nothing to reduce. I changed the settlement path to reduce the original debt edges while preserving everyone’s net balance. Money stays in integer minor units throughout. [The ledger decision and its trade-offs](https://yousofselim.com/work/bupples/#challenges)
+A owes B, and B owes C. The simplified plan says A should just pay C, which is neat until A actually pays and the app looks for a direct A → C debt to reduce. There isn’t one, so the payment reduced nothing. I changed settlement to pay down the original debts along the chain, so everyone’s balance still adds up. Money is kept in whole minor units, so nothing drifts by a cent. [The ledger decision](https://yousofselim.com/work/bupples/#challenges)
 
 #### Adelante: widgets that agree without talking
 
-Flutter, WidgetKit and Android RemoteViews run in separate processes. They share one time-based rotation rule, so widgets advance offline without waiting for the app to open, and iOS also gets a precomputed timeline within WidgetKit’s refresh budget. [The native-widget architecture](https://yousofselim.com/work/adelante/#architecture)
+The Flutter app, the iOS widgets and the Android widgets run in separate processes and can’t talk to each other. So they don’t need to: they all follow the same clock-based rotation rule and land on the same quote, offline, without waiting for the app to open. iOS also gets a precomputed timeline that fits WidgetKit’s refresh budget. [The widget architecture](https://yousofselim.com/work/adelante/#architecture)
 
-#### WayClub: shared infrastructure, separate club data
+#### WayClub: one database, no peeking
 
-Each request runs in one transaction that carries the caller’s verified claims, and PostgreSQL row-level security decides what each club can see, under a database role that cannot bypass it. A query that forgets to filter by club still cannot return another club’s rows. [The isolation decision and its trade-offs](https://yousofselim.com/work/wayclub/)
+Every club shares one database, so the bug that matters is one club seeing another’s data. Instead of trusting every query to filter correctly, each request runs in a transaction that carries the caller’s verified claims, and PostgreSQL row-level security decides what they can see, under a role that can’t bypass it. Forget a filter and you still only see your own club. [The isolation decision](https://yousofselim.com/work/wayclub/)
 
-#### CodeAtlas: from a changed function to a reproduced regression
+#### CodeAtlas: the 500 hiding behind a green suite
 
-CodeAtlas maps a change to the tests that reach it, runs both revisions and signs the evidence. On the supported authentication fixture it reproduces an expired-session response changing from HTTP 401 to HTTP 500. [Implementation status](https://github.com/yeegz/CodeAtlas#current-implementation-status)
+A test suite can pass while a changed branch goes untested. On its authentication fixture, CodeAtlas spots an uncovered expired-session path, generates a test for it, and catches the response quietly changing from HTTP 401 to HTTP 500. [What works today](https://github.com/yeegz/CodeAtlas#current-implementation-status)
 
-Bupples, Adelante and WayClub have public showcases; their application source is private.
+Bupples, Adelante and WayClub are closed source, but each has a public showcase repo.
 
 </details>
 
 <details>
-<summary>Take a detour</summary>
+<summary>Got a minute? Take a detour</summary>
 
-My portfolio has [a working terminal](https://yousofselim.com/terminal/). Start with `help` and see where it goes.
+My portfolio has [a working terminal](https://yousofselim.com/terminal/). Type `help` and see where it takes you.
 
-Or play [Fallen Asteri](https://yeegz.itch.io/fallenasteri), a Godot platformer built by three developers. I set up the repository workflow and worked on levels, animation, the HUD and combat tuning. [Source](https://github.com/yeegz/Fallen-Asteri)
+Or play [Fallen Asteri](https://yeegz.itch.io/fallenasteri), a Godot platformer our team of three built. I set up our branch-and-pull-request workflow and worked on levels, animation, the HUD and combat tuning. [Source](https://github.com/yeegz/Fallen-Asteri)
 
 </details>"""
 
@@ -564,8 +569,8 @@ FOOTER = "<sub>Bachelor of Software Engineering (Hons), Sunway University × Lan
 def main():
     ASSETS.mkdir(exist_ok=True)
     alts = {}
-    work_lead = "Five products, and I was the only developer on each."
-    contact_title, contact_lead = "Hiring interns for January 2027?", "I’d like to hear what your team is building. Remote or on site."
+    work_lead = "Five products, one developer on each: me."
+    contact_title, contact_lead = "Hiring interns for January 2027?", "I\u2019d love to hear what your team is building. Remote or on site both work for me."
     for theme in THEMES:
         for key in BUTTONS:
             button(key, theme)

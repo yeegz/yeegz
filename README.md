@@ -9,11 +9,11 @@
 </p>
 
 <p>
-<a href="https://yousofselim.com/#work" aria-label="Selected work. Five products, and I was the only developer on each."><picture><source media="(min-width: 592px) and (max-width: 767px), (min-width: 880px)" srcset="assets/blank.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/head-work-dark-phone.svg"><img src="assets/head-work-light-phone.svg" alt=""></picture><picture><source media="(max-width: 591px), (min-width: 768px) and (max-width: 879px), (min-width: 1154px)" srcset="assets/blank.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/head-work-dark-mid.svg"><img src="assets/head-work-light-mid.svg" alt=""></picture><picture><source media="(max-width: 1153px)" srcset="assets/blank.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/head-work-dark-wide.svg"><img src="assets/head-work-light-wide.svg" alt=""></picture></a>
+<a href="https://yousofselim.com/#work" aria-label="Selected work. Five products, one developer on each: me."><picture><source media="(min-width: 592px) and (max-width: 767px), (min-width: 880px)" srcset="assets/blank.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/head-work-dark-phone.svg"><img src="assets/head-work-light-phone.svg" alt=""></picture><picture><source media="(max-width: 591px), (min-width: 768px) and (max-width: 879px), (min-width: 1154px)" srcset="assets/blank.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/head-work-dark-mid.svg"><img src="assets/head-work-light-mid.svg" alt=""></picture><picture><source media="(max-width: 1153px)" srcset="assets/blank.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/head-work-dark-wide.svg"><img src="assets/head-work-light-wide.svg" alt=""></picture></a>
 </p>
 
 <p>
-<a href="https://yousofselim.com/work/bupples/" aria-label="Bupples. Live on the App Store and Google Play. Shared expenses, receipt review and settlement plans, backed by a multi-currency ledger. Built with Flutter, Firebase and Vertex AI. The screenshot shows the profile, accent editor and settings screens."><picture><source media="(min-width: 592px) and (max-width: 767px), (min-width: 880px)" srcset="assets/blank.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/work-bupples-dark-phone.svg"><img src="assets/work-bupples-light-phone.svg" alt=""></picture><picture><source media="(max-width: 591px), (min-width: 768px) and (max-width: 879px), (min-width: 1154px)" srcset="assets/blank.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/work-bupples-dark-mid.svg"><img src="assets/work-bupples-light-mid.svg" alt=""></picture><picture><source media="(max-width: 1153px)" srcset="assets/blank.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/work-bupples-dark-wide.svg"><img src="assets/work-bupples-light-wide.svg" alt=""></picture></a>
+<a href="https://yousofselim.com/work/bupples/" aria-label="Bupples. Live on the App Store and Google Play. Split the bill, skip the awkward follow-up. Scan a receipt, tap who had what, and Bupples works out who owes whom. Built with Flutter, Firebase and Vertex AI. The screenshot shows the profile, accent editor and settings screens."><picture><source media="(min-width: 592px) and (max-width: 767px), (min-width: 880px)" srcset="assets/blank.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/work-bupples-dark-phone.svg"><img src="assets/work-bupples-light-phone.svg" alt=""></picture><picture><source media="(max-width: 591px), (min-width: 768px) and (max-width: 879px), (min-width: 1154px)" srcset="assets/blank.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/work-bupples-dark-mid.svg"><img src="assets/work-bupples-light-mid.svg" alt=""></picture><picture><source media="(max-width: 1153px)" srcset="assets/blank.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/work-bupples-dark-wide.svg"><img src="assets/work-bupples-light-wide.svg" alt=""></picture></a>
 </p>
 
 <p>
@@ -24,7 +24,7 @@
 </p>
 
 <p>
-<a href="https://yousofselim.com/work/adelante/" aria-label="Adelante. Live on the App Store. Daily quotes as iPhone and Apple Watch widgets, with one rotation rule across Dart, Swift and Kotlin. Built with Flutter, Swift/SwiftUI and Kotlin. The screenshot shows the widget gallery, Today and Discover screens."><picture><source media="(min-width: 592px) and (max-width: 767px), (min-width: 880px)" srcset="assets/blank.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/work-adelante-dark-phone.svg"><img src="assets/work-adelante-light-phone.svg" alt=""></picture><picture><source media="(max-width: 591px), (min-width: 768px) and (max-width: 879px), (min-width: 1154px)" srcset="assets/blank.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/work-adelante-dark-mid.svg"><img src="assets/work-adelante-light-mid.svg" alt=""></picture><picture><source media="(max-width: 1153px)" srcset="assets/blank.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/work-adelante-dark-wide.svg"><img src="assets/work-adelante-light-wide.svg" alt=""></picture></a>
+<a href="https://yousofselim.com/work/adelante/" aria-label="Adelante. Live on the App Store. A daily quote on your Home Screen, Lock Screen and Apple Watch, for the days you don’t feel like opening an app. Built with Flutter, Swift/SwiftUI and Kotlin. The screenshot shows the widget gallery, Today and Discover screens."><picture><source media="(min-width: 592px) and (max-width: 767px), (min-width: 880px)" srcset="assets/blank.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/work-adelante-dark-phone.svg"><img src="assets/work-adelante-light-phone.svg" alt=""></picture><picture><source media="(max-width: 591px), (min-width: 768px) and (max-width: 879px), (min-width: 1154px)" srcset="assets/blank.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/work-adelante-dark-mid.svg"><img src="assets/work-adelante-light-mid.svg" alt=""></picture><picture><source media="(max-width: 1153px)" srcset="assets/blank.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/work-adelante-dark-wide.svg"><img src="assets/work-adelante-light-wide.svg" alt=""></picture></a>
 </p>
 
 <p>
@@ -34,7 +34,7 @@
 </p>
 
 <p>
-<a href="https://yousofselim.com/work/wayclub/" aria-label="WayClub. Guided demo with sample data. A workspace for student clubs to plan events, approve proposals and manage registrations, with PostgreSQL policies that keep each club’s data separate. Built with Next.js, NestJS and PostgreSQL. The screenshot shows a club workspace with events, proposals and committee members, using fictional data."><picture><source media="(min-width: 592px) and (max-width: 767px), (min-width: 880px)" srcset="assets/blank.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/work-wayclub-dark-phone.svg"><img src="assets/work-wayclub-light-phone.svg" alt=""></picture><picture><source media="(max-width: 591px), (min-width: 768px) and (max-width: 879px), (min-width: 1154px)" srcset="assets/blank.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/work-wayclub-dark-mid.svg"><img src="assets/work-wayclub-light-mid.svg" alt=""></picture><picture><source media="(max-width: 1153px)" srcset="assets/blank.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/work-wayclub-dark-wide.svg"><img src="assets/work-wayclub-light-wide.svg" alt=""></picture></a>
+<a href="https://yousofselim.com/work/wayclub/" aria-label="WayClub. Guided demo with sample data. Student clubs plan events, get them approved and run sign-ups in one place, not across group chats, forms and spreadsheets. Built with Next.js, NestJS and PostgreSQL. The screenshot shows a club workspace with events, proposals and committee members, using fictional data."><picture><source media="(min-width: 592px) and (max-width: 767px), (min-width: 880px)" srcset="assets/blank.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/work-wayclub-dark-phone.svg"><img src="assets/work-wayclub-light-phone.svg" alt=""></picture><picture><source media="(max-width: 591px), (min-width: 768px) and (max-width: 879px), (min-width: 1154px)" srcset="assets/blank.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/work-wayclub-dark-mid.svg"><img src="assets/work-wayclub-light-mid.svg" alt=""></picture><picture><source media="(max-width: 1153px)" srcset="assets/blank.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/work-wayclub-dark-wide.svg"><img src="assets/work-wayclub-light-wide.svg" alt=""></picture></a>
 </p>
 
 <p>
@@ -44,7 +44,7 @@
 </p>
 
 <p>
-<a href="https://yousofselim.com/work/photoshoot/" aria-label="Photoshoot. Live in the browser · Windows 1.0.1. A photobooth with 17 real-time WebGL2 effects, where no camera frame leaves the device. Built with TypeScript, Electron and MediaPipe. The screenshot shows the red photobooth landing page."><picture><source media="(min-width: 592px) and (max-width: 767px), (min-width: 880px)" srcset="assets/blank.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/work-photoshoot-dark-phone.svg"><img src="assets/work-photoshoot-light-phone.svg" alt=""></picture><picture><source media="(max-width: 591px), (min-width: 768px) and (max-width: 879px), (min-width: 1154px)" srcset="assets/blank.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/work-photoshoot-dark-mid.svg"><img src="assets/work-photoshoot-light-mid.svg" alt=""></picture><picture><source media="(max-width: 1153px)" srcset="assets/blank.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/work-photoshoot-dark-wide.svg"><img src="assets/work-photoshoot-light-wide.svg" alt=""></picture></a>
+<a href="https://yousofselim.com/work/photoshoot/" aria-label="Photoshoot. Live in your browser · Windows 1.0.1. Strike a pose, pick from 17 live effects, keep the strip. Nothing from your camera ever leaves your device. Built with TypeScript, Electron and MediaPipe. The screenshot shows the red photobooth landing page."><picture><source media="(min-width: 592px) and (max-width: 767px), (min-width: 880px)" srcset="assets/blank.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/work-photoshoot-dark-phone.svg"><img src="assets/work-photoshoot-light-phone.svg" alt=""></picture><picture><source media="(max-width: 591px), (min-width: 768px) and (max-width: 879px), (min-width: 1154px)" srcset="assets/blank.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/work-photoshoot-dark-mid.svg"><img src="assets/work-photoshoot-light-mid.svg" alt=""></picture><picture><source media="(max-width: 1153px)" srcset="assets/blank.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/work-photoshoot-dark-wide.svg"><img src="assets/work-photoshoot-light-wide.svg" alt=""></picture></a>
 </p>
 
 <p>
@@ -55,7 +55,7 @@
 </p>
 
 <p>
-<a href="https://yousofselim.com/work/codeatlas/" aria-label="CodeAtlas. Local CLI and workspace. Maps a code change to the tests that reach it, runs both revisions and signs the evidence. Built with TypeScript, Node.js and Vitest. The screenshot shows the evidence workspace on a fixture repository."><picture><source media="(min-width: 592px) and (max-width: 767px), (min-width: 880px)" srcset="assets/blank.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/work-codeatlas-dark-phone.svg"><img src="assets/work-codeatlas-light-phone.svg" alt=""></picture><picture><source media="(max-width: 591px), (min-width: 768px) and (max-width: 879px), (min-width: 1154px)" srcset="assets/blank.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/work-codeatlas-dark-mid.svg"><img src="assets/work-codeatlas-light-mid.svg" alt=""></picture><picture><source media="(max-width: 1153px)" srcset="assets/blank.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/work-codeatlas-dark-wide.svg"><img src="assets/work-codeatlas-light-wide.svg" alt=""></picture></a>
+<a href="https://yousofselim.com/work/codeatlas/" aria-label="CodeAtlas. Runs locally · source on GitHub. Green tests don’t always mean nothing broke. CodeAtlas finds the tests a change really reaches, runs the code before and after, and signs what it saw. Built with TypeScript, Node.js and Vitest. The screenshot shows the evidence workspace on a fixture repository."><picture><source media="(min-width: 592px) and (max-width: 767px), (min-width: 880px)" srcset="assets/blank.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/work-codeatlas-dark-phone.svg"><img src="assets/work-codeatlas-light-phone.svg" alt=""></picture><picture><source media="(max-width: 591px), (min-width: 768px) and (max-width: 879px), (min-width: 1154px)" srcset="assets/blank.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/work-codeatlas-dark-mid.svg"><img src="assets/work-codeatlas-light-mid.svg" alt=""></picture><picture><source media="(max-width: 1153px)" srcset="assets/blank.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/work-codeatlas-dark-wide.svg"><img src="assets/work-codeatlas-light-wide.svg" alt=""></picture></a>
 </p>
 
 <p>
@@ -68,39 +68,39 @@
 </p>
 
 <details>
-<summary><b>Engineering notes</b> · four problems, solved</summary>
+<summary><b>Under the hood</b> · four problems and how I cracked them</summary>
 
-#### Bupples: a payment that disappeared
+#### Bupples: the payment that went nowhere
 
-A simplified settlement plan can ask A to pay C even when the original debts were A → B → C. Reducing only a direct A → C debt found nothing to reduce. I changed the settlement path to reduce the original debt edges while preserving everyone’s net balance. Money stays in integer minor units throughout. [The ledger decision and its trade-offs](https://yousofselim.com/work/bupples/#challenges)
+A owes B, and B owes C. The simplified plan says A should just pay C, which is neat until A actually pays and the app looks for a direct A → C debt to reduce. There isn’t one, so the payment reduced nothing. I changed settlement to pay down the original debts along the chain, so everyone’s balance still adds up. Money is kept in whole minor units, so nothing drifts by a cent. [The ledger decision](https://yousofselim.com/work/bupples/#challenges)
 
 #### Adelante: widgets that agree without talking
 
-Flutter, WidgetKit and Android RemoteViews run in separate processes. They share one time-based rotation rule, so widgets advance offline without waiting for the app to open, and iOS also gets a precomputed timeline within WidgetKit’s refresh budget. [The native-widget architecture](https://yousofselim.com/work/adelante/#architecture)
+The Flutter app, the iOS widgets and the Android widgets run in separate processes and can’t talk to each other. So they don’t need to: they all follow the same clock-based rotation rule and land on the same quote, offline, without waiting for the app to open. iOS also gets a precomputed timeline that fits WidgetKit’s refresh budget. [The widget architecture](https://yousofselim.com/work/adelante/#architecture)
 
-#### WayClub: shared infrastructure, separate club data
+#### WayClub: one database, no peeking
 
-Each request runs in one transaction that carries the caller’s verified claims, and PostgreSQL row-level security decides what each club can see, under a database role that cannot bypass it. A query that forgets to filter by club still cannot return another club’s rows. [The isolation decision and its trade-offs](https://yousofselim.com/work/wayclub/)
+Every club shares one database, so the bug that matters is one club seeing another’s data. Instead of trusting every query to filter correctly, each request runs in a transaction that carries the caller’s verified claims, and PostgreSQL row-level security decides what they can see, under a role that can’t bypass it. Forget a filter and you still only see your own club. [The isolation decision](https://yousofselim.com/work/wayclub/)
 
-#### CodeAtlas: from a changed function to a reproduced regression
+#### CodeAtlas: the 500 hiding behind a green suite
 
-CodeAtlas maps a change to the tests that reach it, runs both revisions and signs the evidence. On the supported authentication fixture it reproduces an expired-session response changing from HTTP 401 to HTTP 500. [Implementation status](https://github.com/yeegz/CodeAtlas#current-implementation-status)
+A test suite can pass while a changed branch goes untested. On its authentication fixture, CodeAtlas spots an uncovered expired-session path, generates a test for it, and catches the response quietly changing from HTTP 401 to HTTP 500. [What works today](https://github.com/yeegz/CodeAtlas#current-implementation-status)
 
-Bupples, Adelante and WayClub have public showcases; their application source is private.
+Bupples, Adelante and WayClub are closed source, but each has a public showcase repo.
 
 </details>
 
 <details>
-<summary>Take a detour</summary>
+<summary>Got a minute? Take a detour</summary>
 
-My portfolio has [a working terminal](https://yousofselim.com/terminal/). Start with `help` and see where it goes.
+My portfolio has [a working terminal](https://yousofselim.com/terminal/). Type `help` and see where it takes you.
 
-Or play [Fallen Asteri](https://yeegz.itch.io/fallenasteri), a Godot platformer built by three developers. I set up the repository workflow and worked on levels, animation, the HUD and combat tuning. [Source](https://github.com/yeegz/Fallen-Asteri)
+Or play [Fallen Asteri](https://yeegz.itch.io/fallenasteri), a Godot platformer our team of three built. I set up our branch-and-pull-request workflow and worked on levels, animation, the HUD and combat tuning. [Source](https://github.com/yeegz/Fallen-Asteri)
 
 </details>
 
 <p>
-<a href="https://yousofselim.com/#contact" aria-label="Hiring interns for January 2027? I’d like to hear what your team is building. Remote or on site."><picture><source media="(min-width: 592px) and (max-width: 767px), (min-width: 880px)" srcset="assets/blank.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/head-contact-dark-phone.svg"><img src="assets/head-contact-light-phone.svg" alt=""></picture><picture><source media="(max-width: 591px), (min-width: 768px) and (max-width: 879px), (min-width: 1154px)" srcset="assets/blank.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/head-contact-dark-mid.svg"><img src="assets/head-contact-light-mid.svg" alt=""></picture><picture><source media="(max-width: 1153px)" srcset="assets/blank.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/head-contact-dark-wide.svg"><img src="assets/head-contact-light-wide.svg" alt=""></picture></a>
+<a href="https://yousofselim.com/#contact" aria-label="Hiring interns for January 2027? I’d love to hear what your team is building. Remote or on site both work for me."><picture><source media="(min-width: 592px) and (max-width: 767px), (min-width: 880px)" srcset="assets/blank.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/head-contact-dark-phone.svg"><img src="assets/head-contact-light-phone.svg" alt=""></picture><picture><source media="(max-width: 591px), (min-width: 768px) and (max-width: 879px), (min-width: 1154px)" srcset="assets/blank.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/head-contact-dark-mid.svg"><img src="assets/head-contact-light-mid.svg" alt=""></picture><picture><source media="(max-width: 1153px)" srcset="assets/blank.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/head-contact-dark-wide.svg"><img src="assets/head-contact-light-wide.svg" alt=""></picture></a>
 </p>
 
 <p>
