@@ -120,7 +120,7 @@ LINKS = {
     "app-store": ("App Store", "appstore", False, "Get NAME on the App Store"),
     "google-play": ("Google Play", "play", False, "Get NAME on Google Play"),
     "showcase": ("Showcase", "github", False, "Browse the NAME showcase on GitHub"),
-    "demo": ("Live demo", "play", False, "Try the NAME live demo, an interactive preview with sample data"),
+    "demo": ("Live demo", "globe", False, "Try the NAME live demo, an interactive preview with sample data"),
     "open-app": ("Open the app", "globe", False, "Open NAME in your browser"),
     "windows": ("Windows", "download", False, "Download NAME 1.5.1 for Windows"),
     "source": ("Source", "github", False, "Browse the NAME source on GitHub"),
