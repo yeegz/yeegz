@@ -34,13 +34,13 @@ from PIL import Image
 ROOT = Path(__file__).resolve().parents[1]
 ASSETS = ROOT / "assets"
 MEDIA = ROOT / "tools/profile-media"
-FONT = ROOT / "tools/profile-fonts/HankenGrotesk.woff2"
+FONT = ROOT / "tools/profile-fonts/SchibstedGrotesk.woff2"  # the portfolio's typeface
 
 # Portfolio colours (styles.css and ui/css/00-tokens.css). Hairlines are ink at
 # a fixed opacity, like the site's color-mix() hairlines, so they suit any ground.
 THEMES = {
-    "light": dict(ink="#17150f", muted="#5c574c", panel="#e4e0d7", on_ink="#f3efe6"),
-    "dark": dict(ink="#f1ece1", muted="#a7a093", panel="#070705", on_ink="#12110e"),
+    "light": dict(ink="#111114", muted="#5d5d66", panel="#e8e8eb", on_ink="#f5f5f7"),
+    "dark": dict(ink="#f2f2f4", muted="#a1a1aa", panel="#1c1c1f", on_ink="#111113"),
 }
 HAIR, HAIR_STRONG = .12, .20
 TIERS = {"phone": 320, "mid": 600, "wide": 846}
@@ -70,8 +70,8 @@ ICONS = {
 }
 
 PROJECTS = [
-    dict(key="bupples", name="Bupples", status="Live on the App Store and Google Play",
-         blurb="Split the bill, skip the awkward follow-up. Scan a receipt, tap who had what, and Bupples works out who owes whom.",
+    dict(key="bupples", name="Bupples", status="App Store and Google Play · 1.4.6",
+         blurb="Split the bill, skip the awkward follow-up. Scan a receipt, tap who had what, and Bupples works out who owes whom, to the cent.",
          chips=["Flutter", "Firebase", "Vertex AI"],
          phones=["bupples-profile.webp", "bupples-accent.webp", "bupples-settings.webp"],
          alt="the profile, accent editor and settings screens",
@@ -79,33 +79,32 @@ PROJECTS = [
                 ("app-store", "https://apps.apple.com/my/app/bupples/id6777620291"),
                 ("google-play", "https://play.google.com/store/apps/details?id=com.bupples.bupples"),
                 ("showcase", "https://github.com/yeegz/Bupples-showcase")]),
-    dict(key="adelante", name="Adelante", status="Live on the App Store",
+    dict(key="adelante", name="Adelante", status="App Store · 1.1.0 in TestFlight",
          blurb="A daily quote on your Home Screen, Lock Screen and Apple Watch, for the days you don\u2019t feel like opening an app.",
          chips=["Flutter", "Swift/SwiftUI", "Kotlin"],
-         phones=["adelante-widgets.webp", "adelante-today.webp", "adelante-discover.webp"],
-         alt="the widget gallery, Today and Discover screens",
+         phones=["adelante-v110-widgets.webp", "adelante-v110-today.webp", "adelante-v110-editor.webp"],
+         alt="the widgets, Today and widget editor screens of version 1.1.0",
          links=[("case-study", f"{SITE}/work/adelante/"),
                 ("app-store", "https://apps.apple.com/us/app/adelante-daily-quotes/id6816598027"),
                 ("showcase", "https://github.com/yeegz/adelante-showcase")]),
-    dict(key="wayclub", name="WayClub", status="Guided demo with sample data",
-         blurb="Student clubs plan events, get them approved and run sign-ups in one place, "
+    dict(key="wayclub", name="WayClub", status="In development · no live site",
+         blurb="Teams, clubs and communities run events, tickets and the committee work behind them in one place, "
                "not across group chats, forms and spreadsheets.",
          chips=["Next.js", "NestJS", "PostgreSQL"],
-         shot="wayclub-workspace.webp",
-         alt="a club workspace with events, proposals and committee members, using fictional data",
+         shot="wayclub-committee.webp",
+         alt="the committee workspace for a fictional film society, with a running event and decisions waiting",
          links=[("case-study", f"{SITE}/work/wayclub/"),
-                ("demo", "https://wayclub-live-demo.web.app/home?tour=1"),
                 ("showcase", "https://github.com/yeegz/WayClub-showcase")]),
-    dict(key="photoshoot", name="Photoshoot", status="Live in your browser · Windows 1.0.1",
-         blurb="Strike a pose, pick from 17 live effects, keep the strip. Nothing from your camera ever leaves your device.",
-         chips=["TypeScript", "Electron", "MediaPipe"],
-         shot="photoshoot-landing.webp",
-         alt="the red photobooth landing page",
+    dict(key="photoshoot", name="Photoshoot", status="Web app and Windows 1.5.1",
+         blurb="Strike a pose, pick from 52 live effects and reactive face masks, keep the strip. Nothing from your camera leaves your device.",
+         chips=["TypeScript", "Electron", "WebGL2", "MediaPipe"],
+         shot="photoshoot-landing-v151.webp",
+         alt="the Photoshoot product site for version 1.5.1",
          links=[("case-study", f"{SITE}/work/photoshoot/"),
                 ("open-app", "https://photoshoot-yeegz.web.app/app/"),
-                ("windows", "https://github.com/yeegz/photoshoot/releases/tag/v1.0.1"),
+                ("windows", "https://github.com/yeegz/photoshoot/releases/tag/v1.5.1"),
                 ("source", "https://github.com/yeegz/photoshoot")]),
-    dict(key="codeatlas", name="CodeAtlas", status="Runs locally · source on GitHub",
+    dict(key="codeatlas", name="CodeAtlas", status="Local CLI · merged 6 Oct",
          blurb="Green tests don\u2019t always mean nothing broke. CodeAtlas finds the tests a change really reaches, runs the code before and after, and signs what it saw.",
          chips=["TypeScript", "Node.js", "Vitest"],
          shot="codeatlas-workspace.webp",
@@ -122,7 +121,7 @@ LINKS = {
     "showcase": ("Showcase", "github", False, "Browse the NAME showcase on GitHub"),
     "demo": ("Try the demo", "globe", False, "Try the NAME demo"),
     "open-app": ("Open the app", "globe", False, "Open NAME in your browser"),
-    "windows": ("Windows", "download", False, "Download NAME 1.0.1 for Windows"),
+    "windows": ("Windows", "download", False, "Download NAME 1.5.1 for Windows"),
     "source": ("Source", "github", False, "Browse the NAME source on GitHub"),
 }
 
@@ -137,7 +136,7 @@ BUTTONS = {
 
 SKILLS = [
     ("Mobile", ["Flutter", "Dart", "Riverpod", "Swift/SwiftUI", "Kotlin"]),
-    ("Backend and data", ["TypeScript", "NestJS", "PostgreSQL", "Firebase", "REST APIs"]),
+    ("Backend and data", ["TypeScript", "NestJS", "PostgreSQL", "Supabase", "Firebase", "REST APIs"]),
     ("Web", ["React", "Next.js", "JavaScript", "HTML/CSS", "WebGL2", "Electron"]),
     ("Testing and delivery", ["Flutter tests", "Vitest", "Playwright", "Firebase Emulator Suite",
                               "GitHub Actions", "App Store and Google Play releases"]),
@@ -163,8 +162,8 @@ def hb_font(weight):
     return font
 
 
-UPEM = 1000
-CAP = .697  # cap height / em, from OS/2
+UPEM = TTFont(FONT)["head"].unitsPerEm
+CAP = TTFont(FONT)["OS/2"].sCapHeight / UPEM  # cap height / em, from OS/2
 
 
 def shape(value, weight):
@@ -380,7 +379,7 @@ def chips(values, y, t, size):
     body, x = [], 0
     for value in values:
         w = measure(value, size, 500) + pad * 2
-        body += [rect(x + .5, y + .5, w - 1, h - 1, 6, fill="none", stroke=t["ink"], stroke_opacity=HAIR_STRONG),
+        body += [rect(x, y, w, h, h / 2, fill=t["ink"], fill_opacity=.06),
                  text(value, x + pad, y + h / 2 + size * CAP / 2, size, t["ink"], 500)]
         x += w + gap
     return body, h
@@ -419,22 +418,26 @@ def project(p, theme, tier):
         mw, mh, top = 470, 294, 28
         mx, col = W - mw, W - mw - 40
         h = top + mh
-        body.append(text(p["status"], 0, top + 10, 13, t["muted"]))
-        chip_body, ch = chips(p["chips"], h - 28, t, 13)
+        # One block, centred on the media: name, status, the line, the stack.
         blurb = wrap(p["blurb"], 16, 400, col)
-        base = h - ch - 20 - (len(blurb) - 1) * 24
-        body.append(text(p["name"], 0, base - 36, 24, t["ink"], 600, -.015))
+        name_h, status_gap, blurb_gap, chip_gap, ch = 24 * CAP, 26, 30, 18, 28
+        block_h = name_h + status_gap + blurb_gap + (len(blurb) - 1) * 24 + chip_gap + ch
+        y0 = top + (mh - block_h) / 2 + name_h
+        body.append(text(p["name"], 0, y0, 24, t["ink"], 600, -.015))
+        body.append(text(p["status"], 0, y0 + status_gap, 13, t["muted"]))
+        base = y0 + status_gap + blurb_gap
         body += [text(v, 0, base + i * 24, 16, t["ink"]) for i, v in enumerate(blurb)]
+        chip_body, _ = chips(p["chips"], base + (len(blurb) - 1) * 24 + chip_gap, t, 13)
         body += chip_body
     else:
         mid = tier == "mid"
         mx, mw, mh, top = 0, W, (300 if mid else 180), (26 if mid else 22)
         title_size, blurb_size, lh, chip_size, status = (23, 16, 24, 13, 13) if mid else (20, 15, 22, 12.5, 12.5)
-        base = top + mh + 30
-        body.append(text(p["status"], 0, base, status, t["muted"]))
-        base += 12 + title_size * CAP + 8
+        base = top + mh + 22 + title_size * CAP
         body.append(text(p["name"], 0, base, title_size, t["ink"], 600, -.015))
-        base += 10
+        base += status + 10
+        body.append(text(p["status"], 0, base, status, t["muted"]))
+        base += 4
         for v in wrap(p["blurb"], blurb_size, 400, W):
             base += lh
             body.append(text(v, 0, base, blurb_size, t["ink"]))
@@ -478,6 +481,81 @@ def skills(theme, tier):
     return title
 
 
+REPORT_ROWS = [
+    ("119\u00d7", "shorter waits behind slow requests after one lock fix", "Testing PostgreSQL Tenant Isolation", "WayClub"),
+    ("97%", "of float-based ledgers ended up not adding up", "Cent-Exact Ledger", "Bupples"),
+    ("8 bugs", "around clock changes that the existing tests missed", "One Rule, Three Runtimes", "Adelante"),
+    ("4\u00d7", "lower frame rate once face tracking switches on", "Sixteen Milliseconds", "Photoshoot"),
+]
+BUILDING_ROWS = [
+    ("Planket", "Web app live \u00b7 stores next", "A shared calendar that shows when everyone is free, and sends a plan in three taps."),
+    ("CareerOS", "Private pilot", "Notices when you ship, and drafts r\u00e9sum\u00e9 and LinkedIn lines from evidence it can cite."),
+    ("HACKFAM", "Prototype \u00b7 building", "Event discovery and teammate matching for hackathons, CTFs and game jams."),
+]
+
+
+def reports(theme, tier):
+    """Engineering reports: the headline figure, what it measures, then the report and its product."""
+    t, W = THEMES[theme], TIERS[tier]
+    lead = "Measurements from my own products, each with its data and scripts."
+    body, y = section_head("Engineering reports", lead, t, tier)
+    y += 20
+    big = 30 if tier != "phone" else 26
+    num_w = {"wide": 150, "mid": 130, "phone": 0}[tier]
+    for value, label, title, product in REPORT_ROWS:
+        body.append(rule(y + .5, W, t["ink"]))
+        if tier == "phone":
+            y += 18 + big * CAP
+            body.append(text(value, 0, y, big, t["ink"], 600, -.02))
+            for v in wrap(label, 14, 400, W):
+                y += 21
+                body.append(text(v, 0, y, 14, t["muted"]))
+            y += 22
+            body.append(text(f"{title} \u00b7 {product}", 0, y, 14, t["ink"], 500))
+            y += 16
+        else:
+            base = y + 22 + big * CAP
+            body.append(text(value, 0, base, big, t["ink"], 600, -.02))
+            body.append(text(title, num_w, base - big * CAP + 15 * CAP, 15, t["ink"], 600))
+            body.append(text(f"{label} \u00b7 {product}", num_w, base - big * CAP + 15 * CAP + 22, 14, t["muted"]))
+            y = base + 18
+    body.append(rule(y + .5, W, t["ink"]))
+    title = "Engineering reports. " + lead + " " + " ".join(f"{v} {l}: {ti} ({p})." for v, l, ti, p in REPORT_ROWS)
+    svg(f"reports-{theme}-{tier}.svg", W, y + 1, title, body)
+    return title
+
+
+def building(theme, tier):
+    """Still being built: name, status and one line each, on the skills table's rows."""
+    t, W = THEMES[theme], TIERS[tier]
+    lead = "Three more, in progress. Each status says exactly how far along it is."
+    body, y = section_head("Still being built", lead, t, tier)
+    y += 20
+    name_w = {"wide": 210, "mid": 180, "phone": 0}[tier]
+    for name, status, line in BUILDING_ROWS:
+        body.append(rule(y + .5, W, t["ink"]))
+        if tier == "phone":
+            y += 16 + 16 * CAP
+            body.append(text(name, 0, y, 16, t["ink"], 600))
+            y += 20
+            body.append(text(status, 0, y, 13, t["muted"]))
+            for v in wrap(line, 14, 400, W):
+                y += 21
+                body.append(text(v, 0, y, 14, t["ink"]))
+            y += 16
+        else:
+            base = y + 18 + 16 * CAP
+            body.append(text(name, 0, base, 16, t["ink"], 600))
+            body.append(text(status, 0, base + 20, 13, t["muted"]))
+            rows = wrap(line, 15, 400, W - name_w)
+            body += [text(v, name_w, base + i * 23, 15, t["ink"]) for i, v in enumerate(rows)]
+            y = max(base + 20, base + (len(rows) - 1) * 23) + 18
+    body.append(rule(y + .5, W, t["ink"]))
+    title = "Still being built. " + lead + " " + " ".join(f"{n}: {s}. {l}" for n, s, l in BUILDING_ROWS)
+    svg(f"building-{theme}-{tier}.svg", W, y + 1, title, body)
+    return title
+
+
 def button(key, theme):
     """The site's small button: 36px pill, 14px label, 18px icon, 14px padding."""
     label, mark, primary = BUTTONS[key]
@@ -485,8 +563,8 @@ def button(key, theme):
     h, size, pad, isz, gap = 36, 14, 14, 18, 8
     w = pad * 2 + measure(label, size, 500, -.005) + (isz + gap if mark else 0)
     fg = t["on_ink"] if primary else t["ink"]
-    body = [rect(.5, .5, w - 1, h - 1, (h - 1) / 2, fill=t["ink"] if primary else "none",
-                 stroke=t["ink"], stroke_opacity=1 if primary else HAIR_STRONG)]
+    # Secondary actions rest on a soft filled pill, as on the site (never an empty outline).
+    body = [rect(0, 0, w, h, h / 2, fill=t["ink"], fill_opacity=1 if primary else .07)]
     x = pad
     if mark:
         body.append(icon(mark, x, (h - isz) / 2, isz, fg))
@@ -502,9 +580,13 @@ def link(key, theme):
     t = THEMES[theme]
     colour = t["ink"] if primary else t["muted"]
     h, size, isz, gap = 28, 14, 16, 7
-    w = isz + gap + measure(label, size, 500)
-    body = [icon(mark, 0, (h - isz) / 2, isz, colour), text(label, isz + gap, h / 2 + size * CAP / 2, size, colour, 500)]
-    svg(f"go-{key}-{theme}.svg", round(w + 16), h, label, body)
+    pad = 12
+    w = pad * 2 + isz + gap + measure(label, size, 500)
+    fg = t["on_ink"] if primary else t["ink"]
+    body = [rect(0, 0, w, h, h / 2, fill=t["ink"], fill_opacity=1 if primary else .07),
+            icon(mark, pad, (h - isz) / 2, isz, fg), text(label, pad + isz + gap, h / 2 + size * CAP / 2, size, fg, 500)]
+    # 4px of air after the pill; with the space between links that makes an 8px gap.
+    svg(f"go-{key}-{theme}.svg", round(w + 4), h, label, body)
 
 
 # --- README -----------------------------------------------------------------
@@ -536,15 +618,15 @@ NOTES = """<details>
 
 #### Bupples: the payment that went nowhere
 
-A owes B, and B owes C. The simplified plan says A should just pay C, which is neat until A actually pays and the app looks for a direct A → C debt to reduce. There isn’t one, so the payment reduced nothing. I changed settlement to pay down the original debts along the chain, so everyone’s balance still adds up. Money is kept in whole minor units, so nothing drifts by a cent. [The ledger decision](https://yousofselim.com/work/bupples/#challenges)
+A owes B, and B owes C. The simplified plan says A should just pay C, which is neat until A actually pays and the app looks for a direct A → C debt to reduce. There isn’t one, so the payment reduced nothing. I changed settlement to pay down the original debts along the chain. Money is kept in whole minor units, so nothing drifts by a cent; [the ledger report](https://yousofselim.com/research/cent-exact-ledger/) measures it over four million simulated bills.
 
 #### Adelante: widgets that agree without talking
 
-The Flutter app, the iOS widgets and the Android widgets run in separate processes and can’t talk to each other. So they don’t need to: they all follow the same clock-based rotation rule and land on the same quote, offline, without waiting for the app to open. iOS also gets a precomputed timeline that fits WidgetKit’s refresh budget. [The widget architecture](https://yousofselim.com/work/adelante/#architecture)
+The Flutter app, the iOS widgets and the Android widgets run in separate processes and can’t talk to each other. So they don’t need to: they all follow the same clock-based rotation rule and land on the same quote, offline. Running the three versions side by side then found eight clock-change cases where they disagree; [the report](https://yousofselim.com/research/one-rule-three-runtimes/) has the details.
 
 #### WayClub: one database, no peeking
 
-Every club shares one database, so the bug that matters is one club seeing another’s data. Instead of trusting every query to filter correctly, each request runs in a transaction that carries the caller’s verified claims, and PostgreSQL row-level security decides what they can see, under a role that can’t bypass it. Forget a filter and you still only see your own club. [The isolation decision](https://yousofselim.com/work/wayclub/)
+Every club shares one database, so the bug that matters is one club seeing another’s data. Each request runs in a transaction that carries the caller’s verified claims, and PostgreSQL row-level security decides what they can see, under a role that can’t bypass it. Forget a filter and you still only see your own club. [The isolation report](https://yousofselim.com/research/catalogue-driven-rls/)
 
 #### CodeAtlas: the 500 hiding behind a green suite
 
@@ -569,8 +651,8 @@ FOOTER = "<sub>Bachelor of Software Engineering (Hons), Sunway University × Lan
 def main():
     ASSETS.mkdir(exist_ok=True)
     alts = {}
-    work_lead = "Five products, one developer on each: me."
-    contact_title, contact_lead = "Hiring interns for January 2027?", "I\u2019d love to hear what your team is building. Remote or on site both work for me."
+    work_lead = "Five products, each built end to end by me."
+    contact_title, contact_lead = "Hiring interns for January 2027?", "I\u2019m available full-time from 25 January to 23 April 2027. Email is the quickest way to reach me."
     for theme in THEMES:
         for key in BUTTONS:
             button(key, theme)
@@ -581,6 +663,8 @@ def main():
             heading("work", "Selected work", work_lead, theme, tier)
             heading("contact", contact_title, contact_lead, theme, tier)
             alts["skills"] = skills(theme, tier)
+            alts["reports"] = reports(theme, tier)
+            alts["building"] = building(theme, tier)
             for p in PROJECTS:
                 alts[p["key"]] = project(p, theme, tier)
 
@@ -597,7 +681,14 @@ def main():
         links = [themed("go", key, LINKS[key][3].replace("NAME", p["name"]), href, 28) for key, href in p["links"]]
         sections += [block(responsive("work-" + p["key"], alts[p["key"]], p["links"][0][1])),
                      block("\n".join(links))]
+    report_links = " \u00b7 ".join(f"[{ti}]({SITE}/research/{slug}/)" for (_, _, ti, _), slug in zip(
+        REPORT_ROWS, ["catalogue-driven-rls", "cent-exact-ledger", "one-rule-three-runtimes", "frame-budget"]))
+    building_links = " \u00b7 ".join(f"[{n}]({SITE}/work/{n.lower()}/)" for n, _, _ in BUILDING_ROWS)
     sections += [
+        block(responsive("building", alts["building"], f"{SITE}/#work")),
+        f"<sub>Case studies: {building_links}</sub>",
+        block(responsive("reports", alts["reports"], f"{SITE}/research/")),
+        f"<sub>Read: {report_links} \u00b7 [all eight reports]({SITE}/research/)</sub>",
         block(responsive("skills", alts["skills"], f"{SITE}/#skills")),
         NOTES,
         block(responsive("head-contact", f"{contact_title} {contact_lead}", f"{SITE}/#contact")),
