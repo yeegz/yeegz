@@ -73,29 +73,44 @@ PROJECTS = [
     dict(key="bupples", name="Bupples", status="App Store and Google Play · 1.4.6",
          blurb="Split the bill, skip the awkward follow-up. Scan a receipt, tap who had what, and Bupples works out who owes whom, to the cent.",
          chips=["Flutter", "Firebase", "Vertex AI"],
-         phones=["bupples-profile.webp", "bupples-accent.webp", "bupples-settings.webp"],
-         alt="the profile, accent editor and settings screens",
+         phones=["bupples-receipt-2026-11.webp", "bupples-home-2026-11.webp", "bupples-bubbles-2026-11.webp"],
+         alt="the receipt claim, Home and hangout balance screens",
          links=[("case-study", f"{SITE}/work/bupples/"),
                 ("app-store", "https://apps.apple.com/my/app/bupples/id6777620291"),
                 ("google-play", "https://play.google.com/store/apps/details?id=com.bupples.bupples"),
                 ("showcase", "https://github.com/yeegz/Bupples-showcase")]),
-    dict(key="adelante", name="Adelante", status="App Store · 1.1.0 in TestFlight",
-         blurb="A daily quote on your Home Screen, Lock Screen and Apple Watch, for the days you don\u2019t feel like opening an app.",
-         chips=["Flutter", "Swift/SwiftUI", "Kotlin"],
-         phones=["adelante-v110-widgets.webp", "adelante-v110-today.webp", "adelante-v110-editor.webp"],
-         alt="the widgets, Today and widget editor screens of version 1.1.0",
-         links=[("case-study", f"{SITE}/work/adelante/"),
-                ("app-store", "https://apps.apple.com/us/app/adelante-daily-quotes/id6816598027"),
-                ("showcase", "https://github.com/yeegz/adelante-showcase")]),
-    dict(key="wayclub", name="WayClub", status="Live preview · in development",
-         blurb="Teams, clubs and communities run events, tickets and the committee work behind them in one place, "
-               "not across group chats, forms and spreadsheets.",
-         chips=["Next.js", "NestJS", "PostgreSQL"],
-         shot="wayclub-committee.webp",
-         alt="the committee workspace for a fictional film society, with a running event and decisions waiting",
-         links=[("case-study", f"{SITE}/work/wayclub/"),
-                ("demo", "https://wayclub.site"),
-                ("showcase", "https://github.com/yeegz/WayClub-showcase")]),
+    dict(key="pulse", name="Pulse", status="In development · team project",
+         blurb="A city of about 150 residents that lives on its own. Ask anyone why they did something, change the city in plain English, and replay the day.",
+         chips=["TypeScript", "three.js", "Fastify"],
+         shot="pulse-city.webp",
+         alt="the simulated city from above, with its districts and streets",
+         links=[("case-study", f"{SITE}/work/pulse/"),
+                ("demo", "https://pulse-ihzwsnnyfa-as.a.run.app")]),
+    dict(key="keepwell", name="Keepwell", status="Live demo · pre-pilot",
+         blurb="Maintenance for estates, factories, campuses and hotels. The technician\u2019s app keeps working in a plant room with no signal, and two people can never be promised the same spare part.",
+         chips=["Java", "Spring Boot", "PostgreSQL", "Angular"],
+         shot="keepwell-overview.webp",
+         alt="the manager\u2019s overview with the jobs that need a decision, on sample data",
+         links=[("case-study", f"{SITE}/work/keepwell/"),
+                ("demo", "https://keepwell-951434273932.asia-southeast1.run.app"),
+                ("showcase", "https://github.com/yeegz/keepwell-showcase")]),
+    dict(key="hostmortem", name="Hostmortem", status="Replay live · v0.1",
+         blurb="It was fine, then it wasn\u2019t, then someone rebooted it. Hostmortem keeps the minutes before on a Linux box and says what it knows, suspects and could not see.",
+         chips=["C++20", "Linux", "SQLite"],
+         shot="hostmortem-replay.webp",
+         alt="the replay of a real upstream DNS outage on a five-lane tape, with the verdict underneath",
+         links=[("case-study", f"{SITE}/work/hostmortem/"),
+                ("demo", f"{SITE}/hostmortem-showcase/"),
+                ("showcase", "https://github.com/yeegz/hostmortem-showcase")]),
+    dict(key="planket", name="Planket", status="App Store · web app live",
+         blurb="See when your friends are free and send a plan in three taps. Your calendar stays private: friends see busy time, never what you are doing.",
+         chips=["Next.js", "Capacitor", "Supabase"],
+         phones=["planket-plan.webp", "planket-calendar.webp", "planket-friends.webp"],
+         alt="the plan, shared calendar and friends screens",
+         links=[("case-study", f"{SITE}/work/planket/"),
+                ("app-store", "https://apps.apple.com/my/app/planket/id6825034126"),
+                ("open-app", "https://planket-yeegz.web.app"),
+                ("showcase", "https://github.com/yeegz/planket-showcase")]),
     dict(key="photoshoot", name="Photoshoot", status="Web app and Windows 1.5.1",
          blurb="Strike a pose, pick from 52 live effects and reactive face masks, keep the strip. Nothing from your camera leaves your device.",
          chips=["TypeScript", "Electron", "WebGL2", "MediaPipe"],
@@ -105,13 +120,6 @@ PROJECTS = [
                 ("open-app", "https://photoshoot-yeegz.web.app/app/"),
                 ("windows", "https://github.com/yeegz/photoshoot/releases/tag/v1.5.1"),
                 ("source", "https://github.com/yeegz/photoshoot")]),
-    dict(key="codeatlas", name="CodeAtlas", status="Local CLI · merged 6 Oct",
-         blurb="Green tests don\u2019t always mean nothing broke. CodeAtlas finds the tests a change really reaches, runs the code before and after, and signs what it saw.",
-         chips=["TypeScript", "Node.js", "Vitest"],
-         shot="codeatlas-workspace.webp",
-         alt="the evidence workspace on a fixture repository",
-         links=[("case-study", f"{SITE}/work/codeatlas/"),
-                ("source", "https://github.com/yeegz/CodeAtlas")]),
 ]
 
 # Text links under each project: (label, icon, primary, alt with NAME placeholder).
@@ -136,12 +144,13 @@ BUTTONS = {
 }
 
 SKILLS = [
-    ("Mobile", ["Flutter", "Dart", "Riverpod", "Swift/SwiftUI", "Kotlin"]),
-    ("Backend and data", ["TypeScript", "NestJS", "PostgreSQL", "Supabase", "Firebase", "REST APIs"]),
-    ("Web", ["React", "Next.js", "JavaScript", "HTML/CSS", "WebGL2", "Electron"]),
-    ("Testing and delivery", ["Flutter tests", "Vitest", "Playwright", "Firebase Emulator Suite",
+    ("Mobile", ["Flutter", "Dart", "Riverpod", "Swift/SwiftUI", "Kotlin", "Capacitor"]),
+    ("Backend and data", ["TypeScript", "Java", "Spring Boot", "NestJS", "PostgreSQL", "Supabase", "Firebase", "SQLite"]),
+    ("Systems", ["C++20", "Linux", "CMake", "Docker"]),
+    ("Web", ["React", "Next.js", "Angular", "JavaScript", "HTML/CSS", "WebGL2", "Electron"]),
+    ("Testing and delivery", ["Flutter tests", "Vitest", "Playwright", "JUnit", "Fuzzing and sanitizers",
                               "GitHub Actions", "App Store and Google Play releases"]),
-    ("Also", ["Python", "Java (working knowledge)", "Vertex AI and Gemini", "MediaPipe", "Git"]),
+    ("Also", ["Python", "Vertex AI and Gemini", "MediaPipe", "Git"]),
 ]
 
 
@@ -317,9 +326,9 @@ def pill(y, h, parts, t, size, pad):
 
 def hero(theme, tier):
     t, W = THEMES[theme], TIERS[tier]
-    title = ("Yousof Selim, Software Engineering student. I build and ship real apps. Two are live on the "
+    title = ("Yousof Selim, Software Engineering student. I build and ship real apps. Three are live on the "
              "App Store. Available for an internship, 25 January to 23 April 2027. Subang Jaya, Malaysia.")
-    lines = [("I build and", "ink"), ("ship real apps.", "ink"), ("Two are live on", "muted"), ("the App Store.", "muted")]
+    lines = [("I build and", "ink"), ("ship real apps.", "ink"), ("Three are live on", "muted"), ("the App Store.", "muted")]
     if tier == "phone":
         # No portrait: on narrow screens GitHub shows the avatar just above the README.
         body = [text("Yousof Selim", 0, 18, 15, t["ink"], 500), text("Software Engineering student", 0, 39, 15, t["muted"])]
@@ -455,7 +464,7 @@ def project(p, theme, tier):
 
 def skills(theme, tier):
     t, W = THEMES[theme], TIERS[tier]
-    lead = "Mostly Flutter and Firebase for the apps, and TypeScript for the web and the servers."
+    lead = "Flutter for the apps, TypeScript and Java for the servers, and C++ close to the system."
     body, y = section_head("Skills", lead, t, tier)
     y += 20
     size = 14 if tier == "phone" else 15
@@ -489,9 +498,10 @@ REPORT_ROWS = [
     ("4\u00d7", "lower frame rate once face tracking switches on", "Sixteen Milliseconds", "Photoshoot"),
 ]
 BUILDING_ROWS = [
-    ("Planket", "Web app live \u00b7 stores next", "A shared calendar that shows when everyone is free, and sends a plan in three taps."),
-    ("CareerOS", "Private pilot", "Notices when you ship, and drafts r\u00e9sum\u00e9 and LinkedIn lines from evidence it can cite."),
-    ("HACKFAM", "Prototype \u00b7 building", "Event discovery and teammate matching for hackathons, CTFs and game jams."),
+    ("Adelante", "App Store \u00b7 1.1.0", "A daily quote on your Home Screen, Lock Screen and Apple Watch, with one rotation rule in Dart, Swift and Kotlin."),
+    ("TrustTrail", "Web app live \u00b7 beta", "Lays out a secondhand deal\u2019s evidence and shows the exact words behind each warning sign, privately in your browser."),
+    ("LetMeKnow", "Web app live", "Turns messages, bills and promises into open loops, with a plan to close each one."),
+    ("WayClub", "Preview live \u00b7 paused", "Events, tickets and committee work for teams, clubs and communities, isolated per group in the database."),
 ]
 
 
@@ -529,8 +539,8 @@ def reports(theme, tier):
 def building(theme, tier):
     """Still being built: name, status and one line each, on the skills table's rows."""
     t, W = THEMES[theme], TIERS[tier]
-    lead = "Three more, in progress. Each status says exactly how far along it is."
-    body, y = section_head("Still being built", lead, t, tier)
+    lead = "Four more. Each status says exactly how far along it is."
+    body, y = section_head("More work", lead, t, tier)
     y += 20
     name_w = {"wide": 210, "mid": 180, "phone": 0}[tier]
     for name, status, line in BUILDING_ROWS:
@@ -552,7 +562,7 @@ def building(theme, tier):
             body += [text(v, name_w, base + i * 23, 15, t["ink"]) for i, v in enumerate(rows)]
             y = max(base + 20, base + (len(rows) - 1) * 23) + 18
     body.append(rule(y + .5, W, t["ink"]))
-    title = "Still being built. " + lead + " " + " ".join(f"{n}: {s}. {l}" for n, s, l in BUILDING_ROWS)
+    title = "More work. " + lead + " " + " ".join(f"{n}: {s}. {l}" for n, s, l in BUILDING_ROWS)
     svg(f"building-{theme}-{tier}.svg", W, y + 1, title, body)
     return title
 
@@ -633,7 +643,7 @@ Every club shares one database, so the bug that matters is one club seeing anoth
 
 A test suite can pass while a changed branch goes untested. On its authentication fixture, CodeAtlas spots an uncovered expired-session path, generates a test for it, and catches the response quietly changing from HTTP 401 to HTTP 500. [What works today](https://github.com/yeegz/CodeAtlas#current-implementation-status)
 
-Bupples, Adelante and WayClub are closed source, but each has a public showcase repo.
+Bupples, Adelante, WayClub, Keepwell and Hostmortem are closed source, but each has a public showcase repo.
 
 </details>
 
@@ -652,7 +662,7 @@ FOOTER = "<sub>Bachelor of Software Engineering (Hons), Sunway University × Lan
 def main():
     ASSETS.mkdir(exist_ok=True)
     alts = {}
-    work_lead = "Five products, each built end to end by me."
+    work_lead = "Six products in depth. I built each alone, end to end, except Pulse, a team project."
     contact_title, contact_lead = "Hiring interns for January 2027?", "I\u2019m available full-time from 25 January to 23 April 2027. Email is the quickest way to reach me."
     for theme in THEMES:
         for key in BUTTONS:
