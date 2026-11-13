@@ -43,13 +43,13 @@
 </p>
 
 <p>
-<a href="https://yousofselim.com/work/hostmortem/" aria-label="Hostmortem. Replay live · v0.1. It was fine, then it wasn’t, then someone rebooted it. Hostmortem keeps the minutes before on a Linux box and says what it knows, suspects and could not see. Built with C++20, Linux and SQLite. The screenshot shows the replay of a real upstream DNS outage on a five-lane tape, with the verdict underneath."><picture><source media="(min-width: 592px) and (max-width: 767px), (min-width: 880px)" srcset="assets/blank.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/work-hostmortem-dark-phone.svg"><img src="assets/work-hostmortem-light-phone.svg" alt=""></picture><picture><source media="(max-width: 591px), (min-width: 768px) and (max-width: 879px), (min-width: 1154px)" srcset="assets/blank.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/work-hostmortem-dark-mid.svg"><img src="assets/work-hostmortem-light-mid.svg" alt=""></picture><picture><source media="(max-width: 1153px)" srcset="assets/blank.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/work-hostmortem-dark-wide.svg"><img src="assets/work-hostmortem-light-wide.svg" alt=""></picture></a>
+<a href="https://yousofselim.com/work/hostmortem/" aria-label="Hostmortem. Open source · v0.1.0. It was fine, then it wasn’t, then someone rebooted it. Hostmortem keeps the minutes before on a Linux box and says what it knows, suspects and could not see. Built with C++20, Linux and SQLite. The screenshot shows the replay of a real upstream DNS outage on a five-lane tape, with the verdict underneath."><picture><source media="(min-width: 592px) and (max-width: 767px), (min-width: 880px)" srcset="assets/blank.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/work-hostmortem-dark-phone.svg"><img src="assets/work-hostmortem-light-phone.svg" alt=""></picture><picture><source media="(max-width: 591px), (min-width: 768px) and (max-width: 879px), (min-width: 1154px)" srcset="assets/blank.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/work-hostmortem-dark-mid.svg"><img src="assets/work-hostmortem-light-mid.svg" alt=""></picture><picture><source media="(max-width: 1153px)" srcset="assets/blank.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/work-hostmortem-dark-wide.svg"><img src="assets/work-hostmortem-light-wide.svg" alt=""></picture></a>
 </p>
 
 <p>
 <a href="https://yousofselim.com/work/hostmortem/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/go-case-study-dark.svg"><img src="assets/go-case-study-light.svg" height="28" alt="Read the Hostmortem case study"></picture></a>
 <a href="https://yousofselim.com/hostmortem-showcase/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/go-demo-dark.svg"><img src="assets/go-demo-light.svg" height="28" alt="Try the Hostmortem live demo, an interactive preview with sample data"></picture></a>
-<a href="https://github.com/yeegz/hostmortem-showcase"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/go-showcase-dark.svg"><img src="assets/go-showcase-light.svg" height="28" alt="Browse the Hostmortem showcase on GitHub"></picture></a>
+<a href="https://github.com/yeegz/hostmortem"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/go-source-dark.svg"><img src="assets/go-source-light.svg" height="28" alt="Browse the Hostmortem source on GitHub"></picture></a>
 </p>
 
 <p>
@@ -109,7 +109,7 @@ Every club shares one database, so the bug that matters is one club seeing anoth
 
 A test suite can pass while a changed branch goes untested. On its authentication fixture, CodeAtlas spots an uncovered expired-session path, generates a test for it, and catches the response quietly changing from HTTP 401 to HTTP 500. [What works today](https://github.com/yeegz/CodeAtlas#current-implementation-status)
 
-Bupples, Adelante, WayClub, Keepwell and Hostmortem are closed source, but each has a public showcase repo.
+Bupples, Adelante, WayClub and Keepwell are closed source, but each has a public showcase repo. Hostmortem is open source.
 
 </details>
 

@@ -94,14 +94,14 @@ PROJECTS = [
          links=[("case-study", f"{SITE}/work/keepwell/"),
                 ("demo", "https://keepwell-951434273932.asia-southeast1.run.app"),
                 ("showcase", "https://github.com/yeegz/keepwell-showcase")]),
-    dict(key="hostmortem", name="Hostmortem", status="Replay live · v0.1",
+    dict(key="hostmortem", name="Hostmortem", status="Open source · v0.1.0",
          blurb="It was fine, then it wasn\u2019t, then someone rebooted it. Hostmortem keeps the minutes before on a Linux box and says what it knows, suspects and could not see.",
          chips=["C++20", "Linux", "SQLite"],
          shot="hostmortem-replay.webp",
          alt="the replay of a real upstream DNS outage on a five-lane tape, with the verdict underneath",
          links=[("case-study", f"{SITE}/work/hostmortem/"),
                 ("demo", f"{SITE}/hostmortem-showcase/"),
-                ("showcase", "https://github.com/yeegz/hostmortem-showcase")]),
+                ("source", "https://github.com/yeegz/hostmortem")]),
     dict(key="planket", name="Planket", status="App Store · web app live",
          blurb="See when your friends are free and send a plan in three taps. Your calendar stays private: friends see busy time, never what you are doing.",
          chips=["Next.js", "Capacitor", "Supabase"],
@@ -643,7 +643,7 @@ Every club shares one database, so the bug that matters is one club seeing anoth
 
 A test suite can pass while a changed branch goes untested. On its authentication fixture, CodeAtlas spots an uncovered expired-session path, generates a test for it, and catches the response quietly changing from HTTP 401 to HTTP 500. [What works today](https://github.com/yeegz/CodeAtlas#current-implementation-status)
 
-Bupples, Adelante, WayClub, Keepwell and Hostmortem are closed source, but each has a public showcase repo.
+Bupples, Adelante, WayClub and Keepwell are closed source, but each has a public showcase repo. Hostmortem is open source.
 
 </details>
 
