@@ -70,7 +70,7 @@ ICONS = {
 }
 
 PROJECTS = [
-    dict(key="bupples", name="Bupples", status="App Store and Google Play · 1.4.6",
+    dict(key="bupples", name="Bupples", status="App Store and Google Play · 1.5.0",
          blurb="Split the bill, skip the awkward follow-up. Scan a receipt, tap who had what, and Bupples works out who owes whom, to the cent.",
          chips=["Flutter", "Firebase", "Vertex AI"],
          phones=["bupples-receipt-2026-11.webp", "bupples-home-2026-11.webp", "bupples-bubbles-2026-11.webp"],
