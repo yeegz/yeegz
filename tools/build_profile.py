@@ -327,7 +327,7 @@ def pill(y, h, parts, t, size, pad):
 def hero(theme, tier):
     t, W = THEMES[theme], TIERS[tier]
     title = ("Yousof Selim, Software Engineering student. I build and ship real apps. Three are live on the "
-             "App Store. Available for an internship, 25 January to 23 April 2027. Subang Jaya, Malaysia.")
+             "App Store. Open to graduate roles from August 2027. Subang Jaya, Malaysia.")
     lines = [("I build and", "ink"), ("ship real apps.", "ink"), ("Three are live on", "muted"), ("the App Store.", "muted")]
     if tier == "phone":
         # No portrait: on narrow screens GitHub shows the avatar just above the README.
@@ -345,9 +345,9 @@ def hero(theme, tier):
     for i, (value, colour) in enumerate(lines):
         body.append(text(value, 0, first + i * lh, size, t[colour], 600, -.025))
     pill_y = first + 3 * lh + size * .26 + 22
-    parts = [("Available for an internship", "muted", 400), ("25 January to 23 April 2027", "ink", 500)]
+    parts = [("Open to graduate roles", "muted", 400), ("from August 2027", "ink", 500)]
     if pad * 2 + sum(measure(v, pill_size, wt) for v, _, wt in parts) + pill_size * .45 > W:
-        parts = [("Internship", "muted", 400), ("25 January to 23 April 2027", "ink", 500)]
+        parts = [("Graduate roles", "muted", 400), ("from August 2027", "ink", 500)]
     pill_body, _ = pill(pill_y, pill_h, parts, t, pill_size, pad)
     body += pill_body
     loc = 13 if tier == "phone" else 13.5
@@ -656,6 +656,16 @@ Or play [Fallen Asteri](https://yeegz.itch.io/fallenasteri), a Godot platformer 
 
 </details>"""
 
+INTRO = """**Software Engineering student at Sunway University × Lancaster University, graduating August 2027.** I design, build and release products on my own, from the data model to the store listing. My three strongest:
+
+- **[Bupples](https://yousofselim.com/work/bupples/)**: shared expenses on a cent-exact, multi-currency ledger. Live on the App Store and Google Play (version 1.5.0).
+- **[Keepwell](https://yousofselim.com/work/keepwell/)**: a maintenance platform in Java (Spring Boot), PostgreSQL and Angular, with a technician app that works with no signal. Pre-pilot: the [live demo](https://keepwell-951434273932.asia-southeast1.run.app) runs on synthetic data.
+- **[Hostmortem](https://github.com/yeegz/hostmortem)**: an open-source C++20 flight recorder for Linux that keeps the evidence a reboot destroys (version 0.1.0). The [fault lab replay](https://yousofselim.com/hostmortem-showcase/) shows it diagnosing real injected faults.
+
+Also live: [Planket](https://yousofselim.com/work/planket/) and [Adelante](https://yousofselim.com/work/adelante/) on the App Store, and [Photoshoot](https://github.com/yeegz/photoshoot) for the web and Windows. Methods and numbers are in [eight engineering reports](https://yousofselim.com/research/).
+
+**Looking for:** graduate software engineering roles from August 2027. My internship for January to April 2027 is confirmed."""
+
 FOOTER = "<sub>Bachelor of Software Engineering (Hons), Sunway University × Lancaster University. Graduating August 2027.</sub>"
 
 
@@ -663,7 +673,7 @@ def main():
     ASSETS.mkdir(exist_ok=True)
     alts = {}
     work_lead = "Six products in depth. I built each alone, end to end, except Pulse, a team project."
-    contact_title, contact_lead = "Hiring interns for January 2027?", "I\u2019m available full-time from 25 January to 23 April 2027. Email is the quickest way to reach me."
+    contact_title, contact_lead = "Hiring graduates for August 2027?", "My internship for January to April 2027 is confirmed. Email is the quickest way to reach me."
     for theme in THEMES:
         for key in BUTTONS:
             button(key, theme)
@@ -683,6 +693,7 @@ def main():
 
     sections = [
         block(responsive("hero", alts["hero"], f"{SITE}/")),
+        INTRO,
         block("\n".join([themed("btn", "resume", "Read my résumé (PDF)", RESUME, 36),
                          themed("btn", "recruiters", "Read the one-page recruiter overview", f"{SITE}/simple/", 36),
                          themed("btn", "portfolio", "Visit my portfolio at yousofselim.com", f"{SITE}/", 36)])),
@@ -705,7 +716,7 @@ def main():
         block(responsive("head-contact", f"{contact_title} {contact_lead}", f"{SITE}/#contact")),
         block("\n".join([
             themed("btn", "email", "Email me at yousofselim2@gmail.com",
-                   "mailto:yousofselim2@gmail.com?subject=Software%20Engineering%20internship%2C%20January%202027", 36),
+                   "mailto:yousofselim2@gmail.com?subject=Software%20Engineering%20role", 36),
             themed("btn", "linkedin", "Connect on LinkedIn", "https://www.linkedin.com/in/ysf-slm/", 36)])),
         FOOTER,
     ]
