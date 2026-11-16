@@ -664,7 +664,7 @@ INTRO = """**Software Engineering student at Sunway University × Lancaster Univ
 
 Also live: [Planket](https://yousofselim.com/work/planket/) and [Adelante](https://yousofselim.com/work/adelante/) on the App Store, and [Photoshoot](https://github.com/yeegz/photoshoot) for the web and Windows. Methods and numbers are in [eight engineering reports](https://yousofselim.com/research/).
 
-**Looking for:** graduate software engineering roles from August 2027. My internship for January to April 2027 is confirmed."""
+**Looking for:** graduate software engineering roles from August 2027. Internship confirmed."""
 
 FOOTER = "<sub>Bachelor of Software Engineering (Hons), Sunway University × Lancaster University. Graduating August 2027.</sub>"
 
@@ -673,7 +673,7 @@ def main():
     ASSETS.mkdir(exist_ok=True)
     alts = {}
     work_lead = "Six products in depth. I built each alone, end to end, except Pulse, a team project."
-    contact_title, contact_lead = "Hiring graduates for August 2027?", "My internship for January to April 2027 is confirmed. Email is the quickest way to reach me."
+    contact_title, contact_lead = "Hiring graduates for August 2027?", "Internship confirmed. Email is the quickest way to reach me."
     for theme in THEMES:
         for key in BUTTONS:
             button(key, theme)

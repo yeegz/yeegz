@@ -10,7 +10,7 @@
 
 Also live: [Planket](https://yousofselim.com/work/planket/) and [Adelante](https://yousofselim.com/work/adelante/) on the App Store, and [Photoshoot](https://github.com/yeegz/photoshoot) for the web and Windows. Methods and numbers are in [eight engineering reports](https://yousofselim.com/research/).
 
-**Looking for:** graduate software engineering roles from August 2027. My internship for January to April 2027 is confirmed.
+**Looking for:** graduate software engineering roles from August 2027. Internship confirmed.
 
 <p>
 <a href="https://yousofselim.com/Yousof-Selim-Resume.pdf"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/btn-resume-dark.svg"><img src="assets/btn-resume-light.svg" height="36" alt="Read my résumé (PDF)"></picture></a>
@@ -133,7 +133,7 @@ Or play [Fallen Asteri](https://yeegz.itch.io/fallenasteri), a Godot platformer 
 </details>
 
 <p>
-<a href="https://yousofselim.com/#contact" aria-label="Hiring graduates for August 2027? My internship for January to April 2027 is confirmed. Email is the quickest way to reach me."><picture><source media="(min-width: 592px) and (max-width: 767px), (min-width: 880px)" srcset="assets/blank.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/head-contact-dark-phone.svg"><img src="assets/head-contact-light-phone.svg" alt=""></picture><picture><source media="(max-width: 591px), (min-width: 768px) and (max-width: 879px), (min-width: 1154px)" srcset="assets/blank.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/head-contact-dark-mid.svg"><img src="assets/head-contact-light-mid.svg" alt=""></picture><picture><source media="(max-width: 1153px)" srcset="assets/blank.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/head-contact-dark-wide.svg"><img src="assets/head-contact-light-wide.svg" alt=""></picture></a>
+<a href="https://yousofselim.com/#contact" aria-label="Hiring graduates for August 2027? Internship confirmed. Email is the quickest way to reach me."><picture><source media="(min-width: 592px) and (max-width: 767px), (min-width: 880px)" srcset="assets/blank.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/head-contact-dark-phone.svg"><img src="assets/head-contact-light-phone.svg" alt=""></picture><picture><source media="(max-width: 591px), (min-width: 768px) and (max-width: 879px), (min-width: 1154px)" srcset="assets/blank.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/head-contact-dark-mid.svg"><img src="assets/head-contact-light-mid.svg" alt=""></picture><picture><source media="(max-width: 1153px)" srcset="assets/blank.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/head-contact-dark-wide.svg"><img src="assets/head-contact-light-wide.svg" alt=""></picture></a>
 </p>
 
 <p>
