@@ -326,19 +326,19 @@ def pill(y, h, parts, t, size, pad):
 
 def hero(theme, tier):
     t, W = THEMES[theme], TIERS[tier]
-    title = ("Yousof Selim, Software Engineering student. I build and ship real apps. Three are live on the "
-             "App Store. Open to graduate roles from August 2027. Subang Jaya, Malaysia.")
-    lines = [("I build and", "ink"), ("ship real apps.", "ink"), ("Three are live on", "muted"), ("the App Store.", "muted")]
+    title = ("Yousof Selim, software engineer, backend and product. I build reliable backends. And ship the apps on "
+             "them. Open to graduate roles from August 2027. Subang Jaya, Malaysia.")
+    lines = [("I build", "ink"), ("reliable backends.", "ink"), ("And ship the", "muted"), ("apps on them.", "muted")]
     if tier == "phone":
         # No portrait: on narrow screens GitHub shows the avatar just above the README.
-        body = [text("Yousof Selim", 0, 18, 15, t["ink"], 500), text("Software Engineering student", 0, 39, 15, t["muted"])]
+        body = [text("Yousof Selim", 0, 18, 15, t["ink"], 500), text("Software engineer, backend and product", 0, 39, 15, t["muted"])]
         size, lh = 32, 35
         first = 39 + 22 + size * CAP
         pill_size, pill_h, pad = 12.5, 30, 11
     else:
         name = 17 if tier == "wide" else 16
         body = [text("Yousof Selim", 0, 20, name, t["ink"], 500),
-                text(" · Software Engineering student", measure("Yousof Selim", name, 500), 20, name, t["muted"])]
+                text(" · Software engineer, backend and product", measure("Yousof Selim", name, 500), 20, name, t["muted"])]
         size, lh = (46, 50) if tier == "wide" else (38, 42)
         first = 20 + 26 + size * CAP
         pill_size, pill_h, pad = 13, 32, 12
@@ -656,7 +656,7 @@ Or play [Fallen Asteri](https://yeegz.itch.io/fallenasteri), a Godot platformer 
 
 </details>"""
 
-INTRO = """**Software Engineering student at Sunway University × Lancaster University, graduating August 2027.** I design, build and release products on my own, from the data model to the store listing. My three strongest:
+INTRO = """**Software engineer in my final year at Sunway University × Lancaster University, graduating August 2027.** I build backends where the data has to be right and ship the apps on them, on my own, from the data model to the store listing. My three strongest:
 
 - **[Bupples](https://yousofselim.com/work/bupples/)**: shared expenses on a cent-exact, multi-currency ledger. Live on the App Store and Google Play (version 1.5.0).
 - **[Keepwell](https://yousofselim.com/work/keepwell/)**: a maintenance platform in Java (Spring Boot), PostgreSQL and Angular, with a technician app that works with no signal. Pre-pilot: the [live demo](https://keepwell-951434273932.asia-southeast1.run.app) runs on synthetic data.
