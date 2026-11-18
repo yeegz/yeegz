@@ -10,6 +10,10 @@
 
 Also live: [Planket](https://yousofselim.com/work/planket/) and [Adelante](https://yousofselim.com/work/adelante/) on the App Store, and [Photoshoot](https://github.com/yeegz/photoshoot) for the web and Windows. Methods and numbers are in [eight engineering reports](https://yousofselim.com/research/).
 
+**Open source:** five bug fixes are in review upstream, each with tests that fail without the fix: [Serverpod #6019](https://github.com/serverpod/serverpod/pull/6019) (savepoints released after a rollback), Firebase CLI [#11546](https://github.com/firebase/firebase-tools/pull/11546) and [#11547](https://github.com/firebase/firebase-tools/pull/11547), [Firebase Admin SDK #3324](https://github.com/firebase/firebase-admin-node/pull/3324) and [plus_plugins #4026](https://github.com/fluttercommunity/plus_plugins/pull/4026).
+
+**Newest:** [Unloop](https://unloop-yeegz.web.app) turns a note into researched tasks, because ideas I wrote down kept going unused. Flutter and Node.js, live on the web.
+
 **Looking for:** graduate software engineering roles from August 2027. Internship confirmed.
 
 <p>
