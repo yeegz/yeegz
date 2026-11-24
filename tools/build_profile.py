@@ -94,7 +94,7 @@ PROJECTS = [
          links=[("case-study", f"{SITE}/work/keepwell/"),
                 ("demo", "https://keepwell-951434273932.asia-southeast1.run.app"),
                 ("showcase", "https://github.com/yeegz/keepwell-showcase")]),
-    dict(key="hostmortem", name="Hostmortem", status="Open source · v0.1.0",
+    dict(key="hostmortem", name="Hostmortem", status="Open source · v0.2.2",
          blurb="It was fine, then it wasn\u2019t, then someone rebooted it. Hostmortem keeps the minutes before on a Linux box and says what it knows, suspects and could not see.",
          chips=["C++20", "Linux", "SQLite"],
          shot="hostmortem-replay.webp",
@@ -326,19 +326,19 @@ def pill(y, h, parts, t, size, pad):
 
 def hero(theme, tier):
     t, W = THEMES[theme], TIERS[tier]
-    title = ("Yousof Selim, software engineer, backend and product. I build reliable backends. And ship the apps on "
-             "them. Open to graduate roles from August 2027. Subang Jaya, Malaysia.")
-    lines = [("I build", "ink"), ("reliable backends.", "ink"), ("And ship the", "muted"), ("apps on them.", "muted")]
+    title = ("Yousof Selim, software engineer and product builder. I design, build and ship whole products. "
+             "Open to graduate roles from August 2027. Subang Jaya, Malaysia.")
+    lines = [("I design, build", "ink"), ("and ship", "ink"), ("whole", "muted"), ("products.", "muted")]
     if tier == "phone":
         # No portrait: on narrow screens GitHub shows the avatar just above the README.
-        body = [text("Yousof Selim", 0, 18, 15, t["ink"], 500), text("Software engineer, backend and product", 0, 39, 15, t["muted"])]
+        body = [text("Yousof Selim", 0, 18, 15, t["ink"], 500), text("Software engineer & product builder", 0, 39, 15, t["muted"])]
         size, lh = 32, 35
         first = 39 + 22 + size * CAP
         pill_size, pill_h, pad = 12.5, 30, 11
     else:
         name = 17 if tier == "wide" else 16
         body = [text("Yousof Selim", 0, 20, name, t["ink"], 500),
-                text(" · Software engineer, backend and product", measure("Yousof Selim", name, 500), 20, name, t["muted"])]
+                text(" · Software engineer & product builder", measure("Yousof Selim", name, 500), 20, name, t["muted"])]
         size, lh = (46, 50) if tier == "wide" else (38, 42)
         first = 20 + 26 + size * CAP
         pill_size, pill_h, pad = 13, 32, 12
@@ -656,17 +656,17 @@ Or play [Fallen Asteri](https://yeegz.itch.io/fallenasteri), a Godot platformer 
 
 </details>"""
 
-INTRO = """**Software engineer in my final year at Sunway University × Lancaster University, graduating August 2027.** I build backends where the data has to be right and ship the apps on them, on my own, from the data model to the store listing. My three strongest:
+INTRO = """**Software engineer and product builder in my final year at Sunway University × Lancaster University, graduating August 2027.** I design, build and ship whole products on my own, from the data model and backend to the app in the store. My three strongest:
 
 - **[Bupples](https://yousofselim.com/work/bupples/)**: shared expenses on a cent-exact, multi-currency ledger. Live on the App Store and Google Play (version 1.5.0).
 - **[Keepwell](https://yousofselim.com/work/keepwell/)**: a maintenance platform in Java (Spring Boot), PostgreSQL and Angular, with a technician app that works with no signal. Pre-pilot: the [live demo](https://keepwell-951434273932.asia-southeast1.run.app) runs on synthetic data.
-- **[Hostmortem](https://github.com/yeegz/hostmortem)**: an open-source C++20 flight recorder for Linux that keeps the evidence a reboot destroys (version 0.1.0). The [fault lab replay](https://yousofselim.com/hostmortem-showcase/) shows it diagnosing real injected faults.
+- **[Hostmortem](https://github.com/yeegz/hostmortem)**: an open-source C++20 flight recorder for Linux that keeps the evidence a reboot destroys (version 0.2.2, one-command install for Ubuntu, Debian and Raspberry Pi OS). The [fault lab replay](https://yousofselim.com/hostmortem-showcase/) shows it diagnosing real injected faults.
 
 Also live: [Planket](https://yousofselim.com/work/planket/) and [Adelante](https://yousofselim.com/work/adelante/) on the App Store, and [Photoshoot](https://github.com/yeegz/photoshoot) for the web and Windows. Methods and numbers are in [eight engineering reports](https://yousofselim.com/research/).
 
-**Open source:** seven bug fixes are open upstream, each with tests that fail without the fix, and a Firebase reviewer has approved one: [Serverpod #6019](https://github.com/serverpod/serverpod/pull/6019) (savepoints released after a rollback), Firebase CLI [#11546](https://github.com/firebase/firebase-tools/pull/11546) and [#11547](https://github.com/firebase/firebase-tools/pull/11547) (approved), [Firebase Admin SDK #3324](https://github.com/firebase/firebase-admin-node/pull/3324), [Sentry Flutter SDK #4189](https://github.com/getsentry/sentry-dart/pull/4189), [Dart Frog #1993](https://github.com/dart-frog-dev/dart_frog/pull/1993) and [plus_plugins #4026](https://github.com/fluttercommunity/plus_plugins/pull/4026).
+**Open source:** two fixes are merged, in [Sentry's Flutter SDK (#4189)](https://github.com/getsentry/sentry-dart/pull/4189) and [Dart Frog (#1993)](https://github.com/dart-frog-dev/dart_frog/pull/1993), and Firebase reviewers have approved two more, Firebase CLI [#11546](https://github.com/firebase/firebase-tools/pull/11546) and [#11547](https://github.com/firebase/firebase-tools/pull/11547). Eleven more are in review, each with tests that fail without the fix, including [Serverpod #6019](https://github.com/serverpod/serverpod/pull/6019), [Firebase Admin SDK #3324](https://github.com/firebase/firebase-admin-node/pull/3324), [go_router #13770](https://github.com/flutter/packages/pull/13770) and [BullMQ #5214](https://github.com/taskforcesh/bullmq/pull/5214).
 
-**Newest:** [Unloop](https://unloop-yeegz.web.app) turns a note into researched tasks, because ideas I wrote down kept going unused. Flutter and Node.js, live on the web.
+**Newest:** [Unloop](https://yousofselim.com/work/unloop/) turns a note into researched tasks with sources. Flutter and Node.js, live on the web, iPhone app in App Store review. And the portfolio has an [Arcade](https://yousofselim.com/arcade/): small games built from my own apps.
 
 **Looking for:** graduate software engineering roles from August 2027. Internship confirmed."""
 
