@@ -2,19 +2,9 @@
 <a href="https://yousofselim.com/" aria-label="Yousof Selim, software engineer and product builder. I design, build and ship whole products. Open to graduate roles from August 2027. Subang Jaya, Malaysia."><picture><source media="(min-width: 592px) and (max-width: 767px), (min-width: 880px)" srcset="assets/blank.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/hero-dark-phone.svg"><img src="assets/hero-light-phone.svg" alt=""></picture><picture><source media="(max-width: 591px), (min-width: 768px) and (max-width: 879px), (min-width: 1154px)" srcset="assets/blank.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/hero-dark-mid.svg"><img src="assets/hero-light-mid.svg" alt=""></picture><picture><source media="(max-width: 1153px)" srcset="assets/blank.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/hero-dark-wide.svg"><img src="assets/hero-light-wide.svg" alt=""></picture></a>
 </p>
 
-**Software engineer and product builder in my final year at Sunway University × Lancaster University, graduating August 2027.** I design, build and ship whole products on my own, from the data model and backend to the app in the store. My three strongest:
+**Software engineer and product builder**, graduating from Sunway University × Lancaster University in August 2027. I design, build and ship whole products on my own, from the database to the app in the store.
 
-- **[Bupples](https://yousofselim.com/work/bupples/)**: shared expenses on a cent-exact, multi-currency ledger. Live on the App Store and Google Play (version 1.5.0).
-- **[Keepwell](https://yousofselim.com/work/keepwell/)**: a maintenance platform in Java (Spring Boot), PostgreSQL and Angular, with a technician app that works with no signal. Pre-pilot: the [live demo](https://keepwell-951434273932.asia-southeast1.run.app) runs on synthetic data.
-- **[Hostmortem](https://github.com/yeegz/hostmortem)**: an open-source C++20 flight recorder for Linux that keeps the evidence a reboot destroys (version 0.2.2, one-command install for Ubuntu, Debian and Raspberry Pi OS). The [fault lab replay](https://yousofselim.com/hostmortem-showcase/) shows it diagnosing real injected faults.
-
-Also live: [Planket](https://yousofselim.com/work/planket/) and [Adelante](https://yousofselim.com/work/adelante/) on the App Store, and [Photoshoot](https://github.com/yeegz/photoshoot) for the web and Windows. Methods and numbers are in [eight engineering reports](https://yousofselim.com/research/).
-
-**Open source:** two fixes are merged, in [Sentry's Flutter SDK (#4189)](https://github.com/getsentry/sentry-dart/pull/4189) and [Dart Frog (#1993)](https://github.com/dart-frog-dev/dart_frog/pull/1993), and Firebase reviewers have approved two more, Firebase CLI [#11546](https://github.com/firebase/firebase-tools/pull/11546) and [#11547](https://github.com/firebase/firebase-tools/pull/11547). Eleven more are in review, each with tests that fail without the fix, including [Serverpod #6019](https://github.com/serverpod/serverpod/pull/6019), [Firebase Admin SDK #3324](https://github.com/firebase/firebase-admin-node/pull/3324), [go_router #13770](https://github.com/flutter/packages/pull/13770) and [BullMQ #5214](https://github.com/taskforcesh/bullmq/pull/5214).
-
-**Newest:** [Unloop](https://yousofselim.com/work/unloop/) turns a note into researched tasks with sources. Flutter and Node.js, live on the web, iPhone app in App Store review. And the portfolio has an [Arcade](https://yousofselim.com/arcade/): small games built from my own apps.
-
-**Looking for:** graduate software engineering roles from August 2027. Internship confirmed.
+**Open source:** fixes merged in [Sentry](https://github.com/getsentry/sentry-dart/pull/4189) and [Dart Frog](https://github.com/dart-frog-dev/dart_frog/pull/1993), two approved at [Firebase](https://github.com/firebase/firebase-tools/pull/11546), more in review. **Looking for:** graduate roles from August 2027.
 
 <p>
 <a href="https://yousofselim.com/Yousof-Selim-Resume.pdf"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/btn-resume-dark.svg"><img src="assets/btn-resume-light.svg" height="36" alt="Read my résumé (PDF)"></picture></a>
@@ -23,7 +13,7 @@ Also live: [Planket](https://yousofselim.com/work/planket/) and [Adelante](https
 </p>
 
 <p>
-<a href="https://yousofselim.com/#work" aria-label="Selected work. Six products in depth. I built each alone, end to end, except Pulse, a team project."><picture><source media="(min-width: 592px) and (max-width: 767px), (min-width: 880px)" srcset="assets/blank.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/head-work-dark-phone.svg"><img src="assets/head-work-light-phone.svg" alt=""></picture><picture><source media="(max-width: 591px), (min-width: 768px) and (max-width: 879px), (min-width: 1154px)" srcset="assets/blank.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/head-work-dark-mid.svg"><img src="assets/head-work-light-mid.svg" alt=""></picture><picture><source media="(max-width: 1153px)" srcset="assets/blank.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/head-work-dark-wide.svg"><img src="assets/head-work-light-wide.svg" alt=""></picture></a>
+<a href="https://yousofselim.com/#work" aria-label="Selected work. Four products in depth, each built alone, end to end. More on the site."><picture><source media="(min-width: 592px) and (max-width: 767px), (min-width: 880px)" srcset="assets/blank.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/head-work-dark-phone.svg"><img src="assets/head-work-light-phone.svg" alt=""></picture><picture><source media="(max-width: 591px), (min-width: 768px) and (max-width: 879px), (min-width: 1154px)" srcset="assets/blank.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/head-work-dark-mid.svg"><img src="assets/head-work-light-mid.svg" alt=""></picture><picture><source media="(max-width: 1153px)" srcset="assets/blank.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/head-work-dark-wide.svg"><img src="assets/head-work-light-wide.svg" alt=""></picture></a>
 </p>
 
 <p>
@@ -35,15 +25,6 @@ Also live: [Planket](https://yousofselim.com/work/planket/) and [Adelante](https
 <a href="https://apps.apple.com/my/app/bupples/id6777620291"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/go-app-store-dark.svg"><img src="assets/go-app-store-light.svg" height="28" alt="Get Bupples on the App Store"></picture></a>
 <a href="https://play.google.com/store/apps/details?id=com.bupples.bupples"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/go-google-play-dark.svg"><img src="assets/go-google-play-light.svg" height="28" alt="Get Bupples on Google Play"></picture></a>
 <a href="https://github.com/yeegz/Bupples-showcase"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/go-showcase-dark.svg"><img src="assets/go-showcase-light.svg" height="28" alt="Browse the Bupples showcase on GitHub"></picture></a>
-</p>
-
-<p>
-<a href="https://yousofselim.com/work/pulse/" aria-label="Pulse. In development · team project. A city of about 150 residents that lives on its own. Ask anyone why they did something, change the city in plain English, and replay the day. Built with TypeScript, three.js and Fastify. The screenshot shows the simulated city from above, with its districts and streets."><picture><source media="(min-width: 592px) and (max-width: 767px), (min-width: 880px)" srcset="assets/blank.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/work-pulse-dark-phone.svg"><img src="assets/work-pulse-light-phone.svg" alt=""></picture><picture><source media="(max-width: 591px), (min-width: 768px) and (max-width: 879px), (min-width: 1154px)" srcset="assets/blank.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/work-pulse-dark-mid.svg"><img src="assets/work-pulse-light-mid.svg" alt=""></picture><picture><source media="(max-width: 1153px)" srcset="assets/blank.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/work-pulse-dark-wide.svg"><img src="assets/work-pulse-light-wide.svg" alt=""></picture></a>
-</p>
-
-<p>
-<a href="https://yousofselim.com/work/pulse/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/go-case-study-dark.svg"><img src="assets/go-case-study-light.svg" height="28" alt="Read the Pulse case study"></picture></a>
-<a href="https://pulse-ihzwsnnyfa-as.a.run.app"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/go-demo-dark.svg"><img src="assets/go-demo-light.svg" height="28" alt="Try the Pulse live demo, an interactive preview with sample data"></picture></a>
 </p>
 
 <p>
@@ -78,63 +59,10 @@ Also live: [Planket](https://yousofselim.com/work/planket/) and [Adelante](https
 </p>
 
 <p>
-<a href="https://yousofselim.com/work/photoshoot/" aria-label="Photoshoot. Web app and Windows 1.5.1. Strike a pose, pick from 52 live effects and reactive face masks, keep the strip. Nothing from your camera leaves your device. Built with TypeScript, Electron, WebGL2 and MediaPipe. The screenshot shows the Photoshoot product site for version 1.5.1."><picture><source media="(min-width: 592px) and (max-width: 767px), (min-width: 880px)" srcset="assets/blank.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/work-photoshoot-dark-phone.svg"><img src="assets/work-photoshoot-light-phone.svg" alt=""></picture><picture><source media="(max-width: 591px), (min-width: 768px) and (max-width: 879px), (min-width: 1154px)" srcset="assets/blank.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/work-photoshoot-dark-mid.svg"><img src="assets/work-photoshoot-light-mid.svg" alt=""></picture><picture><source media="(max-width: 1153px)" srcset="assets/blank.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/work-photoshoot-dark-wide.svg"><img src="assets/work-photoshoot-light-wide.svg" alt=""></picture></a>
-</p>
-
-<p>
-<a href="https://yousofselim.com/work/photoshoot/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/go-case-study-dark.svg"><img src="assets/go-case-study-light.svg" height="28" alt="Read the Photoshoot case study"></picture></a>
-<a href="https://photoshoot-yeegz.web.app/app/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/go-open-app-dark.svg"><img src="assets/go-open-app-light.svg" height="28" alt="Open Photoshoot in your browser"></picture></a>
-<a href="https://github.com/yeegz/photoshoot/releases/tag/v1.5.1"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/go-windows-dark.svg"><img src="assets/go-windows-light.svg" height="28" alt="Download Photoshoot 1.5.1 for Windows"></picture></a>
-<a href="https://github.com/yeegz/photoshoot"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/go-source-dark.svg"><img src="assets/go-source-light.svg" height="28" alt="Browse the Photoshoot source on GitHub"></picture></a>
-</p>
-
-<p>
-<a href="https://yousofselim.com/#work" aria-label="More work. Four more. Each status says exactly how far along it is. Adelante: App Store · 1.1.0. A daily quote on your Home Screen, Lock Screen and Apple Watch, with one rotation rule in Dart, Swift and Kotlin. TrustTrail: Web app live · beta. Lays out a secondhand deal’s evidence and shows the exact words behind each warning sign, privately in your browser. LetMeKnow: Web app live. Turns messages, bills and promises into open loops, with a plan to close each one. WayClub: Preview live · paused. Events, tickets and committee work for teams, clubs and communities, isolated per group in the database."><picture><source media="(min-width: 592px) and (max-width: 767px), (min-width: 880px)" srcset="assets/blank.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/building-dark-phone.svg"><img src="assets/building-light-phone.svg" alt=""></picture><picture><source media="(max-width: 591px), (min-width: 768px) and (max-width: 879px), (min-width: 1154px)" srcset="assets/blank.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/building-dark-mid.svg"><img src="assets/building-light-mid.svg" alt=""></picture><picture><source media="(max-width: 1153px)" srcset="assets/blank.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/building-dark-wide.svg"><img src="assets/building-light-wide.svg" alt=""></picture></a>
-</p>
-
-<sub>Case studies: [Adelante](https://yousofselim.com/work/adelante/) · [TrustTrail](https://yousofselim.com/work/trusttrail/) · [LetMeKnow](https://yousofselim.com/work/letmeknow/) · [WayClub](https://yousofselim.com/work/wayclub/)</sub>
-
-<p>
 <a href="https://yousofselim.com/research/" aria-label="Engineering reports. Measurements from my own products, each with its data and scripts. 119× shorter waits behind slow requests after one lock fix: Testing PostgreSQL Tenant Isolation (WayClub). 97% of float-based ledgers ended up not adding up: Cent-Exact Ledger (Bupples). 8 bugs around clock changes that the existing tests missed: One Rule, Three Runtimes (Adelante). 4× lower frame rate once face tracking switches on: Sixteen Milliseconds (Photoshoot)."><picture><source media="(min-width: 592px) and (max-width: 767px), (min-width: 880px)" srcset="assets/blank.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/reports-dark-phone.svg"><img src="assets/reports-light-phone.svg" alt=""></picture><picture><source media="(max-width: 591px), (min-width: 768px) and (max-width: 879px), (min-width: 1154px)" srcset="assets/blank.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/reports-dark-mid.svg"><img src="assets/reports-light-mid.svg" alt=""></picture><picture><source media="(max-width: 1153px)" srcset="assets/blank.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/reports-dark-wide.svg"><img src="assets/reports-light-wide.svg" alt=""></picture></a>
 </p>
 
 <sub>Read: [Testing PostgreSQL Tenant Isolation](https://yousofselim.com/research/catalogue-driven-rls/) · [Cent-Exact Ledger](https://yousofselim.com/research/cent-exact-ledger/) · [One Rule, Three Runtimes](https://yousofselim.com/research/one-rule-three-runtimes/) · [Sixteen Milliseconds](https://yousofselim.com/research/frame-budget/) · [all eight reports](https://yousofselim.com/research/)</sub>
-
-<p>
-<a href="https://yousofselim.com/#skills" aria-label="Skills. Flutter for the apps, TypeScript and Java for the servers, and C++ close to the system. Mobile: Flutter, Dart, Riverpod, Swift/SwiftUI, Kotlin, Capacitor. Backend and data: TypeScript, Java, Spring Boot, NestJS, PostgreSQL, Supabase, Firebase, SQLite. Systems: C++20, Linux, CMake, Docker. Web: React, Next.js, Angular, JavaScript, HTML/CSS, WebGL2, Electron. Testing and delivery: Flutter tests, Vitest, Playwright, JUnit, Fuzzing and sanitizers, GitHub Actions, App Store and Google Play releases. Also: Python, Vertex AI and Gemini, MediaPipe, Git."><picture><source media="(min-width: 592px) and (max-width: 767px), (min-width: 880px)" srcset="assets/blank.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/skills-dark-phone.svg"><img src="assets/skills-light-phone.svg" alt=""></picture><picture><source media="(max-width: 591px), (min-width: 768px) and (max-width: 879px), (min-width: 1154px)" srcset="assets/blank.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/skills-dark-mid.svg"><img src="assets/skills-light-mid.svg" alt=""></picture><picture><source media="(max-width: 1153px)" srcset="assets/blank.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/skills-dark-wide.svg"><img src="assets/skills-light-wide.svg" alt=""></picture></a>
-</p>
-
-<details>
-<summary><b>Under the hood</b> · four problems and how I cracked them</summary>
-
-#### Bupples: the payment that went nowhere
-
-A owes B, and B owes C. The simplified plan says A should just pay C, which is neat until A actually pays and the app looks for a direct A → C debt to reduce. There isn’t one, so the payment reduced nothing. I changed settlement to pay down the original debts along the chain. Money is kept in whole minor units, so nothing drifts by a cent; [the ledger report](https://yousofselim.com/research/cent-exact-ledger/) measures it over four million simulated bills.
-
-#### Adelante: widgets that agree without talking
-
-The Flutter app, the iOS widgets and the Android widgets run in separate processes and can’t talk to each other. So they don’t need to: they all follow the same clock-based rotation rule and land on the same quote, offline. Running the three versions side by side then found eight clock-change cases where they disagree; [the report](https://yousofselim.com/research/one-rule-three-runtimes/) has the details.
-
-#### WayClub: one database, no peeking
-
-Every club shares one database, so the bug that matters is one club seeing another’s data. Each request runs in a transaction that carries the caller’s verified claims, and PostgreSQL row-level security decides what they can see, under a role that can’t bypass it. Forget a filter and you still only see your own club. [The isolation report](https://yousofselim.com/research/catalogue-driven-rls/)
-
-#### CodeAtlas: the 500 hiding behind a green suite
-
-A test suite can pass while a changed branch goes untested. On its authentication fixture, CodeAtlas spots an uncovered expired-session path, generates a test for it, and catches the response quietly changing from HTTP 401 to HTTP 500. [What works today](https://github.com/yeegz/CodeAtlas#current-implementation-status)
-
-Bupples, Adelante, WayClub and Keepwell are closed source, but each has a public showcase repo. Hostmortem is open source.
-
-</details>
-
-<details>
-<summary>Got a minute? Take a detour</summary>
-
-My portfolio has [a working terminal](https://yousofselim.com/terminal/). Type `help` and see where it takes you.
-
-Or play [Fallen Asteri](https://yeegz.itch.io/fallenasteri), a Godot platformer our team of three built. I set up our branch-and-pull-request workflow and worked on levels, animation, the HUD and combat tuning. [Source](https://github.com/yeegz/Fallen-Asteri)
-
-</details>
 
 <p>
 <a href="https://yousofselim.com/#contact" aria-label="Hiring graduates for August 2027? Internship confirmed. Email is the quickest way to reach me."><picture><source media="(min-width: 592px) and (max-width: 767px), (min-width: 880px)" srcset="assets/blank.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/head-contact-dark-phone.svg"><img src="assets/head-contact-light-phone.svg" alt=""></picture><picture><source media="(max-width: 591px), (min-width: 768px) and (max-width: 879px), (min-width: 1154px)" srcset="assets/blank.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/head-contact-dark-mid.svg"><img src="assets/head-contact-light-mid.svg" alt=""></picture><picture><source media="(max-width: 1153px)" srcset="assets/blank.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/head-contact-dark-wide.svg"><img src="assets/head-contact-light-wide.svg" alt=""></picture></a>

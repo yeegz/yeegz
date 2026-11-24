@@ -656,19 +656,9 @@ Or play [Fallen Asteri](https://yeegz.itch.io/fallenasteri), a Godot platformer 
 
 </details>"""
 
-INTRO = """**Software engineer and product builder in my final year at Sunway University × Lancaster University, graduating August 2027.** I design, build and ship whole products on my own, from the data model and backend to the app in the store. My three strongest:
+INTRO = """**Software engineer and product builder**, graduating from Sunway University × Lancaster University in August 2027. I design, build and ship whole products on my own, from the database to the app in the store.
 
-- **[Bupples](https://yousofselim.com/work/bupples/)**: shared expenses on a cent-exact, multi-currency ledger. Live on the App Store and Google Play (version 1.5.0).
-- **[Keepwell](https://yousofselim.com/work/keepwell/)**: a maintenance platform in Java (Spring Boot), PostgreSQL and Angular, with a technician app that works with no signal. Pre-pilot: the [live demo](https://keepwell-951434273932.asia-southeast1.run.app) runs on synthetic data.
-- **[Hostmortem](https://github.com/yeegz/hostmortem)**: an open-source C++20 flight recorder for Linux that keeps the evidence a reboot destroys (version 0.2.2, one-command install for Ubuntu, Debian and Raspberry Pi OS). The [fault lab replay](https://yousofselim.com/hostmortem-showcase/) shows it diagnosing real injected faults.
-
-Also live: [Planket](https://yousofselim.com/work/planket/) and [Adelante](https://yousofselim.com/work/adelante/) on the App Store, and [Photoshoot](https://github.com/yeegz/photoshoot) for the web and Windows. Methods and numbers are in [eight engineering reports](https://yousofselim.com/research/).
-
-**Open source:** two fixes are merged, in [Sentry's Flutter SDK (#4189)](https://github.com/getsentry/sentry-dart/pull/4189) and [Dart Frog (#1993)](https://github.com/dart-frog-dev/dart_frog/pull/1993), and Firebase reviewers have approved two more, Firebase CLI [#11546](https://github.com/firebase/firebase-tools/pull/11546) and [#11547](https://github.com/firebase/firebase-tools/pull/11547). Eleven more are in review, each with tests that fail without the fix, including [Serverpod #6019](https://github.com/serverpod/serverpod/pull/6019), [Firebase Admin SDK #3324](https://github.com/firebase/firebase-admin-node/pull/3324), [go_router #13770](https://github.com/flutter/packages/pull/13770) and [BullMQ #5214](https://github.com/taskforcesh/bullmq/pull/5214).
-
-**Newest:** [Unloop](https://yousofselim.com/work/unloop/) turns a note into researched tasks with sources. Flutter and Node.js, live on the web, iPhone app in App Store review. And the portfolio has an [Arcade](https://yousofselim.com/arcade/): small games built from my own apps.
-
-**Looking for:** graduate software engineering roles from August 2027. Internship confirmed."""
+**Open source:** fixes merged in [Sentry](https://github.com/getsentry/sentry-dart/pull/4189) and [Dart Frog](https://github.com/dart-frog-dev/dart_frog/pull/1993), two approved at [Firebase](https://github.com/firebase/firebase-tools/pull/11546), more in review. **Looking for:** graduate roles from August 2027."""
 
 FOOTER = "<sub>Bachelor of Software Engineering (Hons), Sunway University × Lancaster University. Graduating August 2027.</sub>"
 
@@ -676,7 +666,7 @@ FOOTER = "<sub>Bachelor of Software Engineering (Hons), Sunway University × Lan
 def main():
     ASSETS.mkdir(exist_ok=True)
     alts = {}
-    work_lead = "Six products in depth. I built each alone, end to end, except Pulse, a team project."
+    work_lead = "Four products in depth, each built alone, end to end. More on the site."
     contact_title, contact_lead = "Hiring graduates for August 2027?", "Internship confirmed. Email is the quickest way to reach me."
     for theme in THEMES:
         for key in BUTTONS:
@@ -703,7 +693,7 @@ def main():
                          themed("btn", "portfolio", "Visit my portfolio at yousofselim.com", f"{SITE}/", 36)])),
         block(responsive("head-work", f"Selected work. {work_lead}", f"{SITE}/#work")),
     ]
-    for p in PROJECTS:
+    for p in [x for x in PROJECTS if x['key'] in ('bupples', 'keepwell', 'hostmortem', 'planket')]:
         links = [themed("go", key, LINKS[key][3].replace("NAME", p["name"]), href, 28) for key, href in p["links"]]
         sections += [block(responsive("work-" + p["key"], alts[p["key"]], p["links"][0][1])),
                      block("\n".join(links))]
@@ -711,12 +701,8 @@ def main():
         REPORT_ROWS, ["catalogue-driven-rls", "cent-exact-ledger", "one-rule-three-runtimes", "frame-budget"]))
     building_links = " \u00b7 ".join(f"[{n}]({SITE}/work/{n.lower()}/)" for n, _, _ in BUILDING_ROWS)
     sections += [
-        block(responsive("building", alts["building"], f"{SITE}/#work")),
-        f"<sub>Case studies: {building_links}</sub>",
         block(responsive("reports", alts["reports"], f"{SITE}/research/")),
         f"<sub>Read: {report_links} \u00b7 [all eight reports]({SITE}/research/)</sub>",
-        block(responsive("skills", alts["skills"], f"{SITE}/#skills")),
-        NOTES,
         block(responsive("head-contact", f"{contact_title} {contact_lead}", f"{SITE}/#contact")),
         block("\n".join([
             themed("btn", "email", "Email me at yousofselim2@gmail.com",
