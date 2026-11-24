@@ -710,7 +710,14 @@ def main():
             themed("btn", "linkedin", "Connect on LinkedIn", "https://www.linkedin.com/in/ysf-slm/", 36)])),
         FOOTER,
     ]
-    (ROOT / "README.md").write_text("\n\n".join(sections) + "\n")
+    readme = "\n\n".join(sections) + "\n"
+    # GitHub's image proxy caches by URL, so each asset carries a hash of its bytes.
+    import hashlib, re as _re
+    def _bust(m):
+        f = ROOT / m.group(1)
+        return m.group(0) if not f.exists() else f"{m.group(1)}?v={hashlib.sha1(f.read_bytes()).hexdigest()[:8]}"
+    readme = _re.sub(r"(assets/[\w.-]+\.svg)(?!\?v=)", _bust, readme)
+    (ROOT / "README.md").write_text(readme)
     print(f"Wrote README.md and {len(list(ASSETS.glob('*.svg')))} SVGs in assets/.")
 
 
